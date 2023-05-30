@@ -2,76 +2,49 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>ESP Tool</title>
+        <title>Blockstream Jade DIY Flasher</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.19.0/css/xterm.css">
         <link
             href="https://fonts.googleapis.com/css?family=Orbitron"
             rel="stylesheet"
         />
-        <link rel="icon" href="favicon.ico" />
          <script src="https://cdn.jsdelivr.net/npm/xterm@4.19.0/lib/xterm.min.js"></script>
          <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h1 align="center"><p><img src="./assets/esp-logo.png" width="42" height="42" style="vertical-align:middle"></img> ESP Tool</p></h1>
-        <h4 align="center">A Serial Flasher utility for Espressif chips</h4>
+        <h1 align="center"><p>Blockstream Jade DIY</p></h1>
+        <h4 align="center">A Flasher utility for Jade DIY</h4>
+        <h4 align="center">Warning: This tool does not and cannot enable secure boot and flash encryption on the DIY devices</h4>
         <div id="safariErr" style="display:none"><p align="center" style="color:red">This tool is not supported on Safari browser!</p>
         </div>
         <div class="container" id="main">
             <hr/>
             <div id="program">
-                <h3> Program </h3>
-                <label for="baudrates" id="lblBaudrate">Baudrate:</label>
-                <label style="display:none" id="lblConnTo">Connected to device: </label>
-                <select name="baudrates" id="baudrates">
-                    <option value="921600">921600</option>
-                    <option value="460800">460800</option>
-                    <option value="230400">230400</option>
-                    <option value="115200">115200</option>
+                <h3 id="jadediyversion">Jade DIY</h3>
+                <label for="dyimodels" id="lbldiymodels">Model:</label>
+                <select name="diymodelsel" id="diymodelsel">
+                    <option value="m5fire">M5Stack FIRE</option>
+                    <option value="tdisplay">LILYGO T-Display</option>
+                    <option value="m5gray">M5Stack Gray</option>
+                    <option value="m5stickcplus">M5StickC PLUS</option>
                 </select>
 
-                <input class="btn btn-info btn-sm" type="button" id="connectButton" value="Connect" />
-                <input class="btn btn-warning btn-sm" type="button" id="disconnectButton" value="Disconnect" />
-                <input class="btn btn-danger btn-sm" type="button" id="eraseButton" value="Erase Flash" />
+                <input class="btn btn-info btn-sm" type="button" id="connectButton" value="Flash" />
                 <br>
-
-                <div class="alert alert-danger alert-dismissible" id="alertDiv" style="display:none; margin-top:10px">
-                    <a href="#" class="close" aria-label="close" onclick="$('.alert').hide()">&times;</a>
-                    <span id="alertmsg"></span>
-                </div>
-
-                <div id="files">
-                    <table class="table table-striped" id="fileTable">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>Flash Address</th>
-                                <th>File</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                        </tbody>
-                    </table>
-                    <input class="btn btn-info btn-sm" type="button" id="addFile" value="Add File" />
-                    <input class="btn btn-info btn-sm" type="button" id="programButton" value="Program" />
-                </div>
-                <output id="list"></output>
                 <hr/>
             </div>
-            <div id="console">
-                <h3>Console </h3>
-                <label style="display:none" id="lblConsoleFor">Connected to device: </label>
-
-                <input class="btn btn-info" type="button" id="consoleStartButton" value="Start" />
-                <input class="btn btn-info" type="button" id="consoleStopButton" value="Stop" />
-                <input class="btn btn-info" type="button" id="resetButton" value="Reset" />
-                <hr/>
-            </div>
-            <div id="terminal"></div>
-        </div>
+            <label for="bootloaderprogress" id="bootloaderprogresslbl" style="display:none;" >Bootloader</label>
+            <progress id="bootloaderprogress" value="0" max="100" style="width: 100%; display:none"></progress>
+            <label for="partitiontableprogress" id="partitiontableprogresslbl" style="display:none;">Partition Table</label>
+            <progress id="partitiontableprogress" value="0" max="100" style="width: 100%; display:none"></progress>
+            <label for="otaprogress" id="otaprogresslbl" style="display:none;">OTA initial data</label>
+            <progress id="otaprogress" value="0" max="100" style="width: 100%; display:none"></progress>
+            <label for="jadeprogress" id="jadeprogresslbl" style="display:none;">Jade firmware</label>
+            <progress id="jadeprogress" value="0" max="100" style="width: 100%; display:none"></progress>
+            <h3 id="success"></h3>
         <script src="index.js" type="module"></script>
         <script>
             // Safari 3.0+ "[object HTMLElementConstructor]"
