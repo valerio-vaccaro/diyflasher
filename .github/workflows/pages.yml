@@ -1,9 +1,9 @@
 name: Deploy static content to Pages
 
-# Run on the main branch or on a manual trigger
+# Run on the jade_diy branch or on a manual trigger
 on:
   push:
-    branches: ["main"]
+    branches: ["jade_diy"]
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages

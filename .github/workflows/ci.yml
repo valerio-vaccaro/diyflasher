@@ -1,10 +1,10 @@
 on:
   push:
     branches:
-      - main
+      - jade_diy
   pull_request:
     branches:
-      - main
+      - jade_diy
 
 jobs:
   ci:
