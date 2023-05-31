@@ -52,7 +52,6 @@ connectButton.onclick = async () => {
     chip = await esploader.main_fn();
   } catch (e) {
     console.error(e);
-    term.writeln(`Error: ${e.message}`);
   }
 
   const addressesAndFiles = [
