@@ -42,7 +42,7 @@ connectButton.onclick = async () => {
   jadeprogressBarLbl.style.display = 'block';
 
   try {
-    esploader = new ESPLoader(transport, 115200, null);
+    esploader = new ESPLoader(transport, 921600, null);
     chip = await esploader.main_fn();
   } catch (e) {
     console.error(e);
@@ -55,6 +55,8 @@ connectButton.onclick = async () => {
         {address: '0xE000', fileName: 'ota_data_initial.bin', progressBar: otaprogressBar},
         {address: '0x10000', fileName: 'jade.bin', progressBar: jadeprogressBar},
     ];
+
+  let fileArray = [];
 
   for (const item of addressesAndFiles) {
 
@@ -72,27 +74,28 @@ connectButton.onclick = async () => {
       });
       console.log(typeof fileData);
       console.debug(fileData);
-      const fileArray = [{
+      fileArray.push({
           data: fileData,
           address: item.address
-      }];
-      try {
-          await esploader.write_flash(
-              fileArray,
-              'keep',
-              undefined,
-              undefined,
-              false,
-              true,
-              (fileIndex, written, total) => {
-                item.progressBar.value = (written / total) * 100;
-              },
-              undefined
-          );
-      } catch (e) {
-          console.error(e);
-      }
+      });
   }
+  try {
+      await esploader.write_flash(
+          fileArray,
+          'keep',
+          'keep',
+          'keep',
+          false,
+          true,
+          (fileIndex, written, total) => {
+            addressesAndFiles[fileIndex].progressBar.value = (written / total) * 100;
+          },
+          null
+      );
+  } catch (e) {
+      console.error(e);
+  }
+  await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
