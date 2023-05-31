@@ -41,8 +41,14 @@ connectButton.onclick = async () => {
   ptprogressBarLbl.style.display = 'block';
   jadeprogressBarLbl.style.display = 'block';
 
+  var baudrate = 921600;
+
+  if (diymodelsel.value == "m5stickcplus") {
+      baudrate = 115200;
+  }
+
   try {
-    esploader = new ESPLoader(transport, 921600, null);
+    esploader = new ESPLoader(transport, baudrate, null);
     chip = await esploader.main_fn();
   } catch (e) {
     console.error(e);
@@ -72,8 +78,6 @@ connectButton.onclick = async () => {
           reader.onerror = reject;
           reader.readAsBinaryString(fileBlob);
       });
-      console.log(typeof fileData);
-      console.debug(fileData);
       fileArray.push({
           data: fileData,
           address: item.address
