@@ -6,8 +6,8 @@ const otaprogressBar = document.getElementById('otaprogress');
 const otaprogressBarLbl = document.getElementById('otaprogresslbl');
 const ptprogressBar = document.getElementById('partitiontableprogress');
 const ptprogressBarLbl = document.getElementById('partitiontableprogresslbl');
-const jadeprogressBar = document.getElementById('jadeprogress');
-const jadeprogressBarLbl = document.getElementById('jadeprogresslbl');
+const firmwareprogressBar = document.getElementById('firmwareprogress');
+const firmwareprogressBarlbl = document.getElementById('firmwareprogresslbl');
 const lbldiymodels = document.getElementById('lbldiymodels');
 
 // import { Transport } from './cp210x-webusb.js'
@@ -19,8 +19,6 @@ let device = null;
 let transport;
 let chip = null;
 let esploader;
-
-const version = "fw0.1.48";
 
 connectButton.onclick = async () => {
   connectButton.style.display = 'none';
@@ -34,16 +32,16 @@ connectButton.onclick = async () => {
   btprogressBar.style.display = 'block';
   otaprogressBar.style.display = 'block';
   ptprogressBar.style.display = 'block';
-  jadeprogressBar.style.display = 'block';
+  firmwareprogressBar.style.display = 'block';
 
   btprogressBarLbl.style.display = 'block';
   otaprogressBarLbl.style.display = 'block';
   ptprogressBarLbl.style.display = 'block';
-  jadeprogressBarLbl.style.display = 'block';
+  firmwareprogressBarlbl.style.display = 'block';
 
   var baudrate = 921600;
 
-  if (diymodelsel.value == "m5stickcplus") {
+  if (diymodelsel.value == "jade_0.1.48_m5stickcplus") {
       baudrate = 115200;
   }
 
@@ -54,19 +52,42 @@ connectButton.onclick = async () => {
     console.error(e);
   }
 
-  const addressesAndFiles = [
-        {address: '0x1000', fileName: 'bootloader.bin', progressBar: btprogressBar},
-        {address: '0x9000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
-        {address: '0xE000', fileName: 'ota_data_initial.bin', progressBar: otaprogressBar},
-        {address: '0x10000', fileName: 'jade.bin', progressBar: jadeprogressBar},
+  if (["han_m5stack"].includes(diymodelsel.value)) { // han
+    const addressesAndFiles = [
+          {address: '0x1000', fileName: 'bootloader.bin', progressBar: btprogressBar},
+          {address: '0x9000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
+          {address: '0xE000', fileName: 'ota_data_initial.bin', progressBar: otaprogressBar},
+          {address: '0x10000', fileName: 'firmware.bin', progressBar: firmwareprogressBar},
+      ];
+  } else if (["han2_0.0.1_wt32-sc01", "han2_0.0.1_wt32-sc01-plus"].includes(diymodelsel.value)) { // han2
+    const addressesAndFiles = [
+      {address: '0x1000', fileName: 'bootloader.bin', progressBar: btprogressBar},
+      {address: '0x9000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
+      {address: '0xE000', fileName: 'ota_data_initial.bin', progressBar: otaprogressBar},
+      {address: '0x10000', fileName: 'firmware.bin', progressBar: firmwareprogressBar},
     ];
+  } else if (["nerdminer2_1.4_tdisplays3", "nerdminer2_1.5.1-beta_tdisplays3"].includes(diymodelsel.value)) { // nerd
+    const addressesAndFiles = [
+      {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
+      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
+      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
+      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
+   ];
+  } else { // jade
+    const addressesAndFiles = [
+      {address: '0x1000', fileName: 'bootloader.bin', progressBar: btprogressBar},
+      {address: '0x9000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
+      {address: '0xE000', fileName: 'ota_data_initial.bin', progressBar: otaprogressBar},
+      {address: '0x10000', fileName: 'jade.bin', progressBar: firmwareprogressBar},
+    ];    
+  }
 
   let fileArray = [];
 
   for (const item of addressesAndFiles) {
 
       console.log(`Address: ${item.address}, File Name: ${item.fileName}`);
-      const response = await fetch("assets/" + version + "/" + diymodelsel.value + "/" + item.fileName);
+      const response = await fetch("assets/" + diymodelsel.value + "/" + item.fileName);
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -102,7 +123,5 @@ connectButton.onclick = async () => {
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
-  document.getElementById("success").innerHTML = "Successfully flashed Jade DIY " + version.slice(2) + " on " + diymodelsel.options[diymodelsel.selectedIndex].text;
+  document.getElementById("success").innerHTML = "Successfully flashed " + diymodelsel.options[diymodelsel.selectedIndex].text;
 };
-
-document.getElementById('jadediyversion').innerHTML = "Jade DIY TAG " + version.slice(2);
