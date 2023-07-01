@@ -52,7 +52,7 @@ connectButton.onclick = async () => {
     console.error(e);
   }
 
-  addressesAndFiles = [
+  let addressesAndFiles = [
     {address: '0x1000', fileName: 'bootloader.bin', progressBar: btprogressBar},
     {address: '0x9000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
     {address: '0xE000', fileName: 'ota_data_initial.bin', progressBar: otaprogressBar},
