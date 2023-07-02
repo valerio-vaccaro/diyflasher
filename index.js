@@ -59,11 +59,11 @@ connectButton.onclick = async () => {
     {address: '0x10000', fileName: 'jade.bin', progressBar: firmwareprogressBar},
   ];  
 
-  if (["han_m5stack"].includes(diymodelsel.value)) { // han
+  if (["han_0.0.1_m5stack"].includes(diymodelsel.value)) { // han
     addressesAndFiles = [
       {address: '0x1000', fileName: 'bootloader.bin', progressBar: btprogressBar},
-      {address: '0x9000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: 'ota_data_initial.bin', progressBar: otaprogressBar},
+      {address: '0x8000', fileName: 'partitions.bin', progressBar: ptprogressBar},
+      {address: '0xE000', fileName: 'boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: 'firmware.bin', progressBar: firmwareprogressBar},
     ];
   } else if (["han2_0.0.1_wt32-sc01", "han2_0.0.1_wt32-sc01-plus"].includes(diymodelsel.value)) { // han2
