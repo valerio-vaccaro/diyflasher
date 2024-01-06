@@ -20,6 +20,35 @@ let transport;
 let chip = null;
 let esploader;
 
+eraseButton.onclick = async () => {
+  connectButton.style.display = 'none';
+  lbldiymodels.style.display = 'none';
+  diymodelsel.style.display = 'none';
+  if (device === null) {
+    device = await navigator.serial.requestPort({});
+    transport = new Transport(device);
+  }
+  var baudrate = 115200;
+
+  try {
+    esploader = new ESPLoader(transport, baudrate, null);
+    chip = await esploader.main_fn();
+  } catch (e) {
+    console.error(e);
+  }
+
+  try {
+    await esploader.erase_flash();
+  } catch (e) {
+      console.error(e);
+  }
+  await new Promise((resolve) => setTimeout(resolve, 100));
+  await transport.setDTR(false);
+  await new Promise((resolve) => setTimeout(resolve, 100));
+  await transport.setDTR(true);
+  document.getElementById("success").innerHTML = "Successfully erased!";
+}
+
 connectButton.onclick = async () => {
   connectButton.style.display = 'none';
   lbldiymodels.style.display = 'none';
