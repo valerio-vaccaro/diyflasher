@@ -1,7 +1,7 @@
-const diymodelsel = document.getElementById('diymodelselJade');
-const diymodelsel = document.getElementById('diymodelselNerd');
-const connectButton = document.getElementById('connectButtonJade');
-const connectButton = document.getElementById('connectButtonNerd');
+const diymodelselJade = document.getElementById('diymodelselJade');
+const diymodelselNerd = document.getElementById('diymodelselNerd');
+const connectButtonJade = document.getElementById('connectButtonJade');
+const connectButtonNerd = document.getElementById('connectButtonNerd');
 const btprogressBar = document.getElementById('bootloaderprogress');
 const btprogressBarLbl = document.getElementById('bootloaderprogresslbl');
 const otaprogressBar = document.getElementById('otaprogress');
@@ -10,8 +10,8 @@ const ptprogressBar = document.getElementById('partitiontableprogress');
 const ptprogressBarLbl = document.getElementById('partitiontableprogresslbl');
 const firmwareprogressBar = document.getElementById('firmwareprogress');
 const firmwareprogressBarlbl = document.getElementById('firmwareprogresslbl');
-const lbldiymodels = document.getElementById('lbldiymodelsJade');
-const lbldiymodels = document.getElementById('lbldiymodelsNerd');
+const lbldiymodelsJade = document.getElementById('lbldiymodelsJade');
+const lbldiymodelsNerd = document.getElementById('lbldiymodelsNerd');
 
 // import { Transport } from './cp210x-webusb.js'
 import * as esptooljs from "./bundle.js";
