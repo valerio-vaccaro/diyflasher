@@ -1,5 +1,7 @@
-const diymodelsel = document.getElementById('diymodelsel');
-const connectButton = document.getElementById('connectButton');
+const diymodelsel = document.getElementById('diymodelselJade');
+const diymodelsel = document.getElementById('diymodelselNerd');
+const connectButton = document.getElementById('connectButtonJade');
+const connectButton = document.getElementById('connectButtonNerd');
 const btprogressBar = document.getElementById('bootloaderprogress');
 const btprogressBarLbl = document.getElementById('bootloaderprogresslbl');
 const otaprogressBar = document.getElementById('otaprogress');
@@ -8,7 +10,8 @@ const ptprogressBar = document.getElementById('partitiontableprogress');
 const ptprogressBarLbl = document.getElementById('partitiontableprogresslbl');
 const firmwareprogressBar = document.getElementById('firmwareprogress');
 const firmwareprogressBarlbl = document.getElementById('firmwareprogresslbl');
-const lbldiymodels = document.getElementById('lbldiymodels');
+const lbldiymodels = document.getElementById('lbldiymodelsJade');
+const lbldiymodels = document.getElementById('lbldiymodelsNerd');
 
 // import { Transport } from './cp210x-webusb.js'
 import * as esptooljs from "./bundle.js";
@@ -78,7 +81,7 @@ connectButtonJade.onclick = async () => {
 
   var baudrate = 921600;
 
-  if (["jade_0.1.48_m5stickcplus", "jade_1.0.21_m5stickcplus", "jade_1.0.26_display_m5stickcplus"].includes(diymodelsel.value)) {
+  if (["jade_0.1.48_m5stickcplus", "jade_1.0.21_m5stickcplus", "jade_1.0.26_display_m5stickcplus"].includes(diymodelselJade.value)) {
       baudrate = 115200;
   }
 
@@ -101,7 +104,7 @@ connectButtonJade.onclick = async () => {
   for (const item of addressesAndFiles) {
 
       console.log(`Address: ${item.address}, File Name: ${item.fileName}`);
-      const response = await fetch("assets/" + diymodelsel.value + "/" + item.fileName);
+      const response = await fetch("assets/" + diymodelselJade.value + "/" + item.fileName);
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -137,7 +140,7 @@ connectButtonJade.onclick = async () => {
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
-  document.getElementById("success").innerHTML = "Successfully flashed " + diymodelsel.options[diymodelsel.selectedIndex].text;
+  document.getElementById("success").innerHTML = "Successfully flashed " + diymodelselJade.options[diymodelselJade.selectedIndex].text;
 };
 
 connectButtonNerd.onclick = async () => {
@@ -179,14 +182,14 @@ connectButtonNerd.onclick = async () => {
     {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
   ];  
 
-  if (["han_0.0.1_m5stack"].includes(diymodelsel.value)) { // han
+  if (["han_0.0.1_m5stack"].includes(diymodelselNerd.value)) { // han
     addressesAndFiles = [
       {address: '0x1000', fileName: 'bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: 'partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: 'boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: 'firmware.bin', progressBar: firmwareprogressBar},
     ];
-  } else if (["han2_0.0.1_wt32-sc01", "han2_0.0.1_wt32-sc01-plus"].includes(diymodelsel.value)) { // han2
+  } else if (["han2_0.0.1_wt32-sc01", "han2_0.0.1_wt32-sc01-plus"].includes(diymodelselNerd.value)) { // han2
     addressesAndFiles = [
       {address: '0x1000', fileName: 'bootloader.bin', progressBar: btprogressBar},
       {address: '0x9000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
@@ -200,7 +203,7 @@ connectButtonNerd.onclick = async () => {
   for (const item of addressesAndFiles) {
 
       console.log(`Address: ${item.address}, File Name: ${item.fileName}`);
-      const response = await fetch("assets/" + diymodelsel.value + "/" + item.fileName);
+      const response = await fetch("assets/" + diymodelselNerd.value + "/" + item.fileName);
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -236,5 +239,5 @@ connectButtonNerd.onclick = async () => {
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
-  document.getElementById("success").innerHTML = "Successfully flashed " + diymodelsel.options[diymodelsel.selectedIndex].text;
+  document.getElementById("success").innerHTML = "Successfully flashed " + diymodelselNerd.options[diymodelselNerd.selectedIndex].text;
 };
