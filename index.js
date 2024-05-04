@@ -191,7 +191,7 @@ connectButtonNerd.onclick = async () => {
     ];
   } else if (["han_1.6.4RC1_wt32-sc01"].includes(diymodelselNerd.value)) { // han2
     addressesAndFiles = [
-      {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
+      {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
