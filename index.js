@@ -81,7 +81,7 @@ connectButtonJade.onclick = async () => {
 
   var baudrate = 921600;
 
-  if (["jade_0.1.48_m5stickcplus", "jade_1.0.21_m5stickcplus", "jade_1.0.26_display_m5stickcplus", "jade_1.0.27_display_m5stickcplus"].includes(diymodelselJade.value)) {
+  if (["jade_0.1.48_m5stickcplus", "jade_1.0.21_m5stickcplus", "jade_1.0.26_display_m5stickcplus", "Jade_1.0.27_display_m5stickcplus", "Jade_1.0.28_display_m5stickcplus"].includes(diymodelselJade.value)) {
       baudrate = 115200;
   }
 
