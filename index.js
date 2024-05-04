@@ -168,6 +168,10 @@ connectButtonNerd.onclick = async () => {
 
   var baudrate = 921600;
 
+  if (["han_1.6.4RC1_m5stack"].includes(diymodelselJade.value)) {
+    baudrate = 115200;
+}
+
   try {
     esploader = new ESPLoader(transport, baudrate, null);
     chip = await esploader.main_fn();
