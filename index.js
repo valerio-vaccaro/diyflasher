@@ -99,6 +99,15 @@ connectButtonJade.onclick = async () => {
     {address: '0x10000', fileName: 'jade.bin', progressBar: firmwareprogressBar},
   ];  
 
+  if (["Jade_1.0.31_display_m5core3", "Jade_1.0.31_display_ttgo_tdisplays3", "Jade_1.0.31_display_ttgo_tdisplays3procamera"].includes(diymodelselJade.value)) {
+    addressesAndFiles = [
+      {address: '0x0000', fileName: 'bootloader.bin', progressBar: btprogressBar},
+      {address: '0x8000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
+      {address: '0x1A000', fileName: 'ota_data_initial.bin', progressBar: otaprogressBar},
+      {address: '0x20000', fileName: 'jade.bin', progressBar: firmwareprogressBar},
+    ];
+  }
+
   let fileArray = [];
 
   for (const item of addressesAndFiles) {
