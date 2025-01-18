@@ -81,7 +81,7 @@ connectButtonJade.onclick = async () => {
 
   var baudrate = 921600;
 
-  if (["jade_0.1.48_m5stickcplus", "jade_1.0.21_m5stickcplus", "jade_1.0.26_display_m5stickcplus", "Jade_1.0.27_display_m5stickcplus", "Jade_1.0.28_display_m5stickcplus", "Jade_1.0.29_display_m5stickcplus", "Jade_1.0.30_display_m5stickcplus", "Jade_1.0.31_display_m5stickcplus"].includes(diymodelselJade.value)) {
+  if (["jade_0.1.48_m5stickcplus", "jade_1.0.21_m5stickcplus", "jade_1.0.26_display_m5stickcplus", "Jade_1.0.27_display_m5stickcplus", "Jade_1.0.28_display_m5stickcplus", "Jade_1.0.29_display_m5stickcplus", "Jade_1.0.30_display_m5stickcplus", "Jade_1.0.31_display_m5stickcplus", "Jade_1.0.32_display_m5stickcplus", "Jade_1.0.33_display_m5stickcplus"].includes(diymodelselJade.value)) {
       baudrate = 115200;
   }
 
@@ -99,7 +99,7 @@ connectButtonJade.onclick = async () => {
     {address: '0x10000', fileName: 'jade.bin', progressBar: firmwareprogressBar},
   ];  
 
-  if (["Jade_1.0.31_display_m5core3", "Jade_1.0.31_display_ttgo_tdisplays3", "Jade_1.0.31_display_ttgo_tdisplays3procamera"].includes(diymodelselJade.value)) {
+  if (["Jade_1.0.31_display_m5core3", "Jade_1.0.31_display_ttgo_tdisplays3", "Jade_1.0.31_display_ttgo_tdisplays3procamera", "Jade_1.0.32_display_m5core3", "Jade_1.0.32_display_ttgo_tdisplays3", "Jade_1.0.32_display_ttgo_tdisplays3procamera", "Jade_1.0.33_display_m5core3", "Jade_1.0.33_display_ttgo_tdisplays3", "Jade_1.0.33_display_ttgo_tdisplays3procamera", "Jade_1.0.33_display_ttgo_twatchs3"].includes(diymodelselJade.value)) {
     addressesAndFiles = [
       {address: '0x0000', fileName: 'bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
