@@ -123,6 +123,16 @@
         .build-footer a:hover {
             text-decoration: underline;
         }
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .footer-links a + a::before {
+            margin-right: 1rem;
+            color: var(--blkstr-border);
+            content: "•";
+        }
         body {
             background:
                 radial-gradient(circle at 15% -10%, rgba(0, 195, 255, 0.16), transparent 30rem),
@@ -482,8 +492,10 @@
     </main>
 
     <footer class="build-footer">
-        <div class="container d-flex justify-content-center align-items-center">
+        <div class="footer-links container justify-content-center">
             <a href="https://github.com/valerio-vaccaro/diyflasher" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="LICENSE">Apache-2.0 License</a>
+            <a href="https://github.com/Blockstream/jade" target="_blank" rel="noopener noreferrer">Blockstream Jade</a>
         </div>
     </footer>
 
