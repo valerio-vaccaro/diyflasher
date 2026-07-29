@@ -19,6 +19,7 @@
         }
         body {
             min-height: 100vh;
+            padding-bottom: 2.5rem;
             background: var(--blkstr-space-grey);
             color: var(--blkstr-white);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -95,6 +96,194 @@
             font-weight: 600;
             color: var(--blkstr-blue);
         }
+        .build-footer {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1030;
+            padding: 0.55rem 0;
+            background: var(--blkstr-black);
+            border-top: 1px solid var(--blkstr-border);
+            font-size: 0.75rem;
+        }
+        .build-footer a {
+            color: var(--blkstr-blue);
+            text-decoration: none;
+        }
+        .build-footer a:hover {
+            text-decoration: underline;
+        }
+        body {
+            background:
+                radial-gradient(circle at 15% -10%, rgba(0, 195, 255, 0.16), transparent 30rem),
+                radial-gradient(circle at 100% 10%, rgba(91, 79, 255, 0.12), transparent 26rem),
+                var(--blkstr-space-grey);
+        }
+        .app-nav {
+            position: relative;
+            overflow: hidden;
+            padding: 0.85rem 0;
+        }
+        .app-nav::after {
+            position: absolute;
+            right: 10%;
+            bottom: 0;
+            left: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--blkstr-blue), transparent);
+            content: "";
+            opacity: 0.65;
+        }
+        .nav-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.75rem;
+        }
+        .nav-status::before {
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 50%;
+            background: #53d769;
+            box-shadow: 0 0 0 0 rgba(83, 215, 105, 0.45);
+            content: "";
+            animation: status-pulse 2.4s infinite;
+        }
+        .app-shell {
+            max-width: 1080px;
+        }
+        .hero {
+            max-width: 700px;
+            padding: 2.5rem 0 2rem;
+            animation: rise-in 0.55s ease-out both;
+        }
+        .eyebrow {
+            margin-bottom: 0.8rem;
+            color: var(--blkstr-blue);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(2rem, 5vw, 3.35rem);
+            font-weight: 700;
+            letter-spacing: -0.055em;
+            line-height: 1.02;
+        }
+        .hero p {
+            max-width: 610px;
+            margin: 1rem 0 0;
+            color: #abb4c0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .alert-warning-custom {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            border-radius: 10px;
+            line-height: 1.5;
+            animation: rise-in 0.55s 0.08s ease-out both;
+        }
+        .alert-warning-custom::before {
+            flex: 0 0 auto;
+            width: 0.5rem;
+            height: 0.5rem;
+            margin-top: 0.4rem;
+            border-radius: 50%;
+            background: #d4a94b;
+            content: "";
+        }
+        .firmware-grid > div {
+            animation: rise-in 0.55s ease-out both;
+        }
+        .firmware-grid > div:nth-child(1) { animation-delay: 0.12s; }
+        .firmware-grid > div:nth-child(2) { animation-delay: 0.18s; }
+        .firmware-grid > div:nth-child(3) { animation-delay: 0.24s; }
+        .firmware-grid > div:nth-child(4) { animation-delay: 0.3s; }
+        .card {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.16);
+            transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        }
+        .card:hover {
+            border-color: rgba(0, 195, 255, 0.45);
+            box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+            transform: translateY(-3px);
+        }
+        .card-header {
+            padding: 0.95rem 1.1rem;
+        }
+        .firmware-card .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .firmware-card .card-header::after {
+            padding: 0.2rem 0.48rem;
+            border: 1px solid var(--blkstr-border);
+            border-radius: 999px;
+            color: var(--blkstr-muted);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            content: "FIRMWARE";
+        }
+        .firmware-card .card-body { padding: 1.15rem; }
+        .card-hint {
+            margin: 0 0 1.1rem;
+            color: var(--blkstr-muted);
+            font-size: 0.82rem;
+        }
+        .form-select {
+            min-height: 2.55rem;
+            border-radius: 8px;
+            transition: border-color 180ms ease, box-shadow 180ms ease;
+        }
+        .btn {
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        }
+        .btn:hover { transform: translateY(-1px); }
+        .btn:active { transform: translateY(0); }
+        .btn-jade {
+            min-width: 7.2rem;
+            box-shadow: 0 7px 18px rgba(0, 195, 255, 0.18);
+        }
+        .management-card { background: linear-gradient(100deg, rgba(0, 195, 255, 0.08), transparent 48%), var(--blkstr-space-grey); }
+        .management-card .card-header { min-height: 4.35rem; }
+        .progress-card progress {
+            overflow: hidden;
+            border-radius: 999px;
+        }
+        .progress-card progress::-webkit-progress-value {
+            background: linear-gradient(90deg, var(--blkstr-blue), #6ee7ff);
+            border-radius: 999px;
+            transition: width 180ms ease;
+        }
+        .build-footer { backdrop-filter: blur(10px); background: rgba(0, 0, 0, 0.86); }
+        @keyframes rise-in {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes status-pulse {
+            70% { box-shadow: 0 0 0 0.45rem rgba(83, 215, 105, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(83, 215, 105, 0); }
+        }
+        @media (max-width: 575.98px) {
+            .hero { padding: 1.8rem 0 1.5rem; }
+            .firmware-card .d-flex { flex-direction: column; }
+            .firmware-card .btn { width: 100%; }
+            .navbar .text-muted { display: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
     </style>
 </head>
 <body>
@@ -102,21 +291,26 @@
         This tool is not supported on Safari browser!
     </div>
 
-    <nav class="navbar navbar-dark">
+    <nav class="navbar navbar-dark app-nav">
         <div class="container">
             <span class="navbar-brand mb-0">ESP32 DIY Flasher</span>
-            <span class="text-muted small">Flasher utility for DIY devices</span>
+            <span class="text-muted nav-status">Ready to connect</span>
         </div>
     </nav>
 
-    <main class="container py-4" id="main">
+    <main class="app-shell container py-4" id="main">
+        <section class="hero">
+            <div class="eyebrow">Browser-based flasher</div>
+            <h1>Flash your DIY device with confidence.</h1>
+            <p>Select a firmware build, connect your ESP32 over USB, and let the flasher handle the rest.</p>
+        </section>
         <div class="alert alert-warning-custom mb-4" role="alert">
-            <strong>Warning:</strong> This tool does not and cannot enable secure boot and flash encryption on DIY devices.
+            <span><strong>Security note.</strong> This tool does not and cannot enable secure boot and flash encryption on DIY devices.</span>
         </div>
 
-        <div class="row g-4">
+        <div class="firmware-grid row g-4">
             <div class="col-12">
-                <div class="card">
+                <div class="card management-card">
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <span>Board management</span>
                         <input class="btn btn-outline-jade btn-sm" type="button" id="eraseButton" value="Erase flash" />
@@ -128,6 +322,7 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header">Jade firmware</div>
                     <div class="card-body">
+                        <p class="card-hint">Choose the firmware release that matches your connected board.</p>
                         <label for="diymodelselJade" class="form-label small text-muted" id="lbldiymodelsJade">Select your board</label>
                         <div class="d-flex gap-2">
                             <select name="diymodelselJade" id="diymodelselJade" class="form-select form-select-sm flex-grow-1">
@@ -396,6 +591,7 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header">Nerdminer firmware</div>
                     <div class="card-body">
+                        <p class="card-hint">Choose the Nerdminer or HAN Solo build for your device.</p>
                         <label for="diymodelselNerd" class="form-label small text-muted" id="lbldiymodelsNerd">Select your board</label>
                         <div class="d-flex gap-2">
                             <select name="diymodelselNerd" id="diymodelselNerd" class="form-select form-select-sm flex-grow-1">
@@ -432,7 +628,7 @@
             </div>
 
             <div class="col-12">
-                <div class="card">
+                <div class="card progress-card">
                     <div class="card-header">Flash progress</div>
                     <div class="card-body">
                         <div class="mb-2" id="bootloaderprogresslbl" style="display:none">
@@ -457,6 +653,12 @@
             </div>
         </div>
     </main>
+
+    <footer class="build-footer">
+        <div class="container d-flex justify-content-center align-items-center">
+            <a href="https://github.com/valerio-vaccaro/diyflasher" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
