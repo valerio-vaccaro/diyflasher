@@ -10,8 +10,148 @@ const ptprogressBar = document.getElementById('partitiontableprogress');
 const ptprogressBarLbl = document.getElementById('partitiontableprogresslbl');
 const firmwareprogressBar = document.getElementById('firmwareprogress');
 const firmwareprogressBarlbl = document.getElementById('firmwareprogresslbl');
-const lbldiymodelsJade = document.getElementById('lbldiymodelsJade');
-const lbldiymodelsNerd = document.getElementById('lbldiymodelsNerd');
+const jadePicker = {
+  version: document.getElementById('jadeVersionSelect'),
+  board: document.getElementById('jadeBoardSelect'),
+  variant: document.getElementById('jadeVariantSelect'),
+};
+const nerdPicker = {
+  version: document.getElementById('nerdVersionSelect'),
+  board: document.getElementById('nerdBoardSelect'),
+  variant: document.getElementById('nerdVariantSelect'),
+};
+const firmwareSelectors = [diymodelselJade, diymodelselNerd, ...Object.values(jadePicker), ...Object.values(nerdPicker)];
+const flashButtons = [connectButtonJade, connectButtonNerd];
+const main = document.getElementById('main');
+
+function animatePickerField(selector) {
+  const field = selector.parentElement;
+  field.classList.remove('is-updating');
+  void field.offsetWidth;
+  field.classList.add('is-updating');
+}
+
+function setFlashingState(isFlashing) {
+  main.classList.toggle('is-flashing', isFlashing);
+  main.setAttribute('aria-busy', String(isFlashing));
+}
+
+function populateFirmwareSelector(selector, firmwares) {
+  selector.replaceChildren(...firmwares.map(({ value, label, firmwareVersion, board, variants }) => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = label;
+    option.dataset.firmwareVersion = firmwareVersion;
+    option.dataset.board = board;
+    option.dataset.variants = variants.join(',');
+    return option;
+  }));
+}
+
+function populateChoices(selector, choices) {
+  selector.replaceChildren(...choices.map(({ value, label }) => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = label;
+    return option;
+  }));
+  selector.disabled = choices.length === 0;
+  animatePickerField(selector);
+}
+
+function unique(values) {
+  return [...new Set(values)];
+}
+
+function variantLabel(firmware) {
+  return firmware.variants.length > 0 ? firmware.variants.join(' · ') : 'Standard';
+}
+
+function setUpFirmwarePicker(finalSelector, picker, firmwares) {
+  populateFirmwareSelector(finalSelector, firmwares);
+  const versions = unique(firmwares.map(({ firmwareVersion }) => firmwareVersion));
+  populateChoices(picker.version, versions.map((version) => ({ value: version, label: version })));
+
+  const updateVariants = () => {
+    const matches = firmwares.filter(({ firmwareVersion, board }) =>
+      firmwareVersion === picker.version.value && board === picker.board.value
+    );
+    populateChoices(picker.variant, matches.map((firmware) => ({
+      value: firmware.value,
+      label: variantLabel(firmware),
+    })));
+    picker.variant.closest('.variant-field').classList.toggle('d-none', matches.length <= 1);
+    finalSelector.value = picker.variant.value;
+  };
+
+  const updateBoards = () => {
+    const boards = unique(firmwares
+      .filter(({ firmwareVersion }) => firmwareVersion === picker.version.value)
+      .map(({ board }) => board));
+    populateChoices(picker.board, boards.map((board) => ({ value: board, label: board })));
+    updateVariants();
+  };
+
+  picker.version.onchange = () => {
+    animatePickerField(picker.version);
+    updateBoards();
+  };
+  picker.board.onchange = () => {
+    animatePickerField(picker.board);
+    updateVariants();
+  };
+  picker.variant.onchange = () => {
+    animatePickerField(picker.variant);
+    finalSelector.value = picker.variant.value;
+  };
+  updateBoards();
+}
+
+function hideFirmwareControls() {
+  document.querySelectorAll('.firmware-picker, .firmware-action').forEach((element) => {
+    element.style.display = 'none';
+  });
+}
+
+async function loadFirmwareCatalog() {
+  try {
+    const [jadeResponse, nerdResponse] = await Promise.all([
+      fetch('./firmwares-jade.json'),
+      fetch('./firmwares-nerdminer.json'),
+    ]);
+    if (!jadeResponse.ok || !nerdResponse.ok) {
+      throw new Error('Unable to load firmware catalogs');
+    }
+
+    const [jadeFirmwares, nerdFirmwares] = await Promise.all([
+      jadeResponse.json(),
+      nerdResponse.json(),
+    ]);
+    const catalogsAreValid = [jadeFirmwares, nerdFirmwares].every((firmwares) =>
+      Array.isArray(firmwares) && firmwares.length > 0 && firmwares.every(({ value, label, firmwareVersion, board, variants }) =>
+        typeof value === 'string' && typeof label === 'string' &&
+        typeof firmwareVersion === 'string' && typeof board === 'string' && Array.isArray(variants)
+      )
+    );
+    if (!catalogsAreValid) {
+      throw new Error('Firmware catalog has an invalid format');
+    }
+
+    setUpFirmwarePicker(diymodelselJade, jadePicker, jadeFirmwares);
+    setUpFirmwarePicker(diymodelselNerd, nerdPicker, nerdFirmwares);
+    flashButtons.forEach((button) => { button.disabled = false; });
+  } catch (error) {
+    console.error(error);
+    firmwareSelectors.forEach((selector) => {
+      if (selector.options.length > 0) {
+        selector.options[0].textContent = 'Firmware catalog unavailable';
+      }
+    });
+    document.getElementById('success').textContent = 'Unable to load the firmware catalog. Reload the page and try again.';
+  }
+}
+
+loadFirmwareCatalog();
 
 // import { Transport } from './cp210x-webusb.js'
 import * as esptooljs from "./bundle.js";
@@ -25,12 +165,8 @@ let esploader;
 
 eraseButton.onclick = async () => {
   eraseButton.style.display = 'none';
-  connectButtonJade.style.display = 'none';
-  lbldiymodelsJade.style.display = 'none';
-  diymodelselJade.style.display = 'none';
-  connectButtonNerd.style.display = 'none';
-  lbldiymodelsNerd.style.display = 'none';
-  diymodelselNerd.style.display = 'none';
+  hideFirmwareControls();
+  setFlashingState(true);
   if (device === null) {
     device = await navigator.serial.requestPort({});
     transport = new Transport(device);
@@ -53,17 +189,14 @@ eraseButton.onclick = async () => {
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
+  setFlashingState(false);
   document.getElementById("success").innerHTML = "Successfully erased!";
 }
 
 connectButtonJade.onclick = async () => {
   eraseButton.style.display = 'none';
-  connectButtonJade.style.display = 'none';
-  lbldiymodelsJade.style.display = 'none';
-  diymodelselJade.style.display = 'none';
-  connectButtonNerd.style.display = 'none';
-  lbldiymodelsNerd.style.display = 'none';
-  diymodelselNerd.style.display = 'none';
+  hideFirmwareControls();
+  setFlashingState(true);
   if (device === null) {
     device = await navigator.serial.requestPort({});
     transport = new Transport(device);
@@ -149,17 +282,14 @@ connectButtonJade.onclick = async () => {
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
+  setFlashingState(false);
   document.getElementById("success").innerHTML = "Successfully flashed " + diymodelselJade.options[diymodelselJade.selectedIndex].text;
 };
 
 connectButtonNerd.onclick = async () => {
   eraseButton.style.display = 'none';
-  connectButtonJade.style.display = 'none';
-  lbldiymodelsJade.style.display = 'none';
-  diymodelselJade.style.display = 'none';
-  connectButtonNerd.style.display = 'none';
-  lbldiymodelsNerd.style.display = 'none';
-  diymodelselNerd.style.display = 'none';
+  hideFirmwareControls();
+  setFlashingState(true);
   if (device === null) {
     device = await navigator.serial.requestPort({});
     transport = new Transport(device);
@@ -322,5 +452,6 @@ connectButtonNerd.onclick = async () => {
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
+  setFlashingState(false);
   document.getElementById("success").innerHTML = "Successfully flashed " + diymodelselNerd.options[diymodelselNerd.selectedIndex].text;
 };

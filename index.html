@@ -49,6 +49,15 @@
             background-color: var(--blkstr-black);
             border: 1px solid var(--blkstr-border);
             color: var(--blkstr-white);
+            color-scheme: dark;
+        }
+        .form-select option {
+            background-color: var(--blkstr-black);
+            color: var(--blkstr-white);
+        }
+        .form-select:disabled {
+            background-color: #171b20;
+            color: var(--blkstr-muted);
         }
         .form-select:focus {
             border-color: var(--blkstr-blue);
@@ -234,6 +243,37 @@
             content: "FIRMWARE";
         }
         .firmware-card .card-body { padding: 1.15rem; }
+        .firmware-picker {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+        .firmware-picker > div.is-updating {
+            animation: picker-update 280ms ease-out;
+        }
+        .firmware-picker label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.4rem;
+            color: var(--blkstr-muted);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .picker-step {
+            display: inline-grid;
+            width: 1.2rem;
+            height: 1.2rem;
+            place-items: center;
+            border: 1px solid rgba(0, 195, 255, 0.5);
+            border-radius: 50%;
+            color: var(--blkstr-blue);
+            font-size: 0.65rem;
+        }
+        .firmware-action { margin-top: 1rem; }
+        .firmware-action .btn { width: 100%; }
         .card-hint {
             margin: 0 0 1.1rem;
             color: var(--blkstr-muted);
@@ -242,6 +282,7 @@
         .form-select {
             min-height: 2.55rem;
             border-radius: 8px;
+            background-color: #0b0e12 !important;
             transition: border-color 180ms ease, box-shadow 180ms ease;
         }
         .btn {
@@ -251,6 +292,7 @@
         }
         .btn:hover { transform: translateY(-1px); }
         .btn:active { transform: translateY(0); }
+        .btn:disabled { cursor: wait; opacity: 0.65; transform: none; }
         .btn-jade {
             min-width: 7.2rem;
             box-shadow: 0 7px 18px rgba(0, 195, 255, 0.18);
@@ -266,6 +308,31 @@
             border-radius: 999px;
             transition: width 180ms ease;
         }
+        .is-flashing .progress-card {
+            border-color: rgba(0, 195, 255, 0.72);
+            box-shadow: 0 0 0 1px rgba(0, 195, 255, 0.16), 0 0 32px rgba(0, 195, 255, 0.15);
+        }
+        .is-flashing .progress-card::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(100deg, transparent 35%, rgba(0, 195, 255, 0.08) 50%, transparent 65%);
+            background-size: 220% 100%;
+            content: "";
+            pointer-events: none;
+            animation: flash-sweep 1.6s linear infinite;
+        }
+        .is-flashing .progress-card .card-header::after {
+            margin-left: 0.6rem;
+            color: var(--blkstr-blue);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            content: "WRITING";
+            animation: writing-pulse 1s ease-in-out infinite alternate;
+        }
         .build-footer { backdrop-filter: blur(10px); background: rgba(0, 0, 0, 0.86); }
         @keyframes rise-in {
             from { opacity: 0; transform: translateY(14px); }
@@ -275,9 +342,20 @@
             70% { box-shadow: 0 0 0 0.45rem rgba(83, 215, 105, 0); }
             100% { box-shadow: 0 0 0 0 rgba(83, 215, 105, 0); }
         }
+        @keyframes picker-update {
+            50% { transform: translateY(-2px); }
+        }
+        @keyframes flash-sweep {
+            from { background-position: 200% 0; }
+            to { background-position: -40% 0; }
+        }
+        @keyframes writing-pulse {
+            from { opacity: 0.45; }
+            to { opacity: 1; }
+        }
         @media (max-width: 575.98px) {
             .hero { padding: 1.8rem 0 1.5rem; }
-            .firmware-card .d-flex { flex-direction: column; }
+            .firmware-picker { grid-template-columns: 1fr; }
             .firmware-card .btn { width: 100%; }
             .navbar .text-muted { display: none; }
         }
@@ -322,266 +400,26 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header">Jade firmware</div>
                     <div class="card-body">
-                        <p class="card-hint">Choose the firmware release that matches your connected board.</p>
-                        <label for="diymodelselJade" class="form-label small text-muted" id="lbldiymodelsJade">Select your board</label>
-                        <div class="d-flex gap-2">
-                            <select name="diymodelselJade" id="diymodelselJade" class="form-select form-select-sm flex-grow-1">
-                                <option value="Jade_1.0.41-beta3_esp32-cam">ESP32-Cam (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_esp32-s3-devkitc-1">esp32-s3-devkitc-1 (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_esp32-wrover-cam">ESP32-Wrover-cam (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_m5blackgray">M5Stack Black/Gray (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_m5core2">M5Stack Core2 (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_m5cores3">M5Stack Core S3 (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_m5fire">M5Stack FIRE (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_m5stickcplus">M5StickC PLUS (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_m5stickcplus2">M5StickC PLUS2 (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_tcameraplus">T-Camera Plus (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_ttgo_tdisplay">LILYGO T-Display (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_ttgo_tdisplays3">LILYGO T-DisplayS3 (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_ttgo_tdisplays3procamera">LILYGO T-DisplayS3 Pro Camera (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_ttgo_twatchs3">T-Watch S3 (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_waveshares3_touch_lcd2">Waveshare Touch LCD 2 (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade">Jade v1.0 (dev board) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_noradio">Jade v1.0 (dev board - no radio) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v1_1">Jade v1.1 (dev board) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v1_1_noradio">Jade v1.1 (dev board - no radio) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v2">Jade v2 (dev board) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v2_noradio">Jade v2 (dev board - no radio) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v2c">Jade v2 core (dev board) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v2c_noradio">Jade v2 core (dev board - no radio) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_ci">Jade v1.0 (dev board - ci version) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_noradio_ci">Jade v1.0 (dev board - ci no radio version) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v1_1_ci">Jade v1.1 (dev board - ci version) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v1_1_noradio_ci">Jade v1.1 (dev board - ci no radio version) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v2_ci">Jade v2 (dev board - ci version) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v2_noradio_ci">Jade v2 (dev board - ci no radio version) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v2c_ci">Jade v2 core (dev board - ci version) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta3_jade_v2c_noradio_ci">Jade v2 core (dev board - ci no radio version) (1.0.41-beta3)</option>
-                                <option value="Jade_1.0.41-beta2_jade">Jade v1.0 (dev board) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_noradio">Jade v1.0 (dev board - no radio) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v1_1">Jade v1.1 (dev board) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v1_1_noradio">Jade v1.1 (dev board - no radio) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v2">Jade v2 (dev board) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v2_noradio">Jade v2 (dev board - no radio) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v2c">Jade v2 core (dev board) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v2c_noradio">Jade v2 core (dev board - no radio) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_ci">Jade v1.0 (dev board - ci version) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_noradio_ci">Jade v1.0 (dev board - ci no radio version) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v1_1_ci">Jade v1.1 (dev board - ci version) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v1_1_noradio_ci">Jade v1.1 (dev board - ci no radio version) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v2_ci">Jade v2 (dev board - ci version) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v2_noradio_ci">Jade v2 (dev board - ci no radio version) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v2c_ci">Jade v2 core (dev board - ci version) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_jade_v2c_noradio_ci">Jade v2 core (dev board - ci no radio version) (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_esp32-cam">ESP32-Cam (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_esp32-s3-devkitc-1">esp32-s3-devkitc-1 (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_esp32-wrover-cam">ESP32-Wrover-cam (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_m5blackgray">M5Stack Black/Gray (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_m5core2">M5Stack Core2 (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_m5cores3">M5Stack Core S3 (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_m5fire">M5Stack FIRE (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_m5stickcplus">M5StickC PLUS (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_m5stickcplus2">M5StickC PLUS2 (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_tcameraplus">T-Camera Plus (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_ttgo_tdisplay">LILYGO T-Display (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_ttgo_tdisplays3">LILYGO T-DisplayS3 (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_ttgo_tdisplays3procamera">LILYGO T-DisplayS3 Pro Camera (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_ttgo_twatchs3">T-Watch S3 (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.41-beta2_waveshares3_touch_lcd2">Waveshare Touch LCD 2 (1.0.41-beta2)</option>
-                                <option value="Jade_1.0.40_m5blackgray">Jade 1.0.40 for M5Stack</option>
-                                <option value="Jade_1.0.40_m5core2">Jade 1.0.40 for M5Stack2</option>
-                                <option value="Jade_1.0.40_m5cores3">Jade 1.0.40 for M5StackS3</option>
-                                <option value="Jade_1.0.40_m5fire">Jade 1.0.40 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.40_m5stickcplus">Jade 1.0.40 for M5StickC Plus</option>
-                                <option value="Jade_1.0.40_m5stickcplus2">Jade 1.0.40 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.40_tdisplay">Jade 1.0.40 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.40_tdisplays3">Jade 1.0.40 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.40_tdisplays3procamera">Jade 1.0.40 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.40_twatchs3">Jade 1.0.40 for LILYGO T-Watch-S3 (NEW)</option>
-                                <option value="Jade_1.0.40_esp32-cam">Jade 1.0.40 for ESP32-cam</option>
-                                <option value="Jade_1.0.40_esp32-wrover-cam">Jade 1.0.40 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.40_esp32-s3-devkitc-1">Jade 1.0.40 for ESP32-S3-devkitc-1</option>
-                                <option value="Jade_1.0.40_tcameraplus">Jade 1.0.40 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.40_wavesharetouchlcd2">Jade 1.0.40 for Waveshare Touch LCD2</option>
-                                <option value="Jade_1.0.40_jade">Jade 1.0.40 for Jade 1.0 Dev</option>
-                                <option value="Jade_1.0.40_jade_v1_1">Jade 1.0.40 for Jade 1.1 Dev</option>
-                                <option value="Jade_1.0.40_jade_v2">Jade 1.0.40 for Jade 2.0 Dev</option>
-                                <option value="Jade_1.0.40_jade_v2c">Jade 1.0.40 for Jade 2.0 Core Dev</option>
-                                <option value="Jade_1.0.40_jade_ci">Jade 1.0.40 for Jade 1.0 Dev - CI option</option>
-                                <option value="Jade_1.0.40_jade_v1_1_ci">Jade 1.0.40 for Jade 1.1 Dev - CI option</option>
-                                <option value="Jade_1.0.40_jade_v2_ci">Jade 1.0.40 for Jade 2.0 Dev - CI option</option>
-                                <option value="Jade_1.0.40_jade_v2c_ci">Jade 1.0.40 for Jade 2.0 Core Dev - CI option</option>
-                                <option value="Jade_1.0.39_display_m5blackgray">Jade 1.0.39 for M5Stack</option>
-                                <option value="Jade_1.0.39_display_m5core2">Jade 1.0.39 for M5Stack2</option>
-                                <option value="Jade_1.0.39_display_m5cores3">Jade 1.0.39 for M5StackS3</option>
-                                <option value="Jade_1.0.39_display_m5fire">Jade 1.0.39 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.39_display_m5stickcplus">Jade 1.0.39 for M5StickC Plus</option>
-                                <option value="Jade_1.0.39_display_m5stickcplus2">Jade 1.0.39 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.39_display_ttgo_tdisplay">Jade 1.0.39 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.39_display_ttgo_tdisplays3">Jade 1.0.39 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.39_display_ttgo_tdisplays3procamera">Jade 1.0.39 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.39_display_ttgo_twatchs3">Jade 1.0.39 for LILYGO T-Watch-S3 (NEW)</option>
-                                <option value="Jade_1.0.39_diycam_esp32-cam">Jade 1.0.39 for ESP32-cam</option>
-                                <option value="Jade_1.0.39_diycam_esp32-wrover-cam">Jade 1.0.39 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.39_diycam_tcameraplus">Jade 1.0.39 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.39_display_waveshare_touch_lcd2">Jade 1.0.39 for Waveshare Touch LCD2</option>
-                                <option value="Jade_1.0.39_jade">Jade 1.0.39 for Jade 1.0 Dev</option>
-                                <option value="Jade_1.0.39_jade_v1_1">Jade 1.0.39 for Jade 1.1 Dev</option>
-                                <option value="Jade_1.0.39_jade_v2">Jade 1.0.39 for Jade 2.0 Dev</option>
-                                <option value="Jade_1.0.39_jade_v2_core">Jade 1.0.39 for Jade 2.0 Core Dev</option>
-                                <option value="Jade_1.0.39_jade_ci">Jade 1.0.39 for Jade 1.0 Dev - CI option</option>
-                                <option value="Jade_1.0.39_jade_v1_1_ci">Jade 1.0.39 for Jade 1.1 Dev - CI option</option>
-                                <option value="Jade_1.0.39_jade_v2_ci">Jade 1.0.39 for Jade 2.0 Dev - CI option</option>
-                                <option value="Jade_1.0.39_jade_v2_core_ci">Jade 1.0.39 for Jade 2.0 Core Dev - CI option</option>
-                                <option value="Jade_1.0.38_display_m5blackgray">Jade 1.0.38 for M5Stack</option>
-                                <option value="Jade_1.0.38_display_m5core2">Jade 1.0.38 for M5Stack2</option>
-                                <option value="Jade_1.0.38_display_m5cores3">Jade 1.0.38 for M5StackS3</option>
-                                <option value="Jade_1.0.38_display_m5fire">Jade 1.0.38 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.38_display_m5stickcplus">Jade 1.0.38 for M5StickC Plus</option>
-                                <option value="Jade_1.0.38_display_m5stickcplus2">Jade 1.0.38 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.38_display_ttgo_tdisplay">Jade 1.0.38 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.38_display_ttgo_tdisplays3">Jade 1.0.38 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.38_display_ttgo_tdisplays3procamera">Jade 1.0.38 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.38_display_ttgo_twatchs3">Jade 1.0.38 for LILYGO T-Watch-S3 (NEW)</option>
-                                <option value="Jade_1.0.38_diycam_esp32-cam">Jade 1.0.38 for ESP32-cam</option>
-                                <option value="Jade_1.0.38_diycam_esp32-wrover-cam">Jade 1.0.38 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.38_diycam_tcameraplus">Jade 1.0.38 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.38_jade_v1_1">Jade 1.0.38 for Jade 1.1 Dev</option>
-                                <option value="Jade_1.0.38_jade_v2">Jade 1.0.38 for Jade 2.0 Dev</option>
-                                <option value="Jade_1.0.37_display_m5blackgray">Jade 1.0.37 for M5Stack</option>
-                                <option value="Jade_1.0.37_display_m5core2">Jade 1.0.37 for M5Stack2</option>
-                                <option value="Jade_1.0.37_display_m5cores3">Jade 1.0.37 for M5StackS3</option>
-                                <option value="Jade_1.0.37_display_m5fire">Jade 1.0.37 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.37_display_m5stickcplus">Jade 1.0.37 for M5StickC Plus</option>
-                                <option value="Jade_1.0.37_display_m5stickcplus2">Jade 1.0.37 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.37_display_ttgo_tdisplay">Jade 1.0.37 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.37_display_ttgo_tdisplays3">Jade 1.0.37 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.37_display_ttgo_tdisplays3procamera">Jade 1.0.37 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.37_display_ttgo_twatchs3">Jade 1.0.37 for LILYGO T-Watch-S3 (NEW)</option>
-                                <option value="Jade_1.0.37_diycam_esp32-cam">Jade 1.0.37 for ESP32-cam</option>
-                                <option value="Jade_1.0.37_diycam_esp32-wrover-cam">Jade 1.0.37 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.37_diycam_tcameraplus">Jade 1.0.37 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.36_display_m5blackgray">Jade 1.0.36 for M5Stack</option>
-                                <option value="Jade_1.0.36_display_m5core2">Jade 1.0.36 for M5Stack2</option>
-                                <option value="Jade_1.0.36_display_m5cores3">Jade 1.0.36 for M5StackS3</option>
-                                <option value="Jade_1.0.36_display_m5fire">Jade 1.0.36 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.36_display_m5stickcplus">Jade 1.0.36 for M5StickC Plus</option>
-                                <option value="Jade_1.0.36_display_m5stickcplus2">Jade 1.0.36 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.36_display_ttgo_tdisplay">Jade 1.0.36 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.36_display_ttgo_tdisplays3">Jade 1.0.36 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.36_display_ttgo_tdisplays3procamera">Jade 1.0.36 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.36_display_ttgo_twatchs3">Jade 1.0.36 for LILYGO T-Watch-S3 (NEW)</option>
-                                <option value="Jade_1.0.36_diycam_esp32-cam">Jade 1.0.36 for ESP32-cam</option>
-                                <option value="Jade_1.0.36_diycam_esp32-wrover-cam">Jade 1.0.36 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.36_diycam_tcameraplus">Jade 1.0.36 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.35_display_m5blackgray">Jade 1.0.35 for M5Stack</option>
-                                <option value="Jade_1.0.35_display_m5core2">Jade 1.0.35 for M5Stack2</option>
-                                <option value="Jade_1.0.35_display_m5cores3">Jade 1.0.35 for M5StackS3</option>
-                                <option value="Jade_1.0.35_display_m5fire">Jade 1.0.35 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.35_display_m5stickcplus">Jade 1.0.35 for M5StickC Plus</option>
-                                <option value="Jade_1.0.35_display_m5stickcplus2">Jade 1.0.35 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.35_display_ttgo_tdisplay">Jade 1.0.35 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.35_display_ttgo_tdisplays3">Jade 1.0.35 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.35_display_ttgo_tdisplays3procamera">Jade 1.0.35 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.35_display_ttgo_twatchs3">Jade 1.0.35 for LILYGO T-Watch-S3 (NEW)</option>
-                                <option value="Jade_1.0.35_diycam_esp32-cam">Jade 1.0.35 for ESP32-cam</option>
-                                <option value="Jade_1.0.35_diycam_esp32-wrover-cam">Jade 1.0.35 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.35_diycam_tcameraplus">Jade 1.0.35 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.34_display_m5blackgray">Jade 1.0.34 for M5Stack</option>
-                                <option value="Jade_1.0.34_display_m5core2">Jade 1.0.34 for M5Stack2</option>
-                                <option value="Jade_1.0.34_display_m5cores3">Jade 1.0.34 for M5StackS3</option>
-                                <option value="Jade_1.0.34_display_m5fire">Jade 1.0.34 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.34_display_m5stickcplus">Jade 1.0.34 for M5StickC Plus</option>
-                                <option value="Jade_1.0.34_display_m5stickcplus2">Jade 1.0.34 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.34_display_ttgo_tdisplay">Jade 1.0.34 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.34_display_ttgo_tdisplays3">Jade 1.0.34 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.34_display_ttgo_tdisplays3procamera">Jade 1.0.34 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.34_display_ttgo_twatchs3">Jade 1.0.34 for LILYGO T-Watch-S3 (NEW)</option>
-                                <option value="Jade_1.0.34_diycam_esp32-cam">Jade 1.0.34 for ESP32-cam</option>
-                                <option value="Jade_1.0.34_diycam_esp32-wrover-cam">Jade 1.0.34 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.34_diycam_tcameraplus">Jade 1.0.34 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.33_display_m5blackgray">Jade 1.0.33 for M5Stack</option>
-                                <option value="Jade_1.0.33_display_m5core2">Jade 1.0.33 for M5Stack2</option>
-                                <option value="Jade_1.0.33_display_m5cores3">Jade 1.0.33 for M5StackS3</option>
-                                <option value="Jade_1.0.33_display_m5fire">Jade 1.0.33 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.33_display_m5stickcplus">Jade 1.0.33 for M5StickC Plus</option>
-                                <option value="Jade_1.0.33_display_m5stickcplus2">Jade 1.0.33 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.33_display_ttgo_tdisplay">Jade 1.0.33 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.33_display_ttgo_tdisplays3">Jade 1.0.33 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.33_display_ttgo_tdisplays3procamera">Jade 1.0.33 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.33_display_ttgo_twatchs3">Jade 1.0.33 for LILYGO T-Watch-S3 (NEW)</option>
-                                <option value="Jade_1.0.33_diycam_esp32-cam">Jade 1.0.33 for ESP32-cam</option>
-                                <option value="Jade_1.0.33_diycam_esp32-wrover-cam">Jade 1.0.33 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.33_diycam_tcameraplus">Jade 1.0.33 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.32_display_m5blackgray">Jade 1.0.32 for M5Stack</option>
-                                <option value="Jade_1.0.32_display_m5core2">Jade 1.0.32 for M5Stack2</option>
-                                <option value="Jade_1.0.32_display_m5cores3">Jade 1.0.32 for M5StackS3</option>
-                                <option value="Jade_1.0.32_display_m5fire">Jade 1.0.32 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.32_display_m5stickcplus">Jade 1.0.32 for M5StickC Plus</option>
-                                <option value="Jade_1.0.32_display_m5stickcplus2">Jade 1.0.32 for M5StickC Plus 2</option>
-                                <option value="Jade_1.0.32_display_ttgo_tdisplay">Jade 1.0.32 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.32_display_ttgo_tdisplays3">Jade 1.0.32 for LILYGO T-Display-S3</option>
-                                <option value="Jade_1.0.32_display_ttgo_tdisplays3procamera">Jade 1.0.32 for LILYGO T-Display-S3 PRO Camera</option>
-                                <option value="Jade_1.0.32_diycam_esp32-cam">Jade 1.0.32 for ESP32-cam</option>
-                                <option value="Jade_1.0.32_diycam_esp32-wrover-cam">Jade 1.0.32 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.32_diycam_tcameraplus">Jade 1.0.32 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.31_display_m5blackgray">Jade 1.0.31 for M5Stack</option>
-                                <option value="Jade_1.0.31_display_m5core2">Jade 1.0.31 for M5Stack2 (NEW)</option>
-                                <option value="Jade_1.0.31_display_m5cores3">Jade 1.0.31 for M5StackS3 (NEW)</option>
-                                <option value="Jade_1.0.31_display_m5fire">Jade 1.0.31 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.31_display_m5stickcplus">Jade 1.0.31 for M5StickC Plus</option>
-                                <option value="Jade_1.0.31_display_m5stickcplus2">Jade 1.0.31 for M5StickC Plus 2 (NEW)</option>
-                                <option value="Jade_1.0.31_display_ttgo_tdisplay">Jade 1.0.31 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.31_display_ttgo_tdisplays3">Jade 1.0.31 for LILYGO T-Display-S3 (NEW)</option>
-                                <option value="Jade_1.0.31_display_ttgo_tdisplays3procamera">Jade 1.0.31 for LILYGO T-Display-S3 PRO Camera (NEW)</option>
-                                <option value="Jade_1.0.31_diycam_esp32-cam">Jade 1.0.31 for ESP32-cam</option>
-                                <option value="Jade_1.0.31_diycam_esp32-wrover-cam">Jade 1.0.31 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.31_diycam_tcameraplus">Jade 1.0.31 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.30_display_m5blackgray">Jade 1.0.30 for M5Stack</option>
-                                <option value="Jade_1.0.30_display_m5fire">Jade 1.0.30 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.30_display_m5stickcplus">Jade 1.0.30 for M5StickC Plus</option>
-                                <option value="Jade_1.0.30_display_ttgo_tdisplay">Jade 1.0.30 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.30_diycam_esp32-cam">Jade 1.0.30 for ESP32-cam</option>
-                                <option value="Jade_1.0.30_diycam_esp32-wrover-cam">Jade 1.0.30 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.30_diycam_tcameraplus">Jade 1.0.30 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.29_display_m5blackgray">Jade 1.0.29 for M5Stack</option>
-                                <option value="Jade_1.0.29_display_m5fire">Jade 1.0.29 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.29_display_m5stickcplus">Jade 1.0.29 for M5StickC Plus</option>
-                                <option value="Jade_1.0.29_display_ttgo_tdisplay">Jade 1.0.29 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.29_diycam_esp32-cam">Jade 1.0.29 for ESP32-cam</option>
-                                <option value="Jade_1.0.29_diycam_esp32-wrover-cam">Jade 1.0.29 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.29_diycam_tcameraplus">Jade 1.0.29 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.28_display_m5blackgray">Jade 1.0.28 for M5Stack</option>
-                                <option value="Jade_1.0.28_display_m5fire">Jade 1.0.28 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.28_display_m5stickcplus">Jade 1.0.28 for M5StickC Plus</option>
-                                <option value="Jade_1.0.28_display_ttgo_tdisplay">Jade 1.0.28 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.28_diycam_esp32-cam">Jade 1.0.28 for ESP32-cam</option>
-                                <option value="Jade_1.0.28_diycam_esp32-wrover-cam">Jade 1.0.28 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.28_diycam_tcameraplus">Jade 1.0.28 for LILYGO T-Camera Plus</option>
-                                <option value="Jade_1.0.27_display_m5blackgray">Jade 1.0.27 for M5Stack</option>
-                                <option value="Jade_1.0.27_display_m5fire">Jade 1.0.27 for M5Stack FIRE</option>
-                                <option value="Jade_1.0.27_display_m5stickcplus">Jade 1.0.27 for M5StickC Plus</option>
-                                <option value="Jade_1.0.27_display_ttgo_tdisplay">Jade 1.0.27 for LILYGO T-Display</option>
-                                <option value="Jade_1.0.27_diycam_esp32-cam">Jade 1.0.27 for ESP32-cam</option>
-                                <option value="Jade_1.0.27_diycam_esp32-wrover-cam">Jade 1.0.27 for ESP32-wrover-cam</option>
-                                <option value="Jade_1.0.27_diycam_tcameraplus">Jade 1.0.27 for LILYGO T-Camera Plus</option>
-                                <option value="jade_1.0.26_display_m5blackgray">Jade 1.0.26 for M5Stack</option>
-                                <option value="jade_1.0.26_display_m5fire">Jade 1.0.26 for M5Stack FIRE</option>
-                                <option value="jade_1.0.26_display_m5stickcplus">Jade 1.0.26 for M5StickC Plus</option>
-                                <option value="jade_1.0.26_display_ttgo_tdisplay">Jade 1.0.26 for LILYGO T-Display</option>
-                                <option value="jade_1.0.26_diycam_esp32-cam">Jade 1.0.26 for ESP32-cam</option>
-                                <option value="jade_1.0.26_diycam_esp32-wrover-cam">Jade 1.0.26 for ESP32-wrover-cam</option>
-                                <option value="jade_1.0.26_diycam_tcameraplus">Jade 1.0.26 for LILYGO T-Camera Plus</option>
-                                <option value="jade_1.0.21_tdisplay">Jade 1.0.21 for LILYGO T-Display</option>
-                                <option value="jade_1.0.21_m5stickcplus">Jade 1.0.21 for M5StickC Plus</option>
-                                <option value="jade_0.1.48_m5fire">Jade 0.1.48 for M5Stack FIRE</option>
-                                <option value="jade_0.1.48_tdisplay">Jade 0.1.48 for LILYGO T-Display</option>
-                                <option value="jade_0.1.48_m5gray">Jade 0.1.48 for M5Stack Black/Gray</option>
-                                <option value="jade_0.1.48_m5stickcplus">Jade 0.1.48 for M5StickC Plus</option>
-                                <option value="Jade_0.1.47-miner_display_m5blackgray">Jade 0.1.47-miner for M5Stack Black/Gray</option>
-                                <option value="Jade_0.1.47-miner_display_ttgo_tdisplay">Jade 0.1.47-miner for LILYGO T-Display</option>
-                            </select>
-                            <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonJade" value="Flash" />
+                        <p class="card-hint">Choose a version, then the matching board and build variant.</p>
+                        <div class="firmware-picker" id="jadePicker">
+                            <div>
+                                <label for="jadeVersionSelect"><span class="picker-step">1</span>Version</label>
+                                <select id="jadeVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select>
+                            </div>
+                            <div>
+                                <label for="jadeBoardSelect"><span class="picker-step">2</span>Board</label>
+                                <select id="jadeBoardSelect" class="form-select form-select-sm" disabled><option>Select version first</option></select>
+                            </div>
+                            <div class="variant-field">
+                                <label for="jadeVariantSelect"><span class="picker-step">3</span>Variant</label>
+                                <select id="jadeVariantSelect" class="form-select form-select-sm" disabled><option>Select board first</option></select>
+                            </div>
+                        </div>
+                        <select name="diymodelselJade" id="diymodelselJade" class="d-none" aria-hidden="true" tabindex="-1">
+                                <option value="" selected disabled>Loading firmware catalog…</option>
+                        </select>
+                        <div class="firmware-action">
+                            <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonJade" value="Flash" disabled />
                         </div>
                     </div>
                 </div>
@@ -591,37 +429,26 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header">Nerdminer firmware</div>
                     <div class="card-body">
-                        <p class="card-hint">Choose the Nerdminer or HAN Solo build for your device.</p>
-                        <label for="diymodelselNerd" class="form-label small text-muted" id="lbldiymodelsNerd">Select your board</label>
-                        <div class="d-flex gap-2">
-                            <select name="diymodelselNerd" id="diymodelselNerd" class="form-select form-select-sm flex-grow-1">
-                                <option value="han_1.6.5RC1_wt32-sc01">HAN Solo v2 1.6.5 (RC1) for WT32-SC01</option>
-                                <option value="han_1.6.5RC1_wt32-sc01-plus">HAN Solo v2 1.6.5 (RC1) for WT32-SC01 PLUS</option>
-                                <option value="han_1.6.4RC1_m5stack">HAN Solo v2 1.6.4 (RC1) on M5Stack</option>
-                                <option value="han_1.6.4RC1_wt32-sc01">HAN Solo v2 1.6.4 (RC1) for WT32-SC01</option>
-                                <option value="han_1.6.4RC1_wt32-sc01-plus">HAN Solo v2 1.6.4 (RC1) for WT32-SC01 PLUS</option>
-                                <option value="nerdminer2_1.6.4RC1_ESP32-2432S024">NMV2 1.6.4 (RC1) on ESP32-2432S024</option>
-                                <option value="nerdminer2_1.6.3_tdisplays3">NMV2 1.6.3 original board T-Display S3</option>
-                                <option value="nerdminer2_1.6.3_s3Dongle">NMV2 1.6.3 on LILYGO S3 Dongle</option>
-                                <option value="nerdminer2_1.6.3_tdiplay_S3_Amoled">NMV2 1.6.3 on LILYGO T-Display-AMOLED</option>
-                                <option value="nerdminer2_1.6.3_esp32wroom">NMV2 1.6.3 on ESP32-WROOM</option>
-                                <option value="nerdminer2_1.6.3_T_QT">NMV2 1.6.3 on LILYGO T-QT</option>
-                                <option value="nerdminer2_1.6.3_tdisplayv1">NMV2 1.6.3 on TDisplay v1.14</option>
-                                <option value="nerdminer2_1.6.3_ESP32-2432S028R">NMV2 1.6.3 on ESP32-2432S028R</option>
-                                <option value="nerdminer2_1.6.2_tdisplays3">NMV2 1.6.2 original board T-Display S3</option>
-                                <option value="nerdminer2_1.6.2_s3Dongle">NMV2 1.6.2 on LILYGO S3 Dongle</option>
-                                <option value="nerdminer2_1.6.2_tdiplay_S3_Amoled">NMV2 1.6.2 on LILYGO T-Display-AMOLED</option>
-                                <option value="nerdminer2_1.6.2_esp32wroom">NMV2 1.6.2 on ESP32-WROOM</option>
-                                <option value="nerdminer2_1.6.2_T_QT">NMV2 1.6.2 on LILYGO T-QT</option>
-                                <option value="nerdminer2_1.6.2_tdisplayv1">NMV2 1.6.2 on TDisplay v1.14</option>
-                                <option value="nerdminer2_1.6.2_ESP32-2432S028R">NMV2 1.6.2 on ESP32-2432S028R</option>
-                                <option value="nerdminer2_1.6.0_tdisplays3">Nerdminerv2 1.6.0 for LILYGO T-Display-S3</option>
-                                <option value="nerdminer2_1.6.0_tqt">Nerdminerv2 1.6.0 (preview) for LILYGO T-Qt</option>
-                                <option value="nerdminer2_1.5.1-beta_tdisplays3">Nerdminerv2 1.5.1 beta for LILYGO T-Display-S3</option>
-                                <option value="nerdminer2_1.5.2_tdisplays3">Nerdminerv2 1.5.2 for LILYGO T-Display-S3</option>
-                                <option value="nerdminer2_1.4_tdisplays3">Nerdminerv2 1.4 for LILYGO T-Display-S3</option>
-                            </select>
-                            <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonNerd" value="Flash" />
+                        <p class="card-hint">Choose a version, then the matching board and build variant.</p>
+                        <div class="firmware-picker" id="nerdPicker">
+                            <div>
+                                <label for="nerdVersionSelect"><span class="picker-step">1</span>Version</label>
+                                <select id="nerdVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select>
+                            </div>
+                            <div>
+                                <label for="nerdBoardSelect"><span class="picker-step">2</span>Board</label>
+                                <select id="nerdBoardSelect" class="form-select form-select-sm" disabled><option>Select version first</option></select>
+                            </div>
+                            <div class="variant-field">
+                                <label for="nerdVariantSelect"><span class="picker-step">3</span>Variant</label>
+                                <select id="nerdVariantSelect" class="form-select form-select-sm" disabled><option>Select board first</option></select>
+                            </div>
+                        </div>
+                        <select name="diymodelselNerd" id="diymodelselNerd" class="d-none" aria-hidden="true" tabindex="-1">
+                                <option value="" selected disabled>Loading firmware catalog…</option>
+                        </select>
+                        <div class="firmware-action">
+                            <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonNerd" value="Flash" disabled />
                         </div>
                     </div>
                 </div>

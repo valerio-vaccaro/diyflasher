@@ -1,0 +1,234 @@
+[
+  {
+    "value": "han_1.6.5RC1_wt32-sc01",
+    "label": "HAN Solo v2 1.6.5 (RC1) for WT32-SC01",
+    "firmwareVersion": "1.6.5RC1",
+    "board": "WT32-SC01",
+    "variants": [
+      "HAN Solo v2",
+      "RC1"
+    ]
+  },
+  {
+    "value": "han_1.6.5RC1_wt32-sc01-plus",
+    "label": "HAN Solo v2 1.6.5 (RC1) for WT32-SC01 PLUS",
+    "firmwareVersion": "1.6.5RC1",
+    "board": "WT32-SC01 PLUS",
+    "variants": [
+      "HAN Solo v2",
+      "RC1"
+    ]
+  },
+  {
+    "value": "han_1.6.4RC1_m5stack",
+    "label": "HAN Solo v2 1.6.4 (RC1) on M5Stack",
+    "firmwareVersion": "1.6.4RC1",
+    "board": "M5Stack",
+    "variants": [
+      "HAN Solo v2",
+      "RC1"
+    ]
+  },
+  {
+    "value": "han_1.6.4RC1_wt32-sc01",
+    "label": "HAN Solo v2 1.6.4 (RC1) for WT32-SC01",
+    "firmwareVersion": "1.6.4RC1",
+    "board": "WT32-SC01",
+    "variants": [
+      "HAN Solo v2",
+      "RC1"
+    ]
+  },
+  {
+    "value": "han_1.6.4RC1_wt32-sc01-plus",
+    "label": "HAN Solo v2 1.6.4 (RC1) for WT32-SC01 PLUS",
+    "firmwareVersion": "1.6.4RC1",
+    "board": "WT32-SC01 PLUS",
+    "variants": [
+      "HAN Solo v2",
+      "RC1"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.4RC1_ESP32-2432S024",
+    "label": "NMV2 1.6.4 (RC1) on ESP32-2432S024",
+    "firmwareVersion": "1.6.4RC1",
+    "board": "ESP32-2432S024",
+    "variants": [
+      "NMV2",
+      "RC1"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.3_tdisplays3",
+    "label": "NMV2 1.6.3 original board T-Display S3",
+    "firmwareVersion": "1.6.3",
+    "board": "NMV2 1.6.3 original board T-Display S3",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.3_s3Dongle",
+    "label": "NMV2 1.6.3 on LILYGO S3 Dongle",
+    "firmwareVersion": "1.6.3",
+    "board": "LILYGO S3 Dongle",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.3_tdiplay_S3_Amoled",
+    "label": "NMV2 1.6.3 on LILYGO T-Display-AMOLED",
+    "firmwareVersion": "1.6.3",
+    "board": "LILYGO T-Display-AMOLED",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.3_esp32wroom",
+    "label": "NMV2 1.6.3 on ESP32-WROOM",
+    "firmwareVersion": "1.6.3",
+    "board": "ESP32-WROOM",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.3_T_QT",
+    "label": "NMV2 1.6.3 on LILYGO T-QT",
+    "firmwareVersion": "1.6.3",
+    "board": "LILYGO T-QT",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.3_tdisplayv1",
+    "label": "NMV2 1.6.3 on TDisplay v1.14",
+    "firmwareVersion": "1.6.3",
+    "board": "TDisplay v1.14",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.3_ESP32-2432S028R",
+    "label": "NMV2 1.6.3 on ESP32-2432S028R",
+    "firmwareVersion": "1.6.3",
+    "board": "ESP32-2432S028R",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.2_tdisplays3",
+    "label": "NMV2 1.6.2 original board T-Display S3",
+    "firmwareVersion": "1.6.2",
+    "board": "NMV2 1.6.2 original board T-Display S3",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.2_s3Dongle",
+    "label": "NMV2 1.6.2 on LILYGO S3 Dongle",
+    "firmwareVersion": "1.6.2",
+    "board": "LILYGO S3 Dongle",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.2_tdiplay_S3_Amoled",
+    "label": "NMV2 1.6.2 on LILYGO T-Display-AMOLED",
+    "firmwareVersion": "1.6.2",
+    "board": "LILYGO T-Display-AMOLED",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.2_esp32wroom",
+    "label": "NMV2 1.6.2 on ESP32-WROOM",
+    "firmwareVersion": "1.6.2",
+    "board": "ESP32-WROOM",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.2_T_QT",
+    "label": "NMV2 1.6.2 on LILYGO T-QT",
+    "firmwareVersion": "1.6.2",
+    "board": "LILYGO T-QT",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.2_tdisplayv1",
+    "label": "NMV2 1.6.2 on TDisplay v1.14",
+    "firmwareVersion": "1.6.2",
+    "board": "TDisplay v1.14",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.2_ESP32-2432S028R",
+    "label": "NMV2 1.6.2 on ESP32-2432S028R",
+    "firmwareVersion": "1.6.2",
+    "board": "ESP32-2432S028R",
+    "variants": [
+      "NMV2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.0_tdisplays3",
+    "label": "Nerdminerv2 1.6.0 for LILYGO T-Display-S3",
+    "firmwareVersion": "1.6.0",
+    "board": "LILYGO T-Display-S3",
+    "variants": [
+      "Nerdminerv2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.6.0_tqt",
+    "label": "Nerdminerv2 1.6.0 (preview) for LILYGO T-Qt",
+    "firmwareVersion": "1.6.0",
+    "board": "LILYGO T-Qt",
+    "variants": [
+      "Nerdminerv2",
+      "preview"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.5.1-beta_tdisplays3",
+    "label": "Nerdminerv2 1.5.1 beta for LILYGO T-Display-S3",
+    "firmwareVersion": "1.5.1-beta",
+    "board": "LILYGO T-Display-S3",
+    "variants": [
+      "Nerdminerv2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.5.2_tdisplays3",
+    "label": "Nerdminerv2 1.5.2 for LILYGO T-Display-S3",
+    "firmwareVersion": "1.5.2",
+    "board": "LILYGO T-Display-S3",
+    "variants": [
+      "Nerdminerv2"
+    ]
+  },
+  {
+    "value": "nerdminer2_1.4_tdisplays3",
+    "label": "Nerdminerv2 1.4 for LILYGO T-Display-S3",
+    "firmwareVersion": "1.4",
+    "board": "LILYGO T-Display-S3",
+    "variants": [
+      "Nerdminerv2 1.4 for LILYGO T-Display-S3"
+    ]
+  }
+]
