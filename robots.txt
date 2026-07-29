@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://valerio-vaccaro.github.io/diyflasher/sitemap.xml

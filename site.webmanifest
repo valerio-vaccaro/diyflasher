@@ -1,0 +1,17 @@
+{
+  "name": "ESP32 DIY Flasher",
+  "short_name": "DIY Flasher",
+  "description": "Browser-based flasher for compatible ESP32 DIY devices.",
+  "start_url": "/diyflasher/",
+  "display": "standalone",
+  "background_color": "#111316",
+  "theme_color": "#111316",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
