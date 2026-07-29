@@ -63,6 +63,10 @@ function unique(values) {
   return [...new Set(values)];
 }
 
+function lexicographicalSort(values) {
+  return values.sort((first, second) => first.localeCompare(second));
+}
+
 function variantLabel(firmware) {
   return firmware.variants.length > 0 ? firmware.variants.join(' · ') : 'Standard';
 }
@@ -73,9 +77,9 @@ function setUpFirmwarePicker(finalSelector, picker, firmwares) {
   populateChoices(picker.version, versions.map((version) => ({ value: version, label: version })));
 
   const updateVariants = () => {
-    const matches = firmwares.filter(({ firmwareVersion, board }) =>
-      firmwareVersion === picker.version.value && board === picker.board.value
-    );
+    const matches = firmwares
+      .filter(({ firmwareVersion, board }) => firmwareVersion === picker.version.value && board === picker.board.value)
+      .sort((first, second) => variantLabel(first).localeCompare(variantLabel(second)));
     populateChoices(picker.variant, matches.map((firmware) => ({
       value: firmware.value,
       label: variantLabel(firmware),
@@ -85,9 +89,9 @@ function setUpFirmwarePicker(finalSelector, picker, firmwares) {
   };
 
   const updateBoards = () => {
-    const boards = unique(firmwares
+    const boards = lexicographicalSort(unique(firmwares
       .filter(({ firmwareVersion }) => firmwareVersion === picker.version.value)
-      .map(({ board }) => board));
+      .map(({ board }) => board)));
     populateChoices(picker.board, boards.map((board) => ({ value: board, label: board })));
     updateVariants();
   };
