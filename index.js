@@ -81,7 +81,7 @@ connectButtonJade.onclick = async () => {
 
   var baudrate = 921600;
 
-  if (diymodelselJade.value.include("m5stickcplus")) {
+  if (diymodelselJade.value.includes("m5stickcplus")) {
       baudrate = 115200;
   }
 
@@ -99,7 +99,7 @@ connectButtonJade.onclick = async () => {
     {address: '0x10000', fileName: 'jade.bin', progressBar: firmwareprogressBar},
   ];
 
-  if ((diymodelsel.value.includes("s3")) || (diymodelsel.value.includes("_v2")) || (diymodelsel.value.includes("waveshare"))) {
+  if ((diymodelselJade.value.includes("s3")) || (diymodelselJade.value.includes("_v2")) || (diymodelselJade.value.includes("waveshare"))) {
     addressesAndFiles = [
       {address: '0x0000', fileName: 'bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: 'partition-table.bin', progressBar: ptprogressBar},
@@ -177,7 +177,7 @@ connectButtonNerd.onclick = async () => {
 
   var baudrate = 921600;
 
-  if (["han_1.6.4RC1_m5stack"].includes(diymodelselJade.value)) {
+  if (["han_1.6.4RC1_m5stack"].includes(diymodelselNerd.value)) {
     baudrate = 115200;
 }
 
@@ -224,56 +224,56 @@ connectButtonNerd.onclick = async () => {
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
     ];
   
-  } else if (["nerdminer2_1.6.3_tdisplays3"].includes(diymodelsel.value)) { // nerd
+  } else if (["nerdminer2_1.6.3_tdisplays3"].includes(diymodelselNerd.value)) { // nerd
     addressesAndFiles = [
       {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
    ];
-  } else if (["nerdminer2_1.6.3_esp32wroom"].includes(diymodelsel.value)) { // nerd WROOM
+  } else if (["nerdminer2_1.6.3_esp32wroom"].includes(diymodelselNerd.value)) { // nerd WROOM
     addressesAndFiles = [
       {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
    ];
-   } else if (["nerdminer2_1.6.3_tdiplay_S3_Amoled"].includes(diymodelsel.value)) { // nerd WROOM
+   } else if (["nerdminer2_1.6.3_tdiplay_S3_Amoled"].includes(diymodelselNerd.value)) { // nerd WROOM
     addressesAndFiles = [
       {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
    ];
-      } else if (["nerdminer2_1.6.3_T_QT"].includes(diymodelsel.value)) { // nerd WROOM
+      } else if (["nerdminer2_1.6.3_T_QT"].includes(diymodelselNerd.value)) { // nerd WROOM
     addressesAndFiles = [
       {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
    ];
-    } else if (["nerdminer2_1.6.3_tdisplayv1"].includes(diymodelsel.value)) { // nerd WROOM
+    } else if (["nerdminer2_1.6.3_tdisplayv1"].includes(diymodelselNerd.value)) { // nerd WROOM
     addressesAndFiles = [
       {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
    ];
-    } else if (["nerdminer2_1.6.3_s3Dongle"].includes(diymodelsel.value)) { // nerd WROOM
+    } else if (["nerdminer2_1.6.3_s3Dongle"].includes(diymodelselNerd.value)) { // nerd WROOM
     addressesAndFiles = [
       {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
    ];
-   } else if (["nerdminer2_1.6.3_ESP32-2432S028R"].includes(diymodelsel.value)) { // nerd WROOM
+   } else if (["nerdminer2_1.6.3_ESP32-2432S028R"].includes(diymodelselNerd.value)) { // nerd WROOM
     addressesAndFiles = [
       {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
       {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
       {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
    ];
-  } else if (["nerdminer2_1.6.3_M5-StampS3"].includes(diymodelsel.value)) { // nerd WROOM
+  } else if (["nerdminer2_1.6.3_M5-StampS3"].includes(diymodelselNerd.value)) { // nerd WROOM
     addressesAndFiles = [
       {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
       {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
