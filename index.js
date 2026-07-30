@@ -139,9 +139,22 @@ function setUpFirmwarePicker(finalSelector, picker, firmwares) {
 
 function hideFirmwareControls() {
   backToHomeButton.hidden = true;
+  successMessage.textContent = '';
+  successMessage.classList.remove('is-error');
   document.querySelectorAll('.firmware-picker, .firmware-action').forEach((element) => {
     element.style.display = 'none';
   });
+}
+
+function setProgressMessage(message, isError = false) {
+  successMessage.textContent = message;
+  successMessage.classList.toggle('is-error', isError);
+}
+
+function showFlashError(error, prefix = 'Flashing failed') {
+  const detail = error instanceof Error ? error.message : String(error);
+  setProgressMessage(`${prefix}: ${detail}`, true);
+  backToHomeButton.hidden = true;
 }
 
 function showHomeButton() {
@@ -153,7 +166,7 @@ backToHomeButton.onclick = () => {
     element.style.display = '';
   });
   eraseButton.style.display = '';
-  successMessage.textContent = '';
+  setProgressMessage('');
   backToHomeButton.hidden = true;
   document.querySelectorAll('.progress-card [id$="progress"], .progress-card [id$="progresslbl"]').forEach((element) => {
     element.style.display = 'none';
@@ -232,19 +245,25 @@ eraseButton.onclick = async () => {
     chip = await esploader.main_fn();
   } catch (e) {
     console.error(e);
+    showFlashError(e, 'Erase failed');
+    setFlashingState(false);
+    return;
   }
 
   try {
     await esploader.erase_flash();
   } catch (e) {
-      console.error(e);
+    console.error(e);
+    showFlashError(e, 'Erase failed');
+    setFlashingState(false);
+    return;
   }
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
   setFlashingState(false);
-  successMessage.textContent = "Successfully erased!";
+  setProgressMessage("Successfully erased!");
   showHomeButton();
 }
 
@@ -278,6 +297,9 @@ connectButtonJade.onclick = async () => {
     chip = await esploader.main_fn();
   } catch (e) {
     console.error(e);
+    showFlashError(e);
+    setFlashingState(false);
+    return;
   }
 
   let addressesAndFiles = [
@@ -331,14 +353,17 @@ connectButtonJade.onclick = async () => {
           null
       );
   } catch (e) {
-      console.error(e);
+    console.error(e);
+    showFlashError(e);
+    setFlashingState(false);
+    return;
   }
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(false);
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
   setFlashingState(false);
-  successMessage.textContent = "Successfully flashed " + diymodelselJade.options[diymodelselJade.selectedIndex].text;
+  setProgressMessage("Successfully flashed " + diymodelselJade.options[diymodelselJade.selectedIndex].text);
   showHomeButton();
 };
 
@@ -411,11 +436,11 @@ async function flashRemoteFirmware(selector) {
       await new Promise((resolve) => setTimeout(resolve, 100));
       await transport.setDTR(true);
     }
-    successMessage.textContent = `Successfully flashed ${selectedOption.text}`;
+    setProgressMessage(`Successfully flashed ${selectedOption.text}`);
     showHomeButton();
   } catch (error) {
     console.error(error);
-    successMessage.textContent = `Flashing failed: ${error.message}`;
+    showFlashError(error);
   } finally {
     setFlashingState(false);
   }
