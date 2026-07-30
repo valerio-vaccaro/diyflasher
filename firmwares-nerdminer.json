@@ -493,40 +493,6 @@
     ]
   },
   {
-    "value": "nerdminer-v1.8.3-wt32-sc01-plus",
-    "label": "Wt32 Sc01 Plus (V1.8.3)",
-    "firmwareVersion": "V1.8.3",
-    "board": "Wt32 Sc01 Plus",
-    "variants": [
-      "Factory image"
-    ],
-    "baudrate": 115200,
-    "files": [
-      {
-        "address": "0x0",
-        "url": "assets/nerdminer/nerdminer-v1.8.3-wt32-sc01-plus/wt32-sc01-plus_factory.bin",
-        "name": "wt32-sc01-plus_factory.bin"
-      }
-    ]
-  },
-  {
-    "value": "nerdminer-v1.8.3-wt32-sc01",
-    "label": "Wt32 Sc01 (V1.8.3)",
-    "firmwareVersion": "V1.8.3",
-    "board": "Wt32 Sc01",
-    "variants": [
-      "Factory image"
-    ],
-    "baudrate": 115200,
-    "files": [
-      {
-        "address": "0x0",
-        "url": "assets/nerdminer/nerdminer-v1.8.3-wt32-sc01/wt32-sc01_factory.bin",
-        "name": "wt32-sc01_factory.bin"
-      }
-    ]
-  },
-  {
     "value": "nerdminer-release-v1.8.2-esp32-2432s028r",
     "label": "ESP32 2432S028R (V1.8.2)",
     "firmwareVersion": "V1.8.2",
@@ -1003,40 +969,6 @@
     ]
   },
   {
-    "value": "nerdminer-release-v1.8.2-wt32-sc01-plus",
-    "label": "Wt32 Sc01 Plus (V1.8.2)",
-    "firmwareVersion": "V1.8.2",
-    "board": "Wt32 Sc01 Plus",
-    "variants": [
-      "Factory image"
-    ],
-    "baudrate": 115200,
-    "files": [
-      {
-        "address": "0x0",
-        "url": "assets/nerdminer/nerdminer-release-v1.8.2-wt32-sc01-plus/wt32-sc01-plus_factory.bin",
-        "name": "wt32-sc01-plus_factory.bin"
-      }
-    ]
-  },
-  {
-    "value": "nerdminer-release-v1.8.2-wt32-sc01",
-    "label": "Wt32 Sc01 (V1.8.2)",
-    "firmwareVersion": "V1.8.2",
-    "board": "Wt32 Sc01",
-    "variants": [
-      "Factory image"
-    ],
-    "baudrate": 115200,
-    "files": [
-      {
-        "address": "0x0",
-        "url": "assets/nerdminer/nerdminer-release-v1.8.2-wt32-sc01/wt32-sc01_factory.bin",
-        "name": "wt32-sc01_factory.bin"
-      }
-    ]
-  },
-  {
     "value": "nerdminer-release-v1.8.1-esp32-2432s028r",
     "label": "ESP32 2432S028R (V1.8.1)",
     "firmwareVersion": "V1.8.1",
@@ -1509,40 +1441,6 @@
         "address": "0x0",
         "url": "assets/nerdminer/nerdminer-release-v1.8.1-ttgo-t-display/TTGO-T-Display_factory.bin",
         "name": "TTGO-T-Display_factory.bin"
-      }
-    ]
-  },
-  {
-    "value": "nerdminer-release-v1.8.1-wt32-sc01-plus",
-    "label": "Wt32 Sc01 Plus (V1.8.1)",
-    "firmwareVersion": "V1.8.1",
-    "board": "Wt32 Sc01 Plus",
-    "variants": [
-      "Factory image"
-    ],
-    "baudrate": 115200,
-    "files": [
-      {
-        "address": "0x0",
-        "url": "assets/nerdminer/nerdminer-release-v1.8.1-wt32-sc01-plus/wt32-sc01-plus_factory.bin",
-        "name": "wt32-sc01-plus_factory.bin"
-      }
-    ]
-  },
-  {
-    "value": "nerdminer-release-v1.8.1-wt32-sc01",
-    "label": "Wt32 Sc01 (V1.8.1)",
-    "firmwareVersion": "V1.8.1",
-    "board": "Wt32 Sc01",
-    "variants": [
-      "Factory image"
-    ],
-    "baudrate": 115200,
-    "files": [
-      {
-        "address": "0x0",
-        "url": "assets/nerdminer/nerdminer-release-v1.8.1-wt32-sc01/wt32-sc01_factory.bin",
-        "name": "wt32-sc01_factory.bin"
       }
     ]
   },
@@ -2203,66 +2101,6 @@
         "address": "0x10000",
         "url": "assets/nerdminer/nerdminer-v1.7.0-nerdminerv2/NerdminerV2_firmware.bin",
         "name": "NerdminerV2_firmware.bin"
-      }
-    ]
-  },
-  {
-    "value": "nerdminer-v1.7.0-wt32-sc01-plus",
-    "label": "Wt32 Sc01 Plus (V1.7.0)",
-    "firmwareVersion": "V1.7.0",
-    "board": "Wt32 Sc01 Plus",
-    "variants": [],
-    "baudrate": 115200,
-    "files": [
-      {
-        "address": "0x0000",
-        "url": "assets/nerdminer/nerdminer-v1.7.0-wt32-sc01-plus/wt32-sc01-plus_bootloader.bin",
-        "name": "wt32-sc01-plus_bootloader.bin"
-      },
-      {
-        "address": "0x8000",
-        "url": "assets/nerdminer/nerdminer-v1.7.0-wt32-sc01-plus/wt32-sc01-plus_partitions.bin",
-        "name": "wt32-sc01-plus_partitions.bin"
-      },
-      {
-        "address": "0xE000",
-        "url": "assets/nerdminer/nerdminer-v1.7.0-wt32-sc01-plus/boot_app0.bin",
-        "name": "boot_app0.bin"
-      },
-      {
-        "address": "0x10000",
-        "url": "assets/nerdminer/nerdminer-v1.7.0-wt32-sc01-plus/wt32-sc01-plus_firmware.bin",
-        "name": "wt32-sc01-plus_firmware.bin"
-      }
-    ]
-  },
-  {
-    "value": "nerdminer-v1.7.0-wt32-sc01",
-    "label": "Wt32 Sc01 (V1.7.0)",
-    "firmwareVersion": "V1.7.0",
-    "board": "Wt32 Sc01",
-    "variants": [],
-    "baudrate": 115200,
-    "files": [
-      {
-        "address": "0x0000",
-        "url": "assets/nerdminer/nerdminer-v1.7.0-wt32-sc01/wt32-sc01_bootloader.bin",
-        "name": "wt32-sc01_bootloader.bin"
-      },
-      {
-        "address": "0x8000",
-        "url": "assets/nerdminer/nerdminer-v1.7.0-wt32-sc01/wt32-sc01_partitions.bin",
-        "name": "wt32-sc01_partitions.bin"
-      },
-      {
-        "address": "0xE000",
-        "url": "assets/nerdminer/nerdminer-v1.7.0-wt32-sc01/boot_app0.bin",
-        "name": "boot_app0.bin"
-      },
-      {
-        "address": "0x10000",
-        "url": "assets/nerdminer/nerdminer-v1.7.0-wt32-sc01/wt32-sc01_firmware.bin",
-        "name": "wt32-sc01_firmware.bin"
       }
     ]
   },

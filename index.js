@@ -40,6 +40,8 @@ const firmwareSelectors = [
 ];
 const flashButtons = [connectButtonJade, connectButtonBitfloppy, connectButtonNerd, connectButtonHan];
 const main = document.getElementById('main');
+const successMessage = document.getElementById('success');
+const backToHomeButton = document.getElementById('backToHomeButton');
 
 function animatePickerField(selector) {
   const field = selector.parentElement;
@@ -136,10 +138,28 @@ function setUpFirmwarePicker(finalSelector, picker, firmwares) {
 }
 
 function hideFirmwareControls() {
+  backToHomeButton.hidden = true;
   document.querySelectorAll('.firmware-picker, .firmware-action').forEach((element) => {
     element.style.display = 'none';
   });
 }
+
+function showHomeButton() {
+  backToHomeButton.hidden = false;
+}
+
+backToHomeButton.onclick = () => {
+  document.querySelectorAll('.firmware-picker, .firmware-action').forEach((element) => {
+    element.style.display = '';
+  });
+  eraseButton.style.display = '';
+  successMessage.textContent = '';
+  backToHomeButton.hidden = true;
+  document.querySelectorAll('.progress-card [id$="progress"], .progress-card [id$="progresslbl"]').forEach((element) => {
+    element.style.display = 'none';
+  });
+  main.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
 
 async function loadFirmwareCatalog() {
   try {
@@ -224,7 +244,8 @@ eraseButton.onclick = async () => {
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
   setFlashingState(false);
-  document.getElementById("success").innerHTML = "Successfully erased!";
+  successMessage.textContent = "Successfully erased!";
+  showHomeButton();
 }
 
 connectButtonJade.onclick = async () => {
@@ -317,7 +338,8 @@ connectButtonJade.onclick = async () => {
   await new Promise((resolve) => setTimeout(resolve, 100));
   await transport.setDTR(true);
   setFlashingState(false);
-  document.getElementById("success").innerHTML = "Successfully flashed " + diymodelselJade.options[diymodelselJade.selectedIndex].text;
+  successMessage.textContent = "Successfully flashed " + diymodelselJade.options[diymodelselJade.selectedIndex].text;
+  showHomeButton();
 };
 
 async function flashRemoteFirmware(selector) {
@@ -389,10 +411,11 @@ async function flashRemoteFirmware(selector) {
       await new Promise((resolve) => setTimeout(resolve, 100));
       await transport.setDTR(true);
     }
-    document.getElementById('success').textContent = `Successfully flashed ${selectedOption.text}`;
+    successMessage.textContent = `Successfully flashed ${selectedOption.text}`;
+    showHomeButton();
   } catch (error) {
     console.error(error);
-    document.getElementById('success').textContent = `Flashing failed: ${error.message}`;
+    successMessage.textContent = `Flashing failed: ${error.message}`;
   } finally {
     setFlashingState(false);
   }
