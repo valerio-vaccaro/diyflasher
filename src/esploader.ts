@@ -776,7 +776,7 @@ export class ESPLoader {
     }
   }
 
-  async main_fn(mode = "default_reset") {
+  async main_fn(mode = "default_reset", useStub = true) {
     await this.detect_chip(mode);
 
     const chip = await this.chip.get_chip_description(this);
@@ -790,10 +790,18 @@ export class ESPLoader {
       await this.chip._post_connect(this);
     }
 
-    await this.run_stub();
+    if (useStub) {
+      await this.run_stub();
 
-    if (this.rom_baudrate !== this.baudrate) {
-      await this.change_baud();
+      if (this.rom_baudrate !== this.baudrate) {
+        await this.change_baud();
+      }
+    } else {
+      // Native-USB ESP chips can lose their Web Serial connection while the
+      // temporary RAM stub is uploaded.  The ROM loader supports compressed
+      // flashing too; it just requires its smaller, chip-specific block size.
+      this.FLASH_WRITE_SIZE = this.chip.FLASH_WRITE_SIZE;
+      this.info("Using ROM loader (stub disabled).");
     }
     return chip;
   }
@@ -1020,6 +1028,12 @@ export class ESPLoader {
       } else {
         await this.flash_finish();
       }
+    } else if (compress) {
+      // ROM flashing needs an explicit end command. Reboot so a board that
+      // was manually put in download mode starts the newly written firmware.
+      await this.flash_defl_finish(true);
+    } else {
+      await this.flash_finish(true);
     }
   }
 

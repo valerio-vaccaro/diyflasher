@@ -1,0 +1,83 @@
+[
+  {
+    "value": "nerdminer-v1.8.3-han_m5stack",
+    "label": "Han_m5stack (V1.8.3)",
+    "firmwareVersion": "V1.8.3",
+    "board": "Han_m5stack",
+    "variants": [
+      "Factory image"
+    ],
+    "baudrate": 115200,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/han/nerdminer-v1.8.3-han_m5stack/han_m5stack_factory.bin",
+        "name": "han_m5stack_factory.bin"
+      }
+    ]
+  },
+  {
+    "value": "nerdminer-release-v1.8.2-han_m5stack",
+    "label": "Han M5stack (V1.8.2)",
+    "firmwareVersion": "V1.8.2",
+    "board": "Han M5stack",
+    "variants": [
+      "Factory image"
+    ],
+    "baudrate": 115200,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/han/nerdminer-release-v1.8.2-han_m5stack/han_m5stack_factory.bin",
+        "name": "han_m5stack_factory.bin"
+      }
+    ]
+  },
+  {
+    "value": "nerdminer-release-v1.8.1-han_m5stack",
+    "label": "Han M5stack (V1.8.1)",
+    "firmwareVersion": "V1.8.1",
+    "board": "Han M5stack",
+    "variants": [
+      "Factory image"
+    ],
+    "baudrate": 115200,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/han/nerdminer-release-v1.8.1-han_m5stack/han_m5stack_factory.bin",
+        "name": "han_m5stack_factory.bin"
+      }
+    ]
+  },
+  {
+    "value": "nerdminer-v1.7.0-han_m5stack",
+    "label": "Han M5stack (V1.7.0)",
+    "firmwareVersion": "V1.7.0",
+    "board": "Han M5stack",
+    "variants": [],
+    "baudrate": 115200,
+    "files": [
+      {
+        "address": "0x0000",
+        "url": "assets/han/nerdminer-v1.7.0-han_m5stack/han_m5stack_bootloader.bin",
+        "name": "han_m5stack_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/han/nerdminer-v1.7.0-han_m5stack/han_m5stack_partitions.bin",
+        "name": "han_m5stack_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/han/nerdminer-v1.7.0-han_m5stack/boot_app0.bin",
+        "name": "boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/han/nerdminer-v1.7.0-han_m5stack/han_m5stack_firmware.bin",
+        "name": "han_m5stack_firmware.bin"
+      }
+    ]
+  }
+]

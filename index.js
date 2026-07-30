@@ -1,11 +1,11 @@
 const diymodelselJade = document.getElementById('diymodelselJade');
-const diymodelselNerd = document.getElementById('diymodelselNerd');
 const diymodelselBitfloppy = document.getElementById('diymodelselBitfloppy');
-const diymodelselNewNerd = document.getElementById('diymodelselNewNerd');
+const diymodelselNerd = document.getElementById('diymodelselNerd');
+const diymodelselHan = document.getElementById('diymodelselHan');
 const connectButtonJade = document.getElementById('connectButtonJade');
-const connectButtonNerd = document.getElementById('connectButtonNerd');
 const connectButtonBitfloppy = document.getElementById('connectButtonBitfloppy');
-const connectButtonNewNerd = document.getElementById('connectButtonNewNerd');
+const connectButtonNerd = document.getElementById('connectButtonNerd');
+const connectButtonHan = document.getElementById('connectButtonHan');
 const btprogressBar = document.getElementById('bootloaderprogress');
 const btprogressBarLbl = document.getElementById('bootloaderprogresslbl');
 const otaprogressBar = document.getElementById('otaprogress');
@@ -19,26 +19,26 @@ const jadePicker = {
   board: document.getElementById('jadeBoardSelect'),
   variant: document.getElementById('jadeVariantSelect'),
 };
-const nerdPicker = {
-  version: document.getElementById('nerdVersionSelect'),
-  board: document.getElementById('nerdBoardSelect'),
-  variant: document.getElementById('nerdVariantSelect'),
-};
 const bitfloppyPicker = {
   version: document.getElementById('bitfloppyVersionSelect'),
   board: document.getElementById('bitfloppyBoardSelect'),
   variant: document.getElementById('bitfloppyVariantSelect'),
 };
-const newNerdPicker = {
-  version: document.getElementById('newNerdVersionSelect'),
-  board: document.getElementById('newNerdBoardSelect'),
-  variant: document.getElementById('newNerdVariantSelect'),
+const nerdPicker = {
+  version: document.getElementById('nerdVersionSelect'),
+  board: document.getElementById('nerdBoardSelect'),
+  variant: document.getElementById('nerdVariantSelect'),
+};
+const hanPicker = {
+  version: document.getElementById('hanVersionSelect'),
+  board: document.getElementById('hanBoardSelect'),
+  variant: document.getElementById('hanVariantSelect'),
 };
 const firmwareSelectors = [
-  diymodelselJade, diymodelselNerd, diymodelselBitfloppy, diymodelselNewNerd,
-  ...Object.values(jadePicker), ...Object.values(nerdPicker), ...Object.values(bitfloppyPicker), ...Object.values(newNerdPicker),
+  diymodelselJade, diymodelselBitfloppy, diymodelselNerd, diymodelselHan,
+  ...Object.values(jadePicker), ...Object.values(bitfloppyPicker), ...Object.values(nerdPicker), ...Object.values(hanPicker),
 ];
-const flashButtons = [connectButtonJade, connectButtonNerd, connectButtonBitfloppy, connectButtonNewNerd];
+const flashButtons = [connectButtonJade, connectButtonBitfloppy, connectButtonNerd, connectButtonHan];
 const main = document.getElementById('main');
 
 function animatePickerField(selector) {
@@ -65,6 +65,8 @@ function populateFirmwareSelector(selector, firmwares) {
     if (firmware.files) {
       option.dataset.firmwareFiles = JSON.stringify(firmware.files);
       option.dataset.baudrate = String(firmware.baudrate || 115200);
+      option.dataset.manualBootloader = String(firmware.manualBootloader === true);
+      option.dataset.useStub = String(firmware.useStub !== false);
     }
     return option;
   }));
@@ -141,23 +143,23 @@ function hideFirmwareControls() {
 
 async function loadFirmwareCatalog() {
   try {
-    const [jadeResponse, nerdResponse, bitfloppyResponse, newNerdResponse] = await Promise.all([
+    const [jadeResponse, bitfloppyResponse, nerdResponse, hanResponse] = await Promise.all([
       fetch('./firmwares-jade.json'),
-      fetch('./firmwares-nerdminer.json'),
       fetch('./firmwares-bitfloppy.json'),
-      fetch('./firmwares-new-nerdminer.json'),
+      fetch('./firmwares-nerdminer.json'),
+      fetch('./firmwares-han.json'),
     ]);
-    if (!jadeResponse.ok || !nerdResponse.ok || !bitfloppyResponse.ok || !newNerdResponse.ok) {
+    if (!jadeResponse.ok || !bitfloppyResponse.ok || !nerdResponse.ok || !hanResponse.ok) {
       throw new Error('Unable to load firmware catalogs');
     }
 
-    const [jadeFirmwares, nerdFirmwares, bitfloppyFirmwares, newNerdFirmwares] = await Promise.all([
+    const [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares] = await Promise.all([
       jadeResponse.json(),
-      nerdResponse.json(),
       bitfloppyResponse.json(),
-      newNerdResponse.json(),
+      nerdResponse.json(),
+      hanResponse.json(),
     ]);
-    const catalogsAreValid = [jadeFirmwares, nerdFirmwares, bitfloppyFirmwares, newNerdFirmwares].every((firmwares) =>
+    const catalogsAreValid = [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares].every((firmwares) =>
       Array.isArray(firmwares) && firmwares.length > 0 && firmwares.every(({ value, label, firmwareVersion, board, variants }) =>
         typeof value === 'string' && typeof label === 'string' &&
         typeof firmwareVersion === 'string' && typeof board === 'string' && Array.isArray(variants)
@@ -168,9 +170,9 @@ async function loadFirmwareCatalog() {
     }
 
     setUpFirmwarePicker(diymodelselJade, jadePicker, jadeFirmwares);
-    setUpFirmwarePicker(diymodelselNerd, nerdPicker, nerdFirmwares);
     setUpFirmwarePicker(diymodelselBitfloppy, bitfloppyPicker, bitfloppyFirmwares);
-    setUpFirmwarePicker(diymodelselNewNerd, newNerdPicker, newNerdFirmwares);
+    setUpFirmwarePicker(diymodelselNerd, nerdPicker, nerdFirmwares);
+    setUpFirmwarePicker(diymodelselHan, hanPicker, hanFirmwares);
     flashButtons.forEach((button) => { button.disabled = false; });
   } catch (error) {
     console.error(error);
@@ -278,7 +280,7 @@ connectButtonJade.onclick = async () => {
   for (const item of addressesAndFiles) {
 
       console.log(`Address: ${item.address}, File Name: ${item.fileName}`);
-      const response = await fetch("assets/" + diymodelselJade.value + "/" + item.fileName);
+      const response = await fetch("assets/jade/" + diymodelselJade.value + "/" + item.fileName);
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -318,176 +320,6 @@ connectButtonJade.onclick = async () => {
   document.getElementById("success").innerHTML = "Successfully flashed " + diymodelselJade.options[diymodelselJade.selectedIndex].text;
 };
 
-connectButtonNerd.onclick = async () => {
-  eraseButton.style.display = 'none';
-  hideFirmwareControls();
-  setFlashingState(true);
-  if (device === null) {
-    device = await navigator.serial.requestPort({});
-    transport = new Transport(device);
-  }
-
-  btprogressBar.style.display = 'block';
-  otaprogressBar.style.display = 'block';
-  ptprogressBar.style.display = 'block';
-  firmwareprogressBar.style.display = 'block';
-
-  btprogressBarLbl.style.display = 'block';
-  otaprogressBarLbl.style.display = 'block';
-  ptprogressBarLbl.style.display = 'block';
-  firmwareprogressBarlbl.style.display = 'block';
-
-  var baudrate = 921600;
-
-  if (["han_1.6.4RC1_m5stack"].includes(diymodelselNerd.value)) {
-    baudrate = 115200;
-}
-
-  try {
-    esploader = new ESPLoader(transport, baudrate, null);
-    chip = await esploader.main_fn();
-  } catch (e) {
-    console.error(e);
-  }
-
-  let addressesAndFiles = [
-    {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
-    {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-    {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-    {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-  ]; 
-  
-  if (["han_1.6.4RC1_m5stack"].includes(diymodelselNerd.value)) { // han
-    addressesAndFiles = [
-      {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-    ];
-  } else if (["han_1.6.4RC1_wt32-sc01", "han_1.6.5RC1_wt32-sc01"].includes(diymodelselNerd.value)) { // han2
-    addressesAndFiles = [
-      {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-    ];
-  } else if (["han_1.6.4RC1_wt32-sc01-plus", "han_1.6.5RC1_wt32-sc01-plus"].includes(diymodelselNerd.value)) { // han2
-    addressesAndFiles = [
-      {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-    ];
-  } else if (["nerdminer2_1.6.4RC1_ESP32-2432S024"].includes(diymodelselNerd.value)) { // nerdminer2_1.6.4RC1_ESP32-2432S024
-    addressesAndFiles = [
-      {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-    ];
-  
-  } else if (["nerdminer2_1.6.3_tdisplays3"].includes(diymodelselNerd.value)) { // nerd
-    addressesAndFiles = [
-      {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-   ];
-  } else if (["nerdminer2_1.6.3_esp32wroom"].includes(diymodelselNerd.value)) { // nerd WROOM
-    addressesAndFiles = [
-      {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-   ];
-   } else if (["nerdminer2_1.6.3_tdiplay_S3_Amoled"].includes(diymodelselNerd.value)) { // nerd WROOM
-    addressesAndFiles = [
-      {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-   ];
-      } else if (["nerdminer2_1.6.3_T_QT"].includes(diymodelselNerd.value)) { // nerd WROOM
-    addressesAndFiles = [
-      {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-   ];
-    } else if (["nerdminer2_1.6.3_tdisplayv1"].includes(diymodelselNerd.value)) { // nerd WROOM
-    addressesAndFiles = [
-      {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-   ];
-    } else if (["nerdminer2_1.6.3_s3Dongle"].includes(diymodelselNerd.value)) { // nerd WROOM
-    addressesAndFiles = [
-      {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-   ];
-   } else if (["nerdminer2_1.6.3_ESP32-2432S028R"].includes(diymodelselNerd.value)) { // nerd WROOM
-    addressesAndFiles = [
-      {address: '0x1000', fileName: '0x1000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-   ];
-  } else if (["nerdminer2_1.6.3_M5-StampS3"].includes(diymodelselNerd.value)) { // nerd WROOM
-    addressesAndFiles = [
-      {address: '0x0000', fileName: '0x0000_bootloader.bin', progressBar: btprogressBar},
-      {address: '0x8000', fileName: '0x8000_partitions.bin', progressBar: ptprogressBar},
-      {address: '0xE000', fileName: '0xe000_boot_app0.bin', progressBar: otaprogressBar},
-      {address: '0x10000', fileName: '0x10000_firmware.bin', progressBar: firmwareprogressBar},
-   ];
-  }
-  let fileArray = [];
-
-  for (const item of addressesAndFiles) {
-
-      console.log(`Address: ${item.address}, File Name: ${item.fileName}`);
-      const response = await fetch("assets/" + diymodelselNerd.value + "/" + item.fileName);
-      if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const fileBlob = await response.blob();
-      const fileData = await new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onloadend = () => resolve(reader.result);
-          reader.onerror = reject;
-          reader.readAsBinaryString(fileBlob);
-      });
-      fileArray.push({
-          data: fileData,
-          address: item.address
-      });
-  }
-  try {
-      await esploader.write_flash(
-          fileArray,
-          'keep',
-          'keep',
-          'keep',
-          false,
-          true,
-          (fileIndex, written, total) => {
-            addressesAndFiles[fileIndex].progressBar.value = (written / total) * 100;
-          },
-          null
-      );
-  } catch (e) {
-      console.error(e);
-  }
-  await new Promise((resolve) => setTimeout(resolve, 100));
-  await transport.setDTR(false);
-  await new Promise((resolve) => setTimeout(resolve, 100));
-  await transport.setDTR(true);
-  setFlashingState(false);
-  document.getElementById("success").innerHTML = "Successfully flashed " + diymodelselNerd.options[diymodelselNerd.selectedIndex].text;
-};
-
 async function flashRemoteFirmware(selector) {
   eraseButton.style.display = 'none';
   hideFirmwareControls();
@@ -497,6 +329,8 @@ async function flashRemoteFirmware(selector) {
     const selectedOption = selector.selectedOptions[0];
     const files = JSON.parse(selectedOption.dataset.firmwareFiles);
     const baudrate = Number(selectedOption.dataset.baudrate);
+    const manualBootloader = selectedOption.dataset.manualBootloader === 'true';
+    const useStub = selectedOption.dataset.useStub !== 'false';
     const progressBars = [btprogressBar, ptprogressBar, otaprogressBar, firmwareprogressBar];
     const progressLabels = [btprogressBarLbl, ptprogressBarLbl, otaprogressBarLbl, firmwareprogressBarlbl];
 
@@ -518,7 +352,7 @@ async function flashRemoteFirmware(selector) {
     });
 
     esploader = new ESPLoader(transport, baudrate, null);
-    chip = await esploader.main_fn();
+    chip = await esploader.main_fn(manualBootloader ? 'no_reset' : 'default_reset', useStub);
 
     const fileArray = await Promise.all(files.map(async (file) => {
       const response = await fetch(file.url);
@@ -547,10 +381,14 @@ async function flashRemoteFirmware(selector) {
       },
       null
     );
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    await transport.setDTR(false);
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    await transport.setDTR(true);
+    // Native USB boards do not provide DTR, and ROM flashing above already
+    // requests a reboot. Keep the traditional reset for UART boards only.
+    if (!manualBootloader) {
+      await new Promise((resolve) => setTimeout(resolve, 100));
+      await transport.setDTR(false);
+      await new Promise((resolve) => setTimeout(resolve, 100));
+      await transport.setDTR(true);
+    }
     document.getElementById('success').textContent = `Successfully flashed ${selectedOption.text}`;
   } catch (error) {
     console.error(error);
@@ -561,4 +399,5 @@ async function flashRemoteFirmware(selector) {
 }
 
 connectButtonBitfloppy.onclick = () => flashRemoteFirmware(diymodelselBitfloppy);
-connectButtonNewNerd.onclick = () => flashRemoteFirmware(diymodelselNewNerd);
+connectButtonNerd.onclick = () => flashRemoteFirmware(diymodelselNerd);
+connectButtonHan.onclick = () => flashRemoteFirmware(diymodelselHan);

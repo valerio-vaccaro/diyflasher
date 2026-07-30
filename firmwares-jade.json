@@ -1234,20 +1234,6 @@
     "variants": []
   },
   {
-    "value": "Jade_1.0.34_display_m5core2",
-    "label": "Jade 1.0.34 for M5Stack2",
-    "firmwareVersion": "1.0.34",
-    "board": "M5Stack2",
-    "variants": []
-  },
-  {
-    "value": "Jade_1.0.34_display_m5cores3",
-    "label": "Jade 1.0.34 for M5StackS3",
-    "firmwareVersion": "1.0.34",
-    "board": "M5StackS3",
-    "variants": []
-  },
-  {
     "value": "Jade_1.0.34_display_m5fire",
     "label": "Jade 1.0.34 for M5Stack FIRE",
     "firmwareVersion": "1.0.34",
@@ -1288,15 +1274,6 @@
     "firmwareVersion": "1.0.34",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
-  },
-  {
-    "value": "Jade_1.0.34_display_ttgo_twatchs3",
-    "label": "Jade 1.0.34 for LILYGO T-Watch-S3 (NEW)",
-    "firmwareVersion": "1.0.34",
-    "board": "LILYGO T-Watch-S3",
-    "variants": [
-      "NEW"
-    ]
   },
   {
     "value": "Jade_1.0.34_diycam_esp32-cam",
