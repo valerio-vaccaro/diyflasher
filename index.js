@@ -1,7 +1,11 @@
 const diymodelselJade = document.getElementById('diymodelselJade');
 const diymodelselNerd = document.getElementById('diymodelselNerd');
+const diymodelselBitfloppy = document.getElementById('diymodelselBitfloppy');
+const diymodelselNewNerd = document.getElementById('diymodelselNewNerd');
 const connectButtonJade = document.getElementById('connectButtonJade');
 const connectButtonNerd = document.getElementById('connectButtonNerd');
+const connectButtonBitfloppy = document.getElementById('connectButtonBitfloppy');
+const connectButtonNewNerd = document.getElementById('connectButtonNewNerd');
 const btprogressBar = document.getElementById('bootloaderprogress');
 const btprogressBarLbl = document.getElementById('bootloaderprogresslbl');
 const otaprogressBar = document.getElementById('otaprogress');
@@ -20,8 +24,21 @@ const nerdPicker = {
   board: document.getElementById('nerdBoardSelect'),
   variant: document.getElementById('nerdVariantSelect'),
 };
-const firmwareSelectors = [diymodelselJade, diymodelselNerd, ...Object.values(jadePicker), ...Object.values(nerdPicker)];
-const flashButtons = [connectButtonJade, connectButtonNerd];
+const bitfloppyPicker = {
+  version: document.getElementById('bitfloppyVersionSelect'),
+  board: document.getElementById('bitfloppyBoardSelect'),
+  variant: document.getElementById('bitfloppyVariantSelect'),
+};
+const newNerdPicker = {
+  version: document.getElementById('newNerdVersionSelect'),
+  board: document.getElementById('newNerdBoardSelect'),
+  variant: document.getElementById('newNerdVariantSelect'),
+};
+const firmwareSelectors = [
+  diymodelselJade, diymodelselNerd, diymodelselBitfloppy, diymodelselNewNerd,
+  ...Object.values(jadePicker), ...Object.values(nerdPicker), ...Object.values(bitfloppyPicker), ...Object.values(newNerdPicker),
+];
+const flashButtons = [connectButtonJade, connectButtonNerd, connectButtonBitfloppy, connectButtonNewNerd];
 const main = document.getElementById('main');
 
 function animatePickerField(selector) {
@@ -37,13 +54,18 @@ function setFlashingState(isFlashing) {
 }
 
 function populateFirmwareSelector(selector, firmwares) {
-  selector.replaceChildren(...firmwares.map(({ value, label, firmwareVersion, board, variants }) => {
+  selector.replaceChildren(...firmwares.map((firmware) => {
+    const { value, label, firmwareVersion, board, variants } = firmware;
     const option = document.createElement('option');
     option.value = value;
     option.textContent = label;
     option.dataset.firmwareVersion = firmwareVersion;
     option.dataset.board = board;
     option.dataset.variants = variants.join(',');
+    if (firmware.files) {
+      option.dataset.firmwareFiles = JSON.stringify(firmware.files);
+      option.dataset.baudrate = String(firmware.baudrate || 115200);
+    }
     return option;
   }));
 }
@@ -119,19 +141,23 @@ function hideFirmwareControls() {
 
 async function loadFirmwareCatalog() {
   try {
-    const [jadeResponse, nerdResponse] = await Promise.all([
+    const [jadeResponse, nerdResponse, bitfloppyResponse, newNerdResponse] = await Promise.all([
       fetch('./firmwares-jade.json'),
       fetch('./firmwares-nerdminer.json'),
+      fetch('./firmwares-bitfloppy.json'),
+      fetch('./firmwares-new-nerdminer.json'),
     ]);
-    if (!jadeResponse.ok || !nerdResponse.ok) {
+    if (!jadeResponse.ok || !nerdResponse.ok || !bitfloppyResponse.ok || !newNerdResponse.ok) {
       throw new Error('Unable to load firmware catalogs');
     }
 
-    const [jadeFirmwares, nerdFirmwares] = await Promise.all([
+    const [jadeFirmwares, nerdFirmwares, bitfloppyFirmwares, newNerdFirmwares] = await Promise.all([
       jadeResponse.json(),
       nerdResponse.json(),
+      bitfloppyResponse.json(),
+      newNerdResponse.json(),
     ]);
-    const catalogsAreValid = [jadeFirmwares, nerdFirmwares].every((firmwares) =>
+    const catalogsAreValid = [jadeFirmwares, nerdFirmwares, bitfloppyFirmwares, newNerdFirmwares].every((firmwares) =>
       Array.isArray(firmwares) && firmwares.length > 0 && firmwares.every(({ value, label, firmwareVersion, board, variants }) =>
         typeof value === 'string' && typeof label === 'string' &&
         typeof firmwareVersion === 'string' && typeof board === 'string' && Array.isArray(variants)
@@ -143,6 +169,8 @@ async function loadFirmwareCatalog() {
 
     setUpFirmwarePicker(diymodelselJade, jadePicker, jadeFirmwares);
     setUpFirmwarePicker(diymodelselNerd, nerdPicker, nerdFirmwares);
+    setUpFirmwarePicker(diymodelselBitfloppy, bitfloppyPicker, bitfloppyFirmwares);
+    setUpFirmwarePicker(diymodelselNewNerd, newNerdPicker, newNerdFirmwares);
     flashButtons.forEach((button) => { button.disabled = false; });
   } catch (error) {
     console.error(error);
@@ -459,3 +487,78 @@ connectButtonNerd.onclick = async () => {
   setFlashingState(false);
   document.getElementById("success").innerHTML = "Successfully flashed " + diymodelselNerd.options[diymodelselNerd.selectedIndex].text;
 };
+
+async function flashRemoteFirmware(selector) {
+  eraseButton.style.display = 'none';
+  hideFirmwareControls();
+  setFlashingState(true);
+
+  try {
+    const selectedOption = selector.selectedOptions[0];
+    const files = JSON.parse(selectedOption.dataset.firmwareFiles);
+    const baudrate = Number(selectedOption.dataset.baudrate);
+    const progressBars = [btprogressBar, ptprogressBar, otaprogressBar, firmwareprogressBar];
+    const progressLabels = [btprogressBarLbl, ptprogressBarLbl, otaprogressBarLbl, firmwareprogressBarlbl];
+
+    if (device === null) {
+      device = await navigator.serial.requestPort({});
+      transport = new Transport(device);
+    }
+
+    progressBars.forEach((progressBar, index) => {
+      const isUsed = index < files.length;
+      progressBar.style.display = isUsed ? 'block' : 'none';
+      progressLabels[index].style.display = isUsed ? 'block' : 'none';
+      if (isUsed) {
+        progressLabels[index].querySelector('label').textContent = files.length === 1
+          ? 'Factory image'
+          : ['Bootloader', 'Partition table', 'OTA initial data', 'Firmware'][index];
+      }
+      progressBar.value = 0;
+    });
+
+    esploader = new ESPLoader(transport, baudrate, null);
+    chip = await esploader.main_fn();
+
+    const fileArray = await Promise.all(files.map(async (file) => {
+      const response = await fetch(file.url);
+      if (!response.ok) {
+        throw new Error(`Unable to download ${file.name}: ${response.status}`);
+      }
+      const fileBlob = await response.blob();
+      const data = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsBinaryString(fileBlob);
+      });
+      return { data, address: file.address };
+    }));
+
+    await esploader.write_flash(
+      fileArray,
+      'keep',
+      'keep',
+      'keep',
+      false,
+      true,
+      (fileIndex, written, total) => {
+        progressBars[fileIndex].value = (written / total) * 100;
+      },
+      null
+    );
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    await transport.setDTR(false);
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    await transport.setDTR(true);
+    document.getElementById('success').textContent = `Successfully flashed ${selectedOption.text}`;
+  } catch (error) {
+    console.error(error);
+    document.getElementById('success').textContent = `Flashing failed: ${error.message}`;
+  } finally {
+    setFlashingState(false);
+  }
+}
+
+connectButtonBitfloppy.onclick = () => flashRemoteFirmware(diymodelselBitfloppy);
+connectButtonNewNerd.onclick = () => flashRemoteFirmware(diymodelselNewNerd);

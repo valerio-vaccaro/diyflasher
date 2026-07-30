@@ -478,6 +478,60 @@
                 </div>
             </div>
 
+            <div class="col-lg-6">
+                <div class="card firmware-card h-100">
+                    <div class="card-header">BitFloppy firmware</div>
+                    <div class="card-body">
+                        <p class="card-hint">Choose a BitFloppy release and the matching board.</p>
+                        <div class="firmware-picker" id="bitfloppyPicker">
+                            <div>
+                                <label for="bitfloppyVersionSelect"><span class="picker-step">1</span>Version</label>
+                                <select id="bitfloppyVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select>
+                            </div>
+                            <div>
+                                <label for="bitfloppyBoardSelect"><span class="picker-step">2</span>Board</label>
+                                <select id="bitfloppyBoardSelect" class="form-select form-select-sm" disabled><option>Select version first</option></select>
+                            </div>
+                            <div class="variant-field">
+                                <label for="bitfloppyVariantSelect"><span class="picker-step">3</span>Variant</label>
+                                <select id="bitfloppyVariantSelect" class="form-select form-select-sm" disabled><option>Select board first</option></select>
+                            </div>
+                        </div>
+                        <select id="diymodelselBitfloppy" class="d-none" aria-hidden="true" tabindex="-1"><option value="" selected disabled>Loading firmware catalog…</option></select>
+                        <div class="firmware-action">
+                            <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonBitfloppy" value="Flash" disabled />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card firmware-card h-100">
+                    <div class="card-header">NerdMiner releases</div>
+                    <div class="card-body">
+                        <p class="card-hint">Select a NerdMiner release, then the matching board and installation image.</p>
+                        <div class="firmware-picker" id="newNerdPicker">
+                            <div>
+                                <label for="newNerdVersionSelect"><span class="picker-step">1</span>Version</label>
+                                <select id="newNerdVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select>
+                            </div>
+                            <div>
+                                <label for="newNerdBoardSelect"><span class="picker-step">2</span>Board</label>
+                                <select id="newNerdBoardSelect" class="form-select form-select-sm" disabled><option>Select version first</option></select>
+                            </div>
+                            <div class="variant-field">
+                                <label for="newNerdVariantSelect"><span class="picker-step">3</span>Variant</label>
+                                <select id="newNerdVariantSelect" class="form-select form-select-sm" disabled><option>Select board first</option></select>
+                            </div>
+                        </div>
+                        <select id="diymodelselNewNerd" class="d-none" aria-hidden="true" tabindex="-1"><option value="" selected disabled>Loading firmware catalog…</option></select>
+                        <div class="firmware-action">
+                            <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonNewNerd" value="Flash" disabled />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-12">
                 <div class="card progress-card">
                     <div class="card-header">Flash progress</div>

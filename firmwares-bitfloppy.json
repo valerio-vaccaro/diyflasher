@@ -1,0 +1,32 @@
+[
+  {
+    "value": "bitfloppy-0.0.1-lolin-s2-mini",
+    "label": "Lolin S2 Mini (v0.0.1)",
+    "firmwareVersion": "v0.0.1",
+    "board": "Lolin S2 Mini",
+    "variants": [],
+    "baudrate": 115200,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "https://raw.githubusercontent.com/valerio-vaccaro/BitFloppy/main/docs/binaries/0.0.1/lolin_s2_mini/bootloader.bin",
+        "name": "bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "https://raw.githubusercontent.com/valerio-vaccaro/BitFloppy/main/docs/binaries/0.0.1/lolin_s2_mini/partitions.bin",
+        "name": "partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "https://raw.githubusercontent.com/valerio-vaccaro/BitFloppy/main/docs/binaries/0.0.1/lolin_s2_mini/boot_app0.bin",
+        "name": "boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "https://raw.githubusercontent.com/valerio-vaccaro/BitFloppy/main/docs/binaries/0.0.1/lolin_s2_mini/firmware.bin",
+        "name": "firmware.bin"
+      }
+    ]
+  }
+]
