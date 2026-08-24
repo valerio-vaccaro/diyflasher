@@ -265,9 +265,15 @@
             gap: 0.55rem;
         }
         .firmware-logo {
-            width: 1.6rem;
-            height: 1.6rem;
-            border-radius: 0.38rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            object-fit: contain;
+        }
+        .management-icon {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.45rem;
             object-fit: contain;
         }
         .firmware-card .card-header::after {
@@ -428,7 +434,7 @@
             <div class="col-12">
                 <div class="card management-card">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <span>Board management</span>
+                        <span class="firmware-title"><img class="management-icon" src="assets/trash.png" alt="" />Board management</span>
                         <input class="btn btn-outline-jade btn-sm" type="button" id="eraseButton" value="Erase flash" />
                     </div>
                 </div>
@@ -437,7 +443,7 @@
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
                     <div class="card-header">
-                        <span class="firmware-title"><img class="firmware-logo" src="assets/jade.svg" alt="" />Jade firmware</span>
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/jade.png" alt="" />Jade firmware</span>
                     </div>
                     <div class="card-body">
                         <p class="card-hint">Choose a version, then the matching board and build variant.</p>
@@ -468,7 +474,7 @@
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
                     <div class="card-header">
-                        <span class="firmware-title"><img class="firmware-logo" src="assets/bitfloppy.svg" alt="" />BitFloppy firmware</span>
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/bitfloppy.png" alt="" />BitFloppy firmware</span>
                     </div>
                     <div class="card-body">
                         <p class="card-hint">Choose a BitFloppy release and the matching board.</p>
@@ -526,7 +532,7 @@
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
                     <div class="card-header">
-                        <span class="firmware-title"><img class="firmware-logo" src="assets/han.svg" alt="" />HAN firmware</span>
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/han.png" alt="" />HAN firmware</span>
                     </div>
                     <div class="card-body">
                         <p class="card-hint">Select a HAN release and the matching board.</p>
@@ -555,7 +561,7 @@
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
                     <div class="card-header">
-                        <span class="firmware-title"><img class="firmware-logo" src="assets/satulator.svg" alt="" />SATulator firmware</span>
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/satulator.png" alt="" />SATulator firmware</span>
                     </div>
                     <div class="card-body">
                         <p class="card-hint">Select a SATulator release and the matching board.</p>
@@ -584,7 +590,7 @@
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
                     <div class="card-header">
-                        <span class="firmware-title"><img class="firmware-logo" src="assets/sfyl-wallet.svg" alt="" />SFYL Wallet firmware</span>
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/sfyl-wallet.png" alt="" />SFYL Wallet firmware</span>
                     </div>
                     <div class="card-body">
                         <p class="card-hint">Select an SFYL Wallet release and the matching board.</p>
