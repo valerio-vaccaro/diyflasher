@@ -259,6 +259,17 @@
             align-items: center;
             justify-content: space-between;
         }
+        .firmware-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+        .firmware-logo {
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 0.38rem;
+            object-fit: contain;
+        }
         .firmware-card .card-header::after {
             padding: 0.2rem 0.48rem;
             border: 1px solid var(--blkstr-border);
@@ -425,7 +436,9 @@
 
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
-                    <div class="card-header">Jade firmware</div>
+                    <div class="card-header">
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/jade.svg" alt="" />Jade firmware</span>
+                    </div>
                     <div class="card-body">
                         <p class="card-hint">Choose a version, then the matching board and build variant.</p>
                         <div class="firmware-picker" id="jadePicker">
@@ -438,7 +451,7 @@
                                 <select id="jadeBoardSelect" class="form-select form-select-sm" disabled><option>Select version first</option></select>
                             </div>
                             <div class="variant-field">
-                                <label for="jadeVariantSelect"><span class="picker-step">3</span>Variant</label>
+                                <label for="jadeVariantSelect"><span class="picker-step">3</span>Build</label>
                                 <select id="jadeVariantSelect" class="form-select form-select-sm" disabled><option>Select board first</option></select>
                             </div>
                         </div>
@@ -454,7 +467,9 @@
 
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
-                    <div class="card-header">BitFloppy firmware</div>
+                    <div class="card-header">
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/bitfloppy.svg" alt="" />BitFloppy firmware</span>
+                    </div>
                     <div class="card-body">
                         <p class="card-hint">Choose a BitFloppy release and the matching board.</p>
                         <div class="firmware-picker" id="bitfloppyPicker">
@@ -481,7 +496,9 @@
 
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
-                    <div class="card-header">NerdMiner firmware</div>
+                    <div class="card-header">
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/nerdminer.png" alt="" />NerdMiner firmware</span>
+                    </div>
                     <div class="card-body">
                         <p class="card-hint">Select a NerdMiner release, then the matching board and installation image.</p>
                         <div class="firmware-picker" id="nerdPicker">
@@ -508,7 +525,9 @@
 
             <div class="col-lg-6">
                 <div class="card firmware-card h-100">
-                    <div class="card-header">HAN firmware</div>
+                    <div class="card-header">
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/han.svg" alt="" />HAN firmware</span>
+                    </div>
                     <div class="card-body">
                         <p class="card-hint">Select a HAN release and the matching board.</p>
                         <div class="firmware-picker" id="hanPicker">
@@ -528,6 +547,64 @@
                         <select id="diymodelselHan" class="d-none" aria-hidden="true" tabindex="-1"><option value="" selected disabled>Loading firmware catalog…</option></select>
                         <div class="firmware-action">
                             <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonHan" value="Flash" disabled />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card firmware-card h-100">
+                    <div class="card-header">
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/satulator.svg" alt="" />SATulator firmware</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-hint">Select a SATulator release and the matching board.</p>
+                        <div class="firmware-picker" id="satulatorPicker">
+                            <div>
+                                <label for="satulatorVersionSelect"><span class="picker-step">1</span>Version</label>
+                                <select id="satulatorVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select>
+                            </div>
+                            <div>
+                                <label for="satulatorBoardSelect"><span class="picker-step">2</span>Board</label>
+                                <select id="satulatorBoardSelect" class="form-select form-select-sm" disabled><option>Select version first</option></select>
+                            </div>
+                            <div class="variant-field">
+                                <label for="satulatorVariantSelect"><span class="picker-step">3</span>Variant</label>
+                                <select id="satulatorVariantSelect" class="form-select form-select-sm" disabled><option>Select board first</option></select>
+                            </div>
+                        </div>
+                        <select id="diymodelselSatulator" class="d-none" aria-hidden="true" tabindex="-1"><option value="" selected disabled>Loading firmware catalog…</option></select>
+                        <div class="firmware-action">
+                            <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonSatulator" value="Flash" disabled />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card firmware-card h-100">
+                    <div class="card-header">
+                        <span class="firmware-title"><img class="firmware-logo" src="assets/sfyl-wallet.svg" alt="" />SFYL Wallet firmware</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-hint">Select an SFYL Wallet release and the matching board.</p>
+                        <div class="firmware-picker" id="sfylPicker">
+                            <div>
+                                <label for="sfylVersionSelect"><span class="picker-step">1</span>Version</label>
+                                <select id="sfylVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select>
+                            </div>
+                            <div>
+                                <label for="sfylBoardSelect"><span class="picker-step">2</span>Board</label>
+                                <select id="sfylBoardSelect" class="form-select form-select-sm" disabled><option>Select version first</option></select>
+                            </div>
+                            <div class="variant-field">
+                                <label for="sfylVariantSelect"><span class="picker-step">3</span>Variant</label>
+                                <select id="sfylVariantSelect" class="form-select form-select-sm" disabled><option>Select board first</option></select>
+                            </div>
+                        </div>
+                        <select id="diymodelselSfyl" class="d-none" aria-hidden="true" tabindex="-1"><option value="" selected disabled>Loading firmware catalog…</option></select>
+                        <div class="firmware-action">
+                            <input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonSfyl" value="Flash" disabled />
                         </div>
                     </div>
                 </div>

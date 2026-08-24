@@ -2,10 +2,14 @@ const diymodelselJade = document.getElementById('diymodelselJade');
 const diymodelselBitfloppy = document.getElementById('diymodelselBitfloppy');
 const diymodelselNerd = document.getElementById('diymodelselNerd');
 const diymodelselHan = document.getElementById('diymodelselHan');
+const diymodelselSatulator = document.getElementById('diymodelselSatulator');
+const diymodelselSfyl = document.getElementById('diymodelselSfyl');
 const connectButtonJade = document.getElementById('connectButtonJade');
 const connectButtonBitfloppy = document.getElementById('connectButtonBitfloppy');
 const connectButtonNerd = document.getElementById('connectButtonNerd');
 const connectButtonHan = document.getElementById('connectButtonHan');
+const connectButtonSatulator = document.getElementById('connectButtonSatulator');
+const connectButtonSfyl = document.getElementById('connectButtonSfyl');
 const btprogressBar = document.getElementById('bootloaderprogress');
 const btprogressBarLbl = document.getElementById('bootloaderprogresslbl');
 const otaprogressBar = document.getElementById('otaprogress');
@@ -34,11 +38,21 @@ const hanPicker = {
   board: document.getElementById('hanBoardSelect'),
   variant: document.getElementById('hanVariantSelect'),
 };
+const satulatorPicker = {
+  version: document.getElementById('satulatorVersionSelect'),
+  board: document.getElementById('satulatorBoardSelect'),
+  variant: document.getElementById('satulatorVariantSelect'),
+};
+const sfylPicker = {
+  version: document.getElementById('sfylVersionSelect'),
+  board: document.getElementById('sfylBoardSelect'),
+  variant: document.getElementById('sfylVariantSelect'),
+};
 const firmwareSelectors = [
-  diymodelselJade, diymodelselBitfloppy, diymodelselNerd, diymodelselHan,
+  diymodelselJade, diymodelselBitfloppy, diymodelselNerd, diymodelselHan, diymodelselSatulator, diymodelselSfyl,
   ...Object.values(jadePicker), ...Object.values(bitfloppyPicker), ...Object.values(nerdPicker), ...Object.values(hanPicker),
+  ...Object.values(satulatorPicker), ...Object.values(sfylPicker),
 ];
-const flashButtons = [connectButtonJade, connectButtonBitfloppy, connectButtonNerd, connectButtonHan];
 const main = document.getElementById('main');
 const successMessage = document.getElementById('success');
 const backToHomeButton = document.getElementById('backToHomeButton');
@@ -94,6 +108,11 @@ function lexicographicalSort(values) {
 }
 
 function variantLabel(firmware) {
+  if (firmware.board.startsWith('Jade v')) {
+    const noBluetooth = firmware.variants.some((variant) => variant.includes('no radio'));
+    const ci = firmware.variants.some((variant) => variant.includes('ci'));
+    return `${noBluetooth ? 'nobluetooth' : 'bluetooth'}${ci ? '_ci' : ''}`;
+  }
   return firmware.variants.length > 0 ? firmware.variants.join(' · ') : 'Standard';
 }
 
@@ -176,24 +195,28 @@ backToHomeButton.onclick = () => {
 
 async function loadFirmwareCatalog() {
   try {
-    const [jadeResponse, bitfloppyResponse, nerdResponse, hanResponse] = await Promise.all([
+    const [jadeResponse, bitfloppyResponse, nerdResponse, hanResponse, satulatorResponse, sfylResponse] = await Promise.all([
       fetch('./firmwares-jade.json'),
       fetch('./firmwares-bitfloppy.json'),
       fetch('./firmwares-nerdminer.json'),
       fetch('./firmwares-han.json'),
+      fetch('./firmwares-satulator.json'),
+      fetch('./firmwares-sfyl.json'),
     ]);
-    if (!jadeResponse.ok || !bitfloppyResponse.ok || !nerdResponse.ok || !hanResponse.ok) {
+    if (!jadeResponse.ok || !bitfloppyResponse.ok || !nerdResponse.ok || !hanResponse.ok || !satulatorResponse.ok || !sfylResponse.ok) {
       throw new Error('Unable to load firmware catalogs');
     }
 
-    const [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares] = await Promise.all([
+    const [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares, satulatorFirmwares, sfylFirmwares] = await Promise.all([
       jadeResponse.json(),
       bitfloppyResponse.json(),
       nerdResponse.json(),
       hanResponse.json(),
+      satulatorResponse.json(),
+      sfylResponse.json(),
     ]);
-    const catalogsAreValid = [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares].every((firmwares) =>
-      Array.isArray(firmwares) && firmwares.length > 0 && firmwares.every(({ value, label, firmwareVersion, board, variants }) =>
+    const catalogsAreValid = [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares, satulatorFirmwares, sfylFirmwares].every((firmwares) =>
+      Array.isArray(firmwares) && firmwares.every(({ value, label, firmwareVersion, board, variants }) =>
         typeof value === 'string' && typeof label === 'string' &&
         typeof firmwareVersion === 'string' && typeof board === 'string' && Array.isArray(variants)
       )
@@ -202,11 +225,18 @@ async function loadFirmwareCatalog() {
       throw new Error('Firmware catalog has an invalid format');
     }
 
-    setUpFirmwarePicker(diymodelselJade, jadePicker, jadeFirmwares);
-    setUpFirmwarePicker(diymodelselBitfloppy, bitfloppyPicker, bitfloppyFirmwares);
-    setUpFirmwarePicker(diymodelselNerd, nerdPicker, nerdFirmwares);
-    setUpFirmwarePicker(diymodelselHan, hanPicker, hanFirmwares);
-    flashButtons.forEach((button) => { button.disabled = false; });
+    const catalogs = [
+      [diymodelselJade, jadePicker, jadeFirmwares, connectButtonJade],
+      [diymodelselBitfloppy, bitfloppyPicker, bitfloppyFirmwares, connectButtonBitfloppy],
+      [diymodelselNerd, nerdPicker, nerdFirmwares, connectButtonNerd],
+      [diymodelselHan, hanPicker, hanFirmwares, connectButtonHan],
+      [diymodelselSatulator, satulatorPicker, satulatorFirmwares, connectButtonSatulator],
+      [diymodelselSfyl, sfylPicker, sfylFirmwares, connectButtonSfyl],
+    ];
+    catalogs.forEach(([selector, picker, firmwares, button]) => {
+      setUpFirmwarePicker(selector, picker, firmwares);
+      button.disabled = firmwares.length === 0;
+    });
   } catch (error) {
     console.error(error);
     firmwareSelectors.forEach((selector) => {
@@ -449,3 +479,5 @@ async function flashRemoteFirmware(selector) {
 connectButtonBitfloppy.onclick = () => flashRemoteFirmware(diymodelselBitfloppy);
 connectButtonNerd.onclick = () => flashRemoteFirmware(diymodelselNerd);
 connectButtonHan.onclick = () => flashRemoteFirmware(diymodelselHan);
+connectButtonSatulator.onclick = () => flashRemoteFirmware(diymodelselSatulator);
+connectButtonSfyl.onclick = () => flashRemoteFirmware(diymodelselSfyl);
