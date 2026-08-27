@@ -202,11 +202,12 @@ function setProgressMessage(message, isError = false) {
 function showFlashError(error, prefix = 'Flashing failed') {
   const detail = error instanceof Error ? error.message : String(error);
   setProgressMessage(`${prefix}: ${detail}`, true);
+  showStatusEmoticonRain('error');
   setFlashResultState(true);
   showHomeButton();
 }
 
-function showEraseEmoticonRain(status) {
+function showStatusEmoticonRain(status) {
   const emoticons = status === 'success'
     ? ['🎉', '✨', '🧹', '✅', '🚀', '💫']
     : ['⚠️', '❌', '😵', '🔌', '🛑'];
@@ -326,7 +327,6 @@ eraseButton.onclick = async () => {
   } catch (e) {
     console.error(e);
     showFlashError(e, 'Erase failed');
-    showEraseEmoticonRain('error');
     setFlashingState(false);
     return;
   }
@@ -336,7 +336,6 @@ eraseButton.onclick = async () => {
   } catch (e) {
     console.error(e);
     showFlashError(e, 'Erase failed');
-    showEraseEmoticonRain('error');
     setFlashingState(false);
     return;
   }
@@ -346,7 +345,7 @@ eraseButton.onclick = async () => {
   await transport.setDTR(true);
   setFlashingState(false);
   setProgressMessage("Successfully erased!");
-  showEraseEmoticonRain('success');
+  showStatusEmoticonRain('success');
   showHomeButton();
 }
 
