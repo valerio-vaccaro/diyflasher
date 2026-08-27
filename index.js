@@ -69,7 +69,14 @@ function animatePickerField(selector) {
 
 function setFlashingState(isFlashing) {
   main.classList.toggle('is-flashing', isFlashing);
+  if (isFlashing) {
+    main.classList.remove('has-flash-result');
+  }
   main.setAttribute('aria-busy', String(isFlashing));
+}
+
+function setFlashResultState(hasResult) {
+  main.classList.toggle('has-flash-result', hasResult);
 }
 
 function populateFirmwareSelector(selector, firmwares) {
@@ -195,7 +202,8 @@ function setProgressMessage(message, isError = false) {
 function showFlashError(error, prefix = 'Flashing failed') {
   const detail = error instanceof Error ? error.message : String(error);
   setProgressMessage(`${prefix}: ${detail}`, true);
-  backToHomeButton.hidden = true;
+  setFlashResultState(true);
+  showHomeButton();
 }
 
 function showEraseEmoticonRain(status) {
@@ -226,6 +234,7 @@ function showHomeButton() {
 }
 
 backToHomeButton.onclick = () => {
+  setFlashResultState(false);
   setProgressMessage('');
   backToHomeButton.hidden = true;
   document.querySelectorAll('.progress-card [id$="progress"], .progress-card [id$="progresslbl"]').forEach((element) => {

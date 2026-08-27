@@ -378,8 +378,10 @@
             animation: writing-pulse 1s ease-in-out infinite alternate;
         }
         .progress-section { display: none; }
-        .is-flashing .firmware-grid > :not(.progress-section) { display: none; }
-        .is-flashing .progress-section { display: block; }
+        .is-flashing .firmware-grid > :not(.progress-section),
+        .has-flash-result .firmware-grid > :not(.progress-section) { display: none; }
+        .is-flashing .progress-section,
+        .has-flash-result .progress-section { display: block; }
         .firmware-summary {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
