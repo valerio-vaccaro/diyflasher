@@ -345,6 +345,7 @@ eraseButton.onclick = async () => {
   await transport.setDTR(true);
   setFlashingState(false);
   setProgressMessage("Successfully erased!");
+  setFlashResultState(true);
   showStatusEmoticonRain('success');
   showHomeButton();
 }
@@ -441,6 +442,8 @@ connectButtonJade.onclick = async () => {
   await transport.setDTR(true);
   setFlashingState(false);
   setProgressMessage("Successfully flashed " + diymodelselJade.options[diymodelselJade.selectedIndex].text);
+  setFlashResultState(true);
+  showStatusEmoticonRain('success');
   showHomeButton();
 };
 
@@ -514,6 +517,8 @@ async function flashRemoteFirmware(selector) {
       await transport.setDTR(true);
     }
     setProgressMessage(`Successfully flashed ${selectedOption.text}`);
+    setFlashResultState(true);
+    showStatusEmoticonRain('success');
     showHomeButton();
   } catch (error) {
     console.error(error);
