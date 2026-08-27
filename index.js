@@ -56,6 +56,8 @@ const firmwareSelectors = [
 const main = document.getElementById('main');
 const successMessage = document.getElementById('success');
 const backToHomeButton = document.getElementById('backToHomeButton');
+const emoticonRain = document.getElementById('emoticonRain');
+let emoticonRainTimeout;
 
 function animatePickerField(selector) {
   const field = selector.parentElement;
@@ -176,6 +178,29 @@ function showFlashError(error, prefix = 'Flashing failed') {
   backToHomeButton.hidden = true;
 }
 
+function showEraseEmoticonRain(status) {
+  const emoticons = status === 'success'
+    ? ['🎉', '✨', '🧹', '✅', '🚀', '💫']
+    : ['⚠️', '❌', '😵', '🔌', '🛑'];
+
+  window.clearTimeout(emoticonRainTimeout);
+  emoticonRain.replaceChildren();
+  const drops = document.createDocumentFragment();
+  for (let index = 0; index < 32; index += 1) {
+    const drop = document.createElement('span');
+    drop.className = 'emoticon-rain__drop';
+    drop.textContent = emoticons[index % emoticons.length];
+    drop.style.left = `${Math.random() * 100}%`;
+    drop.style.setProperty('--drift', `${Math.round((Math.random() - 0.5) * 180)}px`);
+    drop.style.setProperty('--spin', `${Math.round((Math.random() - 0.5) * 540)}deg`);
+    drop.style.setProperty('--fall-duration', `${1.7 + Math.random() * 1.3}s`);
+    drop.style.setProperty('--fall-delay', `${Math.random() * 0.5}s`);
+    drops.append(drop);
+  }
+  emoticonRain.append(drops);
+  emoticonRainTimeout = window.setTimeout(() => emoticonRain.replaceChildren(), 3800);
+}
+
 function showHomeButton() {
   backToHomeButton.hidden = false;
 }
@@ -276,6 +301,7 @@ eraseButton.onclick = async () => {
   } catch (e) {
     console.error(e);
     showFlashError(e, 'Erase failed');
+    showEraseEmoticonRain('error');
     setFlashingState(false);
     return;
   }
@@ -285,6 +311,7 @@ eraseButton.onclick = async () => {
   } catch (e) {
     console.error(e);
     showFlashError(e, 'Erase failed');
+    showEraseEmoticonRain('error');
     setFlashingState(false);
     return;
   }
@@ -294,6 +321,7 @@ eraseButton.onclick = async () => {
   await transport.setDTR(true);
   setFlashingState(false);
   setProgressMessage("Successfully erased!");
+  showEraseEmoticonRain('success');
   showHomeButton();
 }
 
