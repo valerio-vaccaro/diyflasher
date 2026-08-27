@@ -377,6 +377,33 @@
             content: "WRITING";
             animation: writing-pulse 1s ease-in-out infinite alternate;
         }
+        .progress-section { display: none; }
+        .is-flashing .firmware-grid > :not(.progress-section) { display: none; }
+        .is-flashing .progress-section { display: block; }
+        .firmware-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding: 0.9rem;
+            border: 1px solid rgba(0, 195, 255, 0.25);
+            border-radius: 8px;
+            background: rgba(0, 195, 255, 0.05);
+        }
+        .firmware-summary div { min-width: 0; }
+        .firmware-summary dt {
+            margin-bottom: 0.2rem;
+            color: var(--blkstr-muted);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .firmware-summary dd {
+            margin: 0;
+            overflow-wrap: anywhere;
+            font-size: 0.85rem;
+        }
         .emoticon-rain {
             position: fixed;
             z-index: 1100;
@@ -638,10 +665,11 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 progress-section">
                 <div class="card progress-card">
                     <div class="card-header">Flash progress</div>
                     <div class="card-body">
+                        <dl class="firmware-summary" id="firmwareSummary" aria-label="Firmware selected for flashing"></dl>
                         <div class="mb-2" id="bootloaderprogresslbl" style="display:none">
                             <label for="bootloaderprogress" class="form-label small text-muted">Bootloader</label>
                             <progress id="bootloaderprogress" value="0" max="100" class="progress w-100" style="display:none"></progress>

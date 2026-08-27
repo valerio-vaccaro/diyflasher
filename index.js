@@ -57,6 +57,7 @@ const main = document.getElementById('main');
 const successMessage = document.getElementById('success');
 const backToHomeButton = document.getElementById('backToHomeButton');
 const emoticonRain = document.getElementById('emoticonRain');
+const firmwareSummary = document.getElementById('firmwareSummary');
 let emoticonRainTimeout;
 
 function animatePickerField(selector) {
@@ -159,12 +160,31 @@ function setUpFirmwarePicker(finalSelector, picker, firmwares) {
 }
 
 function hideFirmwareControls() {
-  backToHomeButton.hidden = true;
   successMessage.textContent = '';
   successMessage.classList.remove('is-error');
-  document.querySelectorAll('.firmware-picker, .firmware-action').forEach((element) => {
-    element.style.display = 'none';
-  });
+  backToHomeButton.hidden = true;
+}
+
+function setFirmwareSummary(selector, operation = 'Flash', baudrate) {
+  const selectedOption = selector?.selectedOptions[0];
+  const details = operation === 'Erase'
+    ? [['Operation', 'Erase entire flash'], ['Connection', 'USB serial']]
+    : [
+      ['Firmware', selectedOption.text],
+      ['Version', selectedOption.dataset.firmwareVersion || 'Not specified'],
+      ['Platform', selectedOption.dataset.board || 'Not specified'],
+      ['Build', selectedOption.dataset.variants || 'Standard'],
+      ['Baud rate', `${baudrate || selectedOption.dataset.baudrate || 921600} baud`],
+    ];
+  firmwareSummary.replaceChildren(...details.map(([label, value]) => {
+    const item = document.createElement('div');
+    const term = document.createElement('dt');
+    const description = document.createElement('dd');
+    term.textContent = label;
+    description.textContent = value;
+    item.append(term, description);
+    return item;
+  }));
 }
 
 function setProgressMessage(message, isError = false) {
@@ -206,10 +226,6 @@ function showHomeButton() {
 }
 
 backToHomeButton.onclick = () => {
-  document.querySelectorAll('.firmware-picker, .firmware-action').forEach((element) => {
-    element.style.display = '';
-  });
-  eraseButton.style.display = '';
   setProgressMessage('');
   backToHomeButton.hidden = true;
   document.querySelectorAll('.progress-card [id$="progress"], .progress-card [id$="progresslbl"]').forEach((element) => {
@@ -286,8 +302,8 @@ let chip = null;
 let esploader;
 
 eraseButton.onclick = async () => {
-  eraseButton.style.display = 'none';
   hideFirmwareControls();
+  setFirmwareSummary(null, 'Erase');
   setFlashingState(true);
   if (device === null) {
     device = await navigator.serial.requestPort({});
@@ -326,8 +342,9 @@ eraseButton.onclick = async () => {
 }
 
 connectButtonJade.onclick = async () => {
-  eraseButton.style.display = 'none';
   hideFirmwareControls();
+  const baudrate = diymodelselJade.value.includes('m5stickcplus') ? 115200 : 921600;
+  setFirmwareSummary(diymodelselJade, 'Flash', baudrate);
   setFlashingState(true);
   if (device === null) {
     device = await navigator.serial.requestPort({});
@@ -343,12 +360,6 @@ connectButtonJade.onclick = async () => {
   otaprogressBarLbl.style.display = 'block';
   ptprogressBarLbl.style.display = 'block';
   firmwareprogressBarlbl.style.display = 'block';
-
-  var baudrate = 921600;
-
-  if (diymodelselJade.value.includes("m5stickcplus")) {
-      baudrate = 115200;
-  }
 
   try {
     esploader = new ESPLoader(transport, baudrate, null);
@@ -426,8 +437,8 @@ connectButtonJade.onclick = async () => {
 };
 
 async function flashRemoteFirmware(selector) {
-  eraseButton.style.display = 'none';
   hideFirmwareControls();
+  setFirmwareSummary(selector);
   setFlashingState(true);
 
   try {
