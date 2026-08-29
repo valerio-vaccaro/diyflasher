@@ -5,9 +5,9 @@
     "firmwareVersion": "0.0.1",
     "board": "ESP32-2432S028",
     "variants": [],
-    "baudrate": 115200,
-    "manualBootloader": true,
-    "useStub": false,
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
     "files": [
       {
         "address": "0x1000",
