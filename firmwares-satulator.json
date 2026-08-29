@@ -1,1 +1,36 @@
-[]
+assets/satulator/SATulator-main-cfab37cb2cb70e43042457d96fd50deb971e1451
+
+[
+  {
+    "value": "SATulator-main-cfab37cb2cb70e43042457d96fd50deb971e1451",
+    "label": "ESP32-2432S028 (0.0.1)",
+    "firmwareVersion": "0.0.1",
+    "board": "ESP32-2432S028",
+    "variants": [],
+    "baudrate": 115200,
+    "manualBootloader": true,
+    "useStub": false,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/satulator/SATulator-main-cfab37cb2cb70e43042457d96fd50deb971e1451/SATulator-esp32-2432s028-bootloader.bin",
+        "name": "SATulator-esp32-2432s028-bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/satulator/SATulator-main-cfab37cb2cb70e43042457d96fd50deb971e1451/SATulator-esp32-2432s028-partitions.bin",
+        "name": "SATulator-esp32-2432s028-partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/satulator/SATulator-main-cfab37cb2cb70e43042457d96fd50deb971e1451/SATulator-esp32-2432s028-boot_app0.bin",
+        "name": "SATulator-esp32-2432s028-boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/satulator/SATulator-main-cfab37cb2cb70e43042457d96fd50deb971e1451/SATulator-esp32-2432s028.bin",
+        "name": "SATulator-esp32-2432s028.bin"
+      }
+    ]
+  }
+]
