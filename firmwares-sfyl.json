@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "value": "sfyl-wallet-firmware-b77915ab8f125573706baea48a5b829a42fb14f9",
+    "label": "TTGO T-Watch",
+    "firmwareVersion": "0.0.1",
+    "board": "TTGO T-Watch",
+    "variants": [],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/sfyl/sfyl-wallet-firmware-b77915ab8f125573706baea48a5b829a42fb14f9/bootloader.bin",
+        "name": "bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/sfyl/sfyl-wallet-firmware-b77915ab8f125573706baea48a5b829a42fb14f9/partitions.bin",
+        "name": "partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/sfyl/sfyl-wallet-firmware-b77915ab8f125573706baea48a5b829a42fb14f9/boot_app0.bin",
+        "name": "boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/sfyl/sfyl-wallet-firmware-b77915ab8f125573706baea48a5b829a42fb14f9/firmware.bin",
+        "name": "firmware.bin"
+      }
+    ]
+  }
+]
