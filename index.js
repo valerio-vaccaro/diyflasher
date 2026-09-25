@@ -4,12 +4,20 @@ const diymodelselNerd = document.getElementById('diymodelselNerd');
 const diymodelselHan = document.getElementById('diymodelselHan');
 const diymodelselSatulator = document.getElementById('diymodelselSatulator');
 const diymodelselSfyl = document.getElementById('diymodelselSfyl');
+const diymodelselEspinserver = document.getElementById('diymodelselEspinserver');
+const diymodelselBtcp = document.getElementById('diymodelselBtcp');
+const diymodelselRetardminer = document.getElementById('diymodelselRetardminer');
+const diymodelselEasyminer = document.getElementById('diymodelselEasyminer');
 const connectButtonJade = document.getElementById('connectButtonJade');
 const connectButtonBitfloppy = document.getElementById('connectButtonBitfloppy');
 const connectButtonNerd = document.getElementById('connectButtonNerd');
 const connectButtonHan = document.getElementById('connectButtonHan');
 const connectButtonSatulator = document.getElementById('connectButtonSatulator');
 const connectButtonSfyl = document.getElementById('connectButtonSfyl');
+const connectButtonEspinserver = document.getElementById('connectButtonEspinserver');
+const connectButtonBtcp = document.getElementById('connectButtonBtcp');
+const connectButtonRetardminer = document.getElementById('connectButtonRetardminer');
+const connectButtonEasyminer = document.getElementById('connectButtonEasyminer');
 const btprogressBar = document.getElementById('bootloaderprogress');
 const btprogressBarLbl = document.getElementById('bootloaderprogresslbl');
 const otaprogressBar = document.getElementById('otaprogress');
@@ -48,10 +56,32 @@ const sfylPicker = {
   board: document.getElementById('sfylBoardSelect'),
   variant: document.getElementById('sfylVariantSelect'),
 };
+const espinserverPicker = {
+  version: document.getElementById('espinserverVersionSelect'),
+  board: document.getElementById('espinserverBoardSelect'),
+  variant: document.getElementById('espinserverVariantSelect'),
+};
+const btcpPicker = {
+  version: document.getElementById('btcpVersionSelect'),
+  board: document.getElementById('btcpBoardSelect'),
+  variant: document.getElementById('btcpVariantSelect'),
+};
+const retardminerPicker = {
+  version: document.getElementById('retardminerVersionSelect'),
+  board: document.getElementById('retardminerBoardSelect'),
+  variant: document.getElementById('retardminerVariantSelect'),
+};
+const easyminerPicker = {
+  version: document.getElementById('easyminerVersionSelect'),
+  board: document.getElementById('easyminerBoardSelect'),
+  variant: document.getElementById('easyminerVariantSelect'),
+};
 const firmwareSelectors = [
   diymodelselJade, diymodelselBitfloppy, diymodelselNerd, diymodelselHan, diymodelselSatulator, diymodelselSfyl,
+  diymodelselEspinserver, diymodelselBtcp, diymodelselRetardminer, diymodelselEasyminer,
   ...Object.values(jadePicker), ...Object.values(bitfloppyPicker), ...Object.values(nerdPicker), ...Object.values(hanPicker),
-  ...Object.values(satulatorPicker), ...Object.values(sfylPicker),
+  ...Object.values(satulatorPicker), ...Object.values(sfylPicker), ...Object.values(espinserverPicker),
+  ...Object.values(btcpPicker), ...Object.values(retardminerPicker), ...Object.values(easyminerPicker),
 ];
 const main = document.getElementById('main');
 const successMessage = document.getElementById('success');
@@ -88,7 +118,7 @@ function populateFirmwareSelector(selector, firmwares) {
     option.dataset.firmwareVersion = firmwareVersion;
     option.dataset.board = board;
     option.dataset.variants = variants.join(',');
-    if (firmware.files) {
+    if (firmware.files?.length) {
       option.dataset.firmwareFiles = JSON.stringify(firmware.files);
       option.dataset.baudrate = String(firmware.baudrate || 115200);
       option.dataset.manualBootloader = String(firmware.manualBootloader === true);
@@ -246,27 +276,39 @@ backToHomeButton.onclick = () => {
 
 async function loadFirmwareCatalog() {
   try {
-    const [jadeResponse, bitfloppyResponse, nerdResponse, hanResponse, satulatorResponse, sfylResponse] = await Promise.all([
+    const [jadeResponse, bitfloppyResponse, nerdResponse, hanResponse, satulatorResponse, sfylResponse,
+      espinserverResponse, btcpResponse, retardminerResponse, easyminerResponse] = await Promise.all([
       fetch('./firmwares-jade.json'),
       fetch('./firmwares-bitfloppy.json'),
       fetch('./firmwares-nerdminer.json'),
       fetch('./firmwares-han.json'),
       fetch('./firmwares-satulator.json'),
       fetch('./firmwares-sfyl.json'),
+      fetch('./firmwares-espinserver.json'),
+      fetch('./firmwares-btc-bp.json'),
+      fetch('./firmwares-retardminer.json'),
+      fetch('./firmwares-easyminer.json'),
     ]);
-    if (!jadeResponse.ok || !bitfloppyResponse.ok || !nerdResponse.ok || !hanResponse.ok || !satulatorResponse.ok || !sfylResponse.ok) {
+    if ([jadeResponse, bitfloppyResponse, nerdResponse, hanResponse, satulatorResponse, sfylResponse,
+      espinserverResponse, btcpResponse, retardminerResponse, easyminerResponse].some((response) => !response.ok)) {
       throw new Error('Unable to load firmware catalogs');
     }
 
-    const [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares, satulatorFirmwares, sfylFirmwares] = await Promise.all([
+    const [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares, satulatorFirmwares, sfylFirmwares,
+      espinserverFirmwares, btcpFirmwares, retardminerFirmwares, easyminerFirmwares] = await Promise.all([
       jadeResponse.json(),
       bitfloppyResponse.json(),
       nerdResponse.json(),
       hanResponse.json(),
       satulatorResponse.json(),
       sfylResponse.json(),
+      espinserverResponse.json(),
+      btcpResponse.json(),
+      retardminerResponse.json(),
+      easyminerResponse.json(),
     ]);
-    const catalogsAreValid = [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares, satulatorFirmwares, sfylFirmwares].every((firmwares) =>
+    const catalogsAreValid = [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares, satulatorFirmwares, sfylFirmwares,
+      espinserverFirmwares, btcpFirmwares, retardminerFirmwares, easyminerFirmwares].every((firmwares) =>
       Array.isArray(firmwares) && firmwares.every(({ value, label, firmwareVersion, board, variants }) =>
         typeof value === 'string' && typeof label === 'string' &&
         typeof firmwareVersion === 'string' && typeof board === 'string' && Array.isArray(variants)
@@ -283,10 +325,20 @@ async function loadFirmwareCatalog() {
       [diymodelselHan, hanPicker, hanFirmwares, connectButtonHan],
       [diymodelselSatulator, satulatorPicker, satulatorFirmwares, connectButtonSatulator],
       [diymodelselSfyl, sfylPicker, sfylFirmwares, connectButtonSfyl],
+      [diymodelselEspinserver, espinserverPicker, espinserverFirmwares, connectButtonEspinserver],
+      [diymodelselBtcp, btcpPicker, btcpFirmwares, connectButtonBtcp],
+      [diymodelselRetardminer, retardminerPicker, retardminerFirmwares, connectButtonRetardminer],
+      [diymodelselEasyminer, easyminerPicker, easyminerFirmwares, connectButtonEasyminer],
     ];
     catalogs.forEach(([selector, picker, firmwares, button]) => {
       setUpFirmwarePicker(selector, picker, firmwares);
-      button.disabled = firmwares.length === 0;
+      button.disabled = firmwares.length === 0 || firmwares.every((firmware) => !firmware.files?.length);
+      const projectLink = button.closest('.firmware-card')?.querySelector('.project-link');
+      const projectUrl = firmwares.find((firmware) => firmware.projectUrl)?.projectUrl;
+      if (projectLink && projectUrl) {
+        projectLink.href = projectUrl;
+        projectLink.hidden = false;
+      }
     });
   } catch (error) {
     console.error(error);
@@ -533,3 +585,7 @@ connectButtonNerd.onclick = () => flashRemoteFirmware(diymodelselNerd);
 connectButtonHan.onclick = () => flashRemoteFirmware(diymodelselHan);
 connectButtonSatulator.onclick = () => flashRemoteFirmware(diymodelselSatulator);
 connectButtonSfyl.onclick = () => flashRemoteFirmware(diymodelselSfyl);
+connectButtonEspinserver.onclick = () => flashRemoteFirmware(diymodelselEspinserver);
+connectButtonBtcp.onclick = () => flashRemoteFirmware(diymodelselBtcp);
+connectButtonRetardminer.onclick = () => flashRemoteFirmware(diymodelselRetardminer);
+connectButtonEasyminer.onclick = () => flashRemoteFirmware(diymodelselEasyminer);

@@ -1,0 +1,11 @@
+[
+  {
+    "value": "easyminer-source",
+    "label": "EasyMiner (source project)",
+    "firmwareVersion": "Source project",
+    "board": "ESP32",
+    "variants": ["Flash image not bundled"],
+    "projectUrl": "https://github.com/EasyMiners/EasyMiner",
+    "files": []
+  }
+]

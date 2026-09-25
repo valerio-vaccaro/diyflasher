@@ -1,0 +1,10 @@
+[
+  {
+    "value": "retardminer-source",
+    "label": "RetardMiner (source project)",
+    "firmwareVersion": "Source project",
+    "board": "ESP32",
+    "variants": ["Flash image not bundled"],
+    "files": []
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "value": "espinserver-source",
+    "label": "ESPInServer (source project)",
+    "firmwareVersion": "Source project",
+    "board": "ESP32",
+    "variants": ["Flash image not bundled"],
+    "files": []
+  }
+]
