@@ -332,7 +332,7 @@ async function loadFirmwareCatalog() {
     ];
     catalogs.forEach(([selector, picker, firmwares, button]) => {
       setUpFirmwarePicker(selector, picker, firmwares);
-      button.disabled = firmwares.length === 0 || firmwares.every((firmware) => !firmware.files?.length);
+      button.disabled = firmwares.length === 0 || (button !== connectButtonJade && firmwares.every((firmware) => !firmware.files?.length));
       const projectLink = button.closest('.firmware-card')?.querySelector('.project-link');
       const projectUrl = firmwares.find((firmware) => firmware.projectUrl)?.projectUrl;
       if (projectLink && projectUrl) {
