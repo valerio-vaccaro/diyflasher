@@ -1,10 +1,34 @@
 [
   {
-    "value": "retardminer-source",
-    "label": "RetardMiner (source project)",
-    "firmwareVersion": "Source project",
-    "board": "ESP32",
-    "variants": ["Flash image not bundled"],
-    "files": []
+    "value": "retardminer-0.0.1-esp32dev",
+    "label": "ESP32 DevKit (v0.0.1)",
+    "firmwareVersion": "v0.0.1",
+    "board": "ESP32 DevKit",
+    "variants": [],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/retardminer/0.0.1_esp32dev/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/retardminer/0.0.1_esp32dev/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/retardminer/0.0.1_esp32dev/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/retardminer/0.0.1_esp32dev/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
   }
 ]
