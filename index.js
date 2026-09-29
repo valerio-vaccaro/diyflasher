@@ -512,6 +512,15 @@ async function flashRemoteFirmware(selector) {
     const useStub = selectedOption.dataset.useStub !== 'false';
     const progressBars = [btprogressBar, ptprogressBar, otaprogressBar, firmwareprogressBar];
     const progressLabels = [btprogressBarLbl, ptprogressBarLbl, otaprogressBarLbl, firmwareprogressBarlbl];
+    const fileLabels = files.map((file, index) => {
+      if (files.length === 1) return 'Factory image';
+      const name = file.name.toLowerCase();
+      if (name.includes('bootloader')) return 'Bootloader';
+      if (name.includes('partition')) return 'Partition table';
+      if (name.includes('ota') || file.address.toLowerCase() === '0xe000') return 'OTA initial data';
+      if (name.includes('firmware') || name.endsWith('jade.bin')) return 'Firmware';
+      return `File ${index + 1}`;
+    });
 
     if (device === null) {
       device = await navigator.serial.requestPort({});
@@ -521,11 +530,9 @@ async function flashRemoteFirmware(selector) {
     progressBars.forEach((progressBar, index) => {
       const isUsed = index < files.length;
       progressBar.style.display = isUsed ? 'block' : 'none';
-      progressLabels[index].style.display = isUsed ? 'block' : 'none';
+        progressLabels[index].style.display = isUsed ? 'block' : 'none';
       if (isUsed) {
-        progressLabels[index].querySelector('label').textContent = files.length === 1
-          ? 'Factory image'
-          : ['Bootloader', 'Partition table', 'OTA initial data', 'Firmware'][index];
+        progressLabels[index].querySelector('label').textContent = fileLabels[index];
       }
       progressBar.value = 0;
     });
