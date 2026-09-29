@@ -1,5 +1,101 @@
 [
   {
+    "value": "espinserver-0.0.8-esp32-s3-devkitc-1",
+    "label": "ESP32-S3-DevKitC-1 (v0.0.8)",
+    "firmwareVersion": "v0.0.8",
+    "board": "ESP32-S3-DevKitC-1",
+    "variants": [],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/espinserver/0.0.8_esp32-s3-devkitc-1/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/espinserver/0.0.8_esp32-s3-devkitc-1/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/espinserver/0.0.8_esp32-s3-devkitc-1/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/espinserver/0.0.8_esp32-s3-devkitc-1/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "espinserver-0.0.8-esp32dev",
+    "label": "ESP32 DevKit (v0.0.8)",
+    "firmwareVersion": "v0.0.8",
+    "board": "ESP32 DevKit",
+    "variants": [],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/espinserver/0.0.8_esp32dev/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/espinserver/0.0.8_esp32dev/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/espinserver/0.0.8_esp32dev/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/espinserver/0.0.8_esp32dev/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "espinserver-0.0.8-t-dongle-s3",
+    "label": "T-Dongle S3 (v0.0.8)",
+    "firmwareVersion": "v0.0.8",
+    "board": "T-Dongle S3",
+    "variants": [],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/espinserver/0.0.8_t-dongle-s3/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/espinserver/0.0.8_t-dongle-s3/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/espinserver/0.0.8_t-dongle-s3/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/espinserver/0.0.8_t-dongle-s3/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
     "value": "espinserver-0.0.7-esp32-s3-devkitc-1",
     "label": "ESP32-S3-DevKitC-1 (v0.0.7)",
     "firmwareVersion": "v0.0.7",
