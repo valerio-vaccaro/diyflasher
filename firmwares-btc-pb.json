@@ -1,7 +1,7 @@
 [
   {
-    "value": "btc-bp-source",
-    "label": "BTC-BP (source project)",
+    "value": "btc-pb-source",
+    "label": "BTC-PB (source project)",
     "firmwareVersion": "Source project",
     "board": "ESP32",
     "variants": ["Flash image not bundled"],

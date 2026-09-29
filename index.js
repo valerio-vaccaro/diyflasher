@@ -285,7 +285,7 @@ async function loadFirmwareCatalog() {
       fetch('./firmwares-satulator.json'),
       fetch('./firmwares-sfyl.json'),
       fetch('./firmwares-espinserver.json'),
-      fetch('./firmwares-btc-bp.json'),
+      fetch('./firmwares-btc-pb.json'),
       fetch('./firmwares-retardminer.json'),
       fetch('./firmwares-easyminer.json'),
     ]);
