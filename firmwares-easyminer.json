@@ -1,5 +1,656 @@
 [
   {
+    "value": "easyminer-0.1.0-esp32-headless",
+    "label": "ESP32 - Headless (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-headless",
+    "label": "ESP32-S3 - Headless (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3",
+    "variants": [
+      "Headless"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-led",
+    "label": "ESP32 - Headless + LED (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "LED"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-mini-headless",
+    "label": "ESP32-S3 Mini - Headless (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3 Mini",
+    "variants": [
+      "Headless"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-blox",
+    "label": "ESP32 - Headless + Blox (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "Blox"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-blox/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-blox/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-blox/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-blox/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-headless-blox",
+    "label": "ESP32-S3 - Headless + Blox (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3",
+    "variants": [
+      "Headless",
+      "Blox"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-blox/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-blox/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-blox/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-led-blox",
+    "label": "ESP32 - Headless + LED + Blox (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "LED",
+      "Blox"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-blox/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-blox/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-blox/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-blox/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-mini-headless-blox",
+    "label": "ESP32-S3 Mini - Headless + Blox (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3 Mini",
+    "variants": [
+      "Headless",
+      "Blox"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-blox/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-blox/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-blox/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-officinebitcoin",
+    "label": "ESP32 - Headless + OfficineBitcoin (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "OfficineBitcoin"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-officinebitcoin/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-officinebitcoin/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-officinebitcoin/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-officinebitcoin/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-headless-officinebitcoin",
+    "label": "ESP32-S3 - Headless + OfficineBitcoin (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3",
+    "variants": [
+      "Headless",
+      "OfficineBitcoin"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-officinebitcoin/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-officinebitcoin/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-officinebitcoin/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-led-officinebitcoin",
+    "label": "ESP32 - Headless + LED + OfficineBitcoin (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "LED",
+      "OfficineBitcoin"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-officinebitcoin/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-officinebitcoin/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-officinebitcoin/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-officinebitcoin/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-mini-headless-officinebitcoin",
+    "label": "ESP32-S3 Mini - Headless + OfficineBitcoin (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3 Mini",
+    "variants": [
+      "Headless",
+      "OfficineBitcoin"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-officinebitcoin/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-officinebitcoin/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-officinebitcoin/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-satoshispritz",
+    "label": "ESP32 - Headless + SatoshiSpritz (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "SatoshiSpritz"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-satoshispritz/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-satoshispritz/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-satoshispritz/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-satoshispritz/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-headless-satoshispritz",
+    "label": "ESP32-S3 - Headless + SatoshiSpritz (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3",
+    "variants": [
+      "Headless",
+      "SatoshiSpritz"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-satoshispritz/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-satoshispritz/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-satoshispritz/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-led-satoshispritz",
+    "label": "ESP32 - Headless + LED + SatoshiSpritz (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "LED",
+      "SatoshiSpritz"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-satoshispritz/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-satoshispritz/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-satoshispritz/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-satoshispritz/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-mini-headless-satoshispritz",
+    "label": "ESP32-S3 Mini - Headless + SatoshiSpritz (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3 Mini",
+    "variants": [
+      "Headless",
+      "SatoshiSpritz"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-satoshispritz/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-satoshispritz/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-satoshispritz/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-sbamminer",
+    "label": "ESP32 - Headless + SBAMminer (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "SBAMminer"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-sbamminer/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-sbamminer/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-sbamminer/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-sbamminer/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-headless-sbamminer",
+    "label": "ESP32-S3 - Headless + SBAMminer (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3",
+    "variants": [
+      "Headless",
+      "SBAMminer"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-sbamminer/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-sbamminer/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-headless-sbamminer/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32-headless-led-sbamminer",
+    "label": "ESP32 - Headless + LED + SBAMminer (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32",
+    "variants": [
+      "Headless",
+      "LED",
+      "SBAMminer"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-sbamminer/0x1000_bootloader.bin",
+        "name": "0x1000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-sbamminer/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-sbamminer/0xE000_boot_app0.bin",
+        "name": "0xE000_boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32-headless-led-sbamminer/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "easyminer-0.1.0-esp32s3-mini-headless-sbamminer",
+    "label": "ESP32-S3 Mini - Headless + SBAMminer (0.1.0)",
+    "firmwareVersion": "0.1.0",
+    "board": "ESP32-S3 Mini",
+    "variants": [
+      "Headless",
+      "SBAMminer"
+    ],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-sbamminer/0x0000_bootloader.bin",
+        "name": "0x0000_bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-sbamminer/0x8000_partitions.bin",
+        "name": "0x8000_partitions.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/easyminer/0.1.0_esp32s3-mini-headless-sbamminer/0x10000_firmware.bin",
+        "name": "0x10000_firmware.bin"
+      }
+    ]
+  },
+  {
     "value": "easyminer-0.0.12-esp32-headless",
     "label": "ESP32 - Headless (0.0.12)",
     "firmwareVersion": "0.0.12",
