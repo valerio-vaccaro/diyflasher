@@ -8,6 +8,8 @@ const diymodelselEspinserver = document.getElementById('diymodelselEspinserver')
 const diymodelselBtcp = document.getElementById('diymodelselBtcp');
 const diymodelselRetardminer = document.getElementById('diymodelselRetardminer');
 const diymodelselEasyminer = document.getElementById('diymodelselEasyminer');
+const diymodelselSertun32 = document.getElementById('diymodelselSertun32');
+const diymodelselMouse64 = document.getElementById('diymodelselMouse64');
 const connectButtonJade = document.getElementById('connectButtonJade');
 const connectButtonBitfloppy = document.getElementById('connectButtonBitfloppy');
 const connectButtonNerd = document.getElementById('connectButtonNerd');
@@ -18,6 +20,8 @@ const connectButtonEspinserver = document.getElementById('connectButtonEspinserv
 const connectButtonBtcp = document.getElementById('connectButtonBtcp');
 const connectButtonRetardminer = document.getElementById('connectButtonRetardminer');
 const connectButtonEasyminer = document.getElementById('connectButtonEasyminer');
+const connectButtonSertun32 = document.getElementById('connectButtonSertun32');
+const connectButtonMouse64 = document.getElementById('connectButtonMouse64');
 const btprogressBar = document.getElementById('bootloaderprogress');
 const btprogressBarLbl = document.getElementById('bootloaderprogresslbl');
 const otaprogressBar = document.getElementById('otaprogress');
@@ -76,12 +80,24 @@ const easyminerPicker = {
   board: document.getElementById('easyminerBoardSelect'),
   variant: document.getElementById('easyminerVariantSelect'),
 };
+const sertun32Picker = {
+  version: document.getElementById('sertun32VersionSelect'),
+  board: document.getElementById('sertun32BoardSelect'),
+  variant: document.getElementById('sertun32VariantSelect'),
+};
+const mouse64Picker = {
+  version: document.getElementById('mouse64VersionSelect'),
+  board: document.getElementById('mouse64BoardSelect'),
+  variant: document.getElementById('mouse64VariantSelect'),
+};
 const firmwareSelectors = [
   diymodelselJade, diymodelselBitfloppy, diymodelselNerd, diymodelselHan, diymodelselSatulator, diymodelselSfyl,
   diymodelselEspinserver, diymodelselBtcp, diymodelselRetardminer, diymodelselEasyminer,
+  diymodelselSertun32, diymodelselMouse64,
   ...Object.values(jadePicker), ...Object.values(bitfloppyPicker), ...Object.values(nerdPicker), ...Object.values(hanPicker),
   ...Object.values(satulatorPicker), ...Object.values(sfylPicker), ...Object.values(espinserverPicker),
   ...Object.values(btcpPicker), ...Object.values(retardminerPicker), ...Object.values(easyminerPicker),
+  ...Object.values(sertun32Picker), ...Object.values(mouse64Picker),
 ];
 const main = document.getElementById('main');
 const successMessage = document.getElementById('success');
@@ -158,6 +174,14 @@ function variantLabel(firmware) {
 
 function setUpFirmwarePicker(finalSelector, picker, firmwares) {
   populateFirmwareSelector(finalSelector, firmwares);
+  if (firmwares.length === 0) {
+    picker.version.replaceChildren(new Option('No releases available', ''));
+    picker.board.replaceChildren(new Option('No boards available', ''));
+    picker.version.disabled = true;
+    picker.board.disabled = true;
+    picker.variant.closest('.variant-field').classList.add('d-none');
+    return;
+  }
   const versions = unique(firmwares.map(({ firmwareVersion }) => firmwareVersion));
   populateChoices(picker.version, versions.map((version) => ({ value: version, label: version })));
 
@@ -277,7 +301,8 @@ backToHomeButton.onclick = () => {
 async function loadFirmwareCatalog() {
   try {
     const [jadeResponse, bitfloppyResponse, nerdResponse, hanResponse, satulatorResponse, sfylResponse,
-      espinserverResponse, btcpResponse, retardminerResponse, easyminerResponse] = await Promise.all([
+      espinserverResponse, btcpResponse, retardminerResponse, easyminerResponse,
+      sertun32Response, mouse64Response] = await Promise.all([
       fetch('./firmwares-jade.json'),
       fetch('./firmwares-bitfloppy.json'),
       fetch('./firmwares-nerdminer.json'),
@@ -288,14 +313,18 @@ async function loadFirmwareCatalog() {
       fetch('./firmwares-btc-pb.json'),
       fetch('./firmwares-retardminer.json'),
       fetch('./firmwares-easyminer.json'),
+      fetch('./firmwares-sertun32.json'),
+      fetch('./firmwares-mouse64.json'),
     ]);
     if ([jadeResponse, bitfloppyResponse, nerdResponse, hanResponse, satulatorResponse, sfylResponse,
-      espinserverResponse, btcpResponse, retardminerResponse, easyminerResponse].some((response) => !response.ok)) {
+      espinserverResponse, btcpResponse, retardminerResponse, easyminerResponse,
+      sertun32Response, mouse64Response].some((response) => !response.ok)) {
       throw new Error('Unable to load firmware catalogs');
     }
 
     const [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares, satulatorFirmwares, sfylFirmwares,
-      espinserverFirmwares, btcpFirmwares, retardminerFirmwares, easyminerFirmwares] = await Promise.all([
+      espinserverFirmwares, btcpFirmwares, retardminerFirmwares, easyminerFirmwares,
+      sertun32Firmwares, mouse64Firmwares] = await Promise.all([
       jadeResponse.json(),
       bitfloppyResponse.json(),
       nerdResponse.json(),
@@ -306,9 +335,12 @@ async function loadFirmwareCatalog() {
       btcpResponse.json(),
       retardminerResponse.json(),
       easyminerResponse.json(),
+      sertun32Response.json(),
+      mouse64Response.json(),
     ]);
     const catalogsAreValid = [jadeFirmwares, bitfloppyFirmwares, nerdFirmwares, hanFirmwares, satulatorFirmwares, sfylFirmwares,
-      espinserverFirmwares, btcpFirmwares, retardminerFirmwares, easyminerFirmwares].every((firmwares) =>
+      espinserverFirmwares, btcpFirmwares, retardminerFirmwares, easyminerFirmwares,
+      sertun32Firmwares, mouse64Firmwares].every((firmwares) =>
       Array.isArray(firmwares) && firmwares.every(({ value, label, firmwareVersion, board, variants }) =>
         typeof value === 'string' && typeof label === 'string' &&
         typeof firmwareVersion === 'string' && typeof board === 'string' && Array.isArray(variants)
@@ -329,6 +361,8 @@ async function loadFirmwareCatalog() {
       [diymodelselBtcp, btcpPicker, btcpFirmwares, connectButtonBtcp],
       [diymodelselRetardminer, retardminerPicker, retardminerFirmwares, connectButtonRetardminer],
       [diymodelselEasyminer, easyminerPicker, easyminerFirmwares, connectButtonEasyminer],
+      [diymodelselSertun32, sertun32Picker, sertun32Firmwares, connectButtonSertun32],
+      [diymodelselMouse64, mouse64Picker, mouse64Firmwares, connectButtonMouse64],
     ];
     catalogs.forEach(([selector, picker, firmwares, button]) => {
       setUpFirmwarePicker(selector, picker, firmwares);
@@ -596,3 +630,5 @@ connectButtonEspinserver.onclick = () => flashRemoteFirmware(diymodelselEspinser
 connectButtonBtcp.onclick = () => flashRemoteFirmware(diymodelselBtcp);
 connectButtonRetardminer.onclick = () => flashRemoteFirmware(diymodelselRetardminer);
 connectButtonEasyminer.onclick = () => flashRemoteFirmware(diymodelselEasyminer);
+connectButtonSertun32.onclick = () => flashRemoteFirmware(diymodelselSertun32);
+connectButtonMouse64.onclick = () => flashRemoteFirmware(diymodelselMouse64);

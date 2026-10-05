@@ -1,0 +1,68 @@
+[
+  {
+    "value": "1.3.0_lilygo-t-display-s3",
+    "label": "LilyGo T-Display S3 (1.3.0)",
+    "firmwareVersion": "1.3.0",
+    "board": "LilyGo T-Display S3",
+    "variants": [],
+    "baudrate": 115200,
+    "manualBootloader": true,
+    "useStub": false,
+    "projectUrl": "https://github.com/valerio-vaccaro/SerTun32",
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/sertun32/1.3.0_lilygo-t-display-s3/bootloader.bin",
+        "name": "bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/sertun32/1.3.0_lilygo-t-display-s3/partitions.bin",
+        "name": "partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/sertun32/1.3.0_lilygo-t-display-s3/boot_app0.bin",
+        "name": "boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/sertun32/1.3.0_lilygo-t-display-s3/firmware.bin",
+        "name": "firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "1.3.0_lilygo-t-display",
+    "label": "LilyGo T-Display (1.3.0)",
+    "firmwareVersion": "1.3.0",
+    "board": "LilyGo T-Display",
+    "variants": [],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "projectUrl": "https://github.com/valerio-vaccaro/SerTun32",
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/sertun32/1.3.0_lilygo-t-display/bootloader.bin",
+        "name": "bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/sertun32/1.3.0_lilygo-t-display/partitions.bin",
+        "name": "partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/sertun32/1.3.0_lilygo-t-display/boot_app0.bin",
+        "name": "boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/sertun32/1.3.0_lilygo-t-display/firmware.bin",
+        "name": "firmware.bin"
+      }
+    ]
+  }
+]

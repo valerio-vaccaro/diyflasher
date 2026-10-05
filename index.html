@@ -712,6 +712,40 @@
                 </div>
             </div>
 
+            <div class="col-lg-6">
+                <div class="card firmware-card h-100">
+                    <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/sertun32.png" alt="" />SerTun32 firmware</span></div>
+                    <div class="card-body">
+                        <p class="card-hint">Choose a SerTun32 release and the matching board.</p>
+                        <div class="firmware-picker" id="sertun32Picker">
+                            <div><label for="sertun32VersionSelect">Version</label><select id="sertun32VersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                            <div><label for="sertun32BoardSelect">Board</label><select id="sertun32BoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                            <div class="variant-field"><label for="sertun32VariantSelect">Build</label><select id="sertun32VariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                        </div>
+                        <select id="diymodelselSertun32" class="d-none" aria-hidden="true" tabindex="-1"></select>
+                        <a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a>
+                        <div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonSertun32" value="Flash" disabled /></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card firmware-card h-100">
+                    <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/mouse64.png" alt="" />Mouse64 firmware</span></div>
+                    <div class="card-body">
+                        <p class="card-hint">Choose a Mouse64 release and the matching board.</p>
+                        <div class="firmware-picker" id="mouse64Picker">
+                            <div><label for="mouse64VersionSelect">Version</label><select id="mouse64VersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                            <div><label for="mouse64BoardSelect">Board</label><select id="mouse64BoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                            <div class="variant-field"><label for="mouse64VariantSelect">Build</label><select id="mouse64VariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                        </div>
+                        <select id="diymodelselMouse64" class="d-none" aria-hidden="true" tabindex="-1"></select>
+                        <a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a>
+                        <div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonMouse64" value="Flash" disabled /></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-12 progress-section">
                 <div class="card progress-card">
                     <div class="card-header">Flash progress</div>
