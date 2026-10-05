@@ -746,6 +746,40 @@
                 </div>
             </div>
 
+            <div class="col-lg-6">
+                <div class="card firmware-card h-100">
+                    <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/nostr-pager.png" alt="" />Nostr Pager firmware</span></div>
+                    <div class="card-body">
+                        <p class="card-hint">Choose a Nostr Pager release and the matching board.</p>
+                        <div class="firmware-picker" id="nostrPagerPicker">
+                            <div><label for="nostrPagerVersionSelect">Version</label><select id="nostrPagerVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                            <div><label for="nostrPagerBoardSelect">Board</label><select id="nostrPagerBoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                            <div class="variant-field"><label for="nostrPagerVariantSelect">Build</label><select id="nostrPagerVariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                        </div>
+                        <select id="diymodelselNostrPager" class="d-none" aria-hidden="true" tabindex="-1"></select>
+                        <a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a>
+                        <div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonNostrPager" value="Flash" disabled /></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card firmware-card h-100">
+                    <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/tovarish-satoshi.png" alt="" />TovarishSatoshi firmware</span></div>
+                    <div class="card-body">
+                        <p class="card-hint">No TovarishSatoshi firmware builds are available yet.</p>
+                        <div class="firmware-picker" id="tovarishSatoshiPicker">
+                            <div><label for="tovarishSatoshiVersionSelect">Version</label><select id="tovarishSatoshiVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                            <div><label for="tovarishSatoshiBoardSelect">Board</label><select id="tovarishSatoshiBoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                            <div class="variant-field"><label for="tovarishSatoshiVariantSelect">Build</label><select id="tovarishSatoshiVariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
+                        </div>
+                        <select id="diymodelselTovarishSatoshi" class="d-none" aria-hidden="true" tabindex="-1"></select>
+                        <a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a>
+                        <div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonTovarishSatoshi" value="Flash" disabled /></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-12 progress-section">
                 <div class="card progress-card">
                     <div class="card-header">Flash progress</div>

@@ -1,0 +1,34 @@
+[
+  {
+    "value": "0.0.1_JC3248W535C_I_Y",
+    "label": "JC3248W535C_I_Y (0.0.1)",
+    "firmwareVersion": "0.0.1",
+    "board": "JC3248W535C_I_Y",
+    "variants": [],
+    "baudrate": 460800,
+    "manualBootloader": false,
+    "useStub": true,
+    "files": [
+      {
+        "address": "0x0",
+        "url": "assets/nostr-pager/0.0.1_JC3248W535C_I_Y/bootloader.bin",
+        "name": "bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/nostr-pager/0.0.1_JC3248W535C_I_Y/partitions.bin",
+        "name": "partitions.bin"
+      },
+      {
+        "address": "0xe000",
+        "url": "assets/nostr-pager/0.0.1_JC3248W535C_I_Y/boot_app0.bin",
+        "name": "boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/nostr-pager/0.0.1_JC3248W535C_I_Y/firmware.bin",
+        "name": "firmware.bin"
+      }
+    ]
+  }
+]
