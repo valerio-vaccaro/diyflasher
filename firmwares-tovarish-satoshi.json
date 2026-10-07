@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "value": "0.0.1_esp32dev",
+    "label": "ESP32 DevKit (0.0.1)",
+    "firmwareVersion": "0.0.1",
+    "board": "esp32dev",
+    "variants": [],
+    "baudrate": 115200,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/tovarish-satoshi/0.0.1_esp32dev/bootloader.bin",
+        "name": "bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/tovarish-satoshi/0.0.1_esp32dev/partitions.bin",
+        "name": "partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/tovarish-satoshi/0.0.1_esp32dev/boot_app0.bin",
+        "name": "boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/tovarish-satoshi/0.0.1_esp32dev/firmware.bin",
+        "name": "firmware.bin"
+      }
+    ]
+  },
+  {
+    "value": "0.0.1_wemos_d1_uno32",
+    "label": "Wemos D1 UNO32 (0.0.1)",
+    "firmwareVersion": "0.0.1",
+    "board": "wemos_d1_uno32",
+    "variants": [],
+    "baudrate": 115200,
+    "files": [
+      {
+        "address": "0x1000",
+        "url": "assets/tovarish-satoshi/0.0.1_wemos_d1_uno32/bootloader.bin",
+        "name": "bootloader.bin"
+      },
+      {
+        "address": "0x8000",
+        "url": "assets/tovarish-satoshi/0.0.1_wemos_d1_uno32/partitions.bin",
+        "name": "partitions.bin"
+      },
+      {
+        "address": "0xE000",
+        "url": "assets/tovarish-satoshi/0.0.1_wemos_d1_uno32/boot_app0.bin",
+        "name": "boot_app0.bin"
+      },
+      {
+        "address": "0x10000",
+        "url": "assets/tovarish-satoshi/0.0.1_wemos_d1_uno32/firmware.bin",
+        "name": "firmware.bin"
+      }
+    ]
+  }
+]
