@@ -2,6 +2,7 @@
   {
     "value": "0.1.0_lolin_s2_mini",
     "label": "Lolin S2 Mini (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/Mouse64",
     "firmwareVersion": "0.1.0",
     "board": "Lolin S2 Mini",
     "variants": [],

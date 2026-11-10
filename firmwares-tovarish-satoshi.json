@@ -2,6 +2,7 @@
   {
     "value": "0.0.1_esp32dev",
     "label": "ESP32 DevKit (0.0.1)",
+    "projectUrl": "https://github.com/valerio-vaccaro/TovarishSatoshi",
     "firmwareVersion": "0.0.1",
     "board": "esp32dev",
     "variants": [],
@@ -32,6 +33,7 @@
   {
     "value": "0.0.1_wemos_d1_uno32",
     "label": "Wemos D1 UNO32 (0.0.1)",
+    "projectUrl": "https://github.com/valerio-vaccaro/TovarishSatoshi",
     "firmwareVersion": "0.0.1",
     "board": "wemos_d1_uno32",
     "variants": [],

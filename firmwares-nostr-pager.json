@@ -2,6 +2,7 @@
   {
     "value": "0.0.1_JC3248W535C_I_Y",
     "label": "JC3248W535C_I_Y (0.0.1)",
+    "projectUrl": "https://github.com/valerio-vaccaro/nostr-pager",
     "firmwareVersion": "0.0.1",
     "board": "JC3248W535C_I_Y",
     "variants": [],

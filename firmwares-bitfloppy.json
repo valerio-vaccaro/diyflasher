@@ -2,6 +2,7 @@
   {
     "value": "bitfloppy-0.0.1-lolin-s2-mini",
     "label": "Lolin S2 Mini (v0.0.1)",
+    "projectUrl": "https://github.com/valerio-vaccaro/bitfloppy",
     "firmwareVersion": "v0.0.1",
     "board": "Lolin S2 Mini",
     "variants": [],

@@ -2,6 +2,7 @@
   {
     "value": "SATulator-main-cfab37cb2cb70e43042457d96fd50deb971e1451",
     "label": "ESP32-2432S028 (0.0.1)",
+    "projectUrl": "https://github.com/valerio-vaccaro/SATulator",
     "firmwareVersion": "0.0.1",
     "board": "ESP32-2432S028",
     "variants": [],

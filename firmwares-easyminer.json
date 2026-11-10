@@ -2,6 +2,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless",
     "label": "ESP32 - Headless (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -36,6 +37,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-headless",
     "label": "ESP32-S3 - Headless (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3",
     "variants": [
@@ -65,6 +67,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-led",
     "label": "ESP32 - Headless + LED (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -100,6 +103,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-mini-headless",
     "label": "ESP32-S3 Mini - Headless (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3 Mini",
     "variants": [
@@ -129,6 +133,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-blox",
     "label": "ESP32 - Headless + Blox (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -164,6 +169,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-headless-blox",
     "label": "ESP32-S3 - Headless + Blox (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3",
     "variants": [
@@ -194,6 +200,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-led-blox",
     "label": "ESP32 - Headless + LED + Blox (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -230,6 +237,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-mini-headless-blox",
     "label": "ESP32-S3 Mini - Headless + Blox (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3 Mini",
     "variants": [
@@ -260,6 +268,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-officinebitcoin",
     "label": "ESP32 - Headless + OfficineBitcoin (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -295,6 +304,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-headless-officinebitcoin",
     "label": "ESP32-S3 - Headless + OfficineBitcoin (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3",
     "variants": [
@@ -325,6 +335,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-led-officinebitcoin",
     "label": "ESP32 - Headless + LED + OfficineBitcoin (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -361,6 +372,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-mini-headless-officinebitcoin",
     "label": "ESP32-S3 Mini - Headless + OfficineBitcoin (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3 Mini",
     "variants": [
@@ -391,6 +403,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-satoshispritz",
     "label": "ESP32 - Headless + SatoshiSpritz (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -426,6 +439,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-headless-satoshispritz",
     "label": "ESP32-S3 - Headless + SatoshiSpritz (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3",
     "variants": [
@@ -456,6 +470,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-led-satoshispritz",
     "label": "ESP32 - Headless + LED + SatoshiSpritz (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -492,6 +507,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-mini-headless-satoshispritz",
     "label": "ESP32-S3 Mini - Headless + SatoshiSpritz (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3 Mini",
     "variants": [
@@ -522,6 +538,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-sbamminer",
     "label": "ESP32 - Headless + SBAMminer (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -557,6 +574,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-headless-sbamminer",
     "label": "ESP32-S3 - Headless + SBAMminer (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3",
     "variants": [
@@ -587,6 +605,7 @@
   {
     "value": "easyminer-0.1.0-esp32-headless-led-sbamminer",
     "label": "ESP32 - Headless + LED + SBAMminer (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32",
     "variants": [
@@ -623,6 +642,7 @@
   {
     "value": "easyminer-0.1.0-esp32s3-mini-headless-sbamminer",
     "label": "ESP32-S3 Mini - Headless + SBAMminer (0.1.0)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.1.0",
     "board": "ESP32-S3 Mini",
     "variants": [
@@ -653,6 +673,7 @@
   {
     "value": "easyminer-0.0.12-esp32-headless",
     "label": "ESP32 - Headless (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32",
     "variants": [
@@ -687,6 +708,7 @@
   {
     "value": "easyminer-0.0.12-esp32s3-headless",
     "label": "ESP32-S3 - Headless (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32-S3",
     "variants": [
@@ -716,6 +738,7 @@
   {
     "value": "easyminer-0.0.12-esp32-headless-led",
     "label": "ESP32 - Headless + LED (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32",
     "variants": [
@@ -751,6 +774,7 @@
   {
     "value": "easyminer-0.0.12-esp32s3-mini-headless",
     "label": "ESP32-S3 Mini - Headless (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32-S3 Mini",
     "variants": [
@@ -780,6 +804,7 @@
   {
     "value": "easyminer-0.0.12-esp32-headless-blox",
     "label": "ESP32 - Headless + Blox (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32",
     "variants": [
@@ -815,6 +840,7 @@
   {
     "value": "easyminer-0.0.12-esp32s3-headless-blox",
     "label": "ESP32-S3 - Headless + Blox (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32-S3",
     "variants": [
@@ -845,6 +871,7 @@
   {
     "value": "easyminer-0.0.12-esp32-headless-led-blox",
     "label": "ESP32 - Headless + LED + Blox (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32",
     "variants": [
@@ -881,6 +908,7 @@
   {
     "value": "easyminer-0.0.12-esp32s3-mini-headless-blox",
     "label": "ESP32-S3 Mini - Headless + Blox (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32-S3 Mini",
     "variants": [
@@ -911,6 +939,7 @@
   {
     "value": "easyminer-0.0.12-esp32-headless-officinebitcoin",
     "label": "ESP32 - Headless + OfficineBitcoin (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32",
     "variants": [
@@ -946,6 +975,7 @@
   {
     "value": "easyminer-0.0.12-esp32s3-headless-officinebitcoin",
     "label": "ESP32-S3 - Headless + OfficineBitcoin (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32-S3",
     "variants": [
@@ -976,6 +1006,7 @@
   {
     "value": "easyminer-0.0.12-esp32-headless-led-officinebitcoin",
     "label": "ESP32 - Headless + LED + OfficineBitcoin (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32",
     "variants": [
@@ -1012,6 +1043,7 @@
   {
     "value": "easyminer-0.0.12-esp32s3-mini-headless-officinebitcoin",
     "label": "ESP32-S3 Mini - Headless + OfficineBitcoin (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32-S3 Mini",
     "variants": [
@@ -1042,6 +1074,7 @@
   {
     "value": "easyminer-0.0.12-esp32-headless-satoshispritz",
     "label": "ESP32 - Headless + SatoshiSpritz (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32",
     "variants": [
@@ -1077,6 +1110,7 @@
   {
     "value": "easyminer-0.0.12-esp32s3-headless-satoshispritz",
     "label": "ESP32-S3 - Headless + SatoshiSpritz (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32-S3",
     "variants": [
@@ -1107,6 +1141,7 @@
   {
     "value": "easyminer-0.0.12-esp32-headless-led-satoshispritz",
     "label": "ESP32 - Headless + LED + SatoshiSpritz (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32",
     "variants": [
@@ -1143,6 +1178,7 @@
   {
     "value": "easyminer-0.0.12-esp32s3-mini-headless-satoshispritz",
     "label": "ESP32-S3 Mini - Headless + SatoshiSpritz (0.0.12)",
+    "projectUrl": "https://github.com/valerio-vaccaro/EasyMiner",
     "firmwareVersion": "0.0.12",
     "board": "ESP32-S3 Mini",
     "variants": [

@@ -2,6 +2,7 @@
   {
     "value": "sfyl-wallet-firmware-b77915ab8f125573706baea48a5b829a42fb14f9",
     "label": "TTGO T-Watch",
+    "projectUrl": "https://github.com/valerio-vaccaro/SFYL-Wallet",
     "firmwareVersion": "0.0.1",
     "board": "TTGO T-Watch",
     "variants": [],

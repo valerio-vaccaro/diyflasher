@@ -2,6 +2,7 @@
   {
     "value": "espinserver-0.0.8-esp32-s3-devkitc-1",
     "label": "ESP32-S3-DevKitC-1 (v0.0.8)",
+    "projectUrl": "https://github.com/valerio-vaccaro/ESPinServer",
     "firmwareVersion": "v0.0.8",
     "board": "ESP32-S3-DevKitC-1",
     "variants": [],
@@ -34,6 +35,7 @@
   {
     "value": "espinserver-0.0.8-esp32dev",
     "label": "ESP32 DevKit (v0.0.8)",
+    "projectUrl": "https://github.com/valerio-vaccaro/ESPinServer",
     "firmwareVersion": "v0.0.8",
     "board": "ESP32 DevKit",
     "variants": [],
@@ -66,6 +68,7 @@
   {
     "value": "espinserver-0.0.8-t-dongle-s3",
     "label": "T-Dongle S3 (v0.0.8)",
+    "projectUrl": "https://github.com/valerio-vaccaro/ESPinServer",
     "firmwareVersion": "v0.0.8",
     "board": "T-Dongle S3",
     "variants": [],
@@ -98,6 +101,7 @@
   {
     "value": "espinserver-0.0.7-esp32-s3-devkitc-1",
     "label": "ESP32-S3-DevKitC-1 (v0.0.7)",
+    "projectUrl": "https://github.com/valerio-vaccaro/ESPinServer",
     "firmwareVersion": "v0.0.7",
     "board": "ESP32-S3-DevKitC-1",
     "variants": [],
@@ -130,6 +134,7 @@
   {
     "value": "espinserver-0.0.7-esp32dev",
     "label": "ESP32 DevKit (v0.0.7)",
+    "projectUrl": "https://github.com/valerio-vaccaro/ESPinServer",
     "firmwareVersion": "v0.0.7",
     "board": "ESP32 DevKit",
     "variants": [],
@@ -162,6 +167,7 @@
   {
     "value": "espinserver-0.0.7-t-dongle-s3",
     "label": "T-Dongle S3 (v0.0.7)",
+    "projectUrl": "https://github.com/valerio-vaccaro/ESPinServer",
     "firmwareVersion": "v0.0.7",
     "board": "T-Dongle S3",
     "variants": [],

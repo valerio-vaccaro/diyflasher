@@ -2,6 +2,7 @@
   {
     "value": "retardminer-0.0.1-esp32dev",
     "label": "ESP32 DevKit (v0.0.1)",
+    "projectUrl": "https://github.com/valerio-vaccaro/retardminer.com",
     "firmwareVersion": "v0.0.1",
     "board": "ESP32 DevKit",
     "variants": [],

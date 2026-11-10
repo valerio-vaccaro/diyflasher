@@ -235,6 +235,95 @@ function setUpFirmwarePicker(finalSelector, picker, firmwares) {
   updateBoards();
 }
 
+const projectDetails = {
+  diymodelselJade: {
+    description: 'Blockstream Jade firmware with DIY board builds for compatible ESP32 devices.',
+    license: 'GPL-3.0 for the collection; some components have their own licenses.',
+  },
+  diymodelselBitfloppy: {
+    description: 'Offline Bitcoin signing firmware for the Lolin S2 Mini, with a file-based PSBT workflow.',
+    license: 'Not verified.',
+  },
+  diymodelselNerd: {
+    description: 'Educational Bitcoin solo-mining firmware for ESP32 boards.',
+    license: 'MIT.',
+  },
+  diymodelselHan: {
+    description: 'HAN SOLOminer is an educational Bitcoin mining project; its work continued in NerdMiner V2.',
+    license: 'MIT (NerdMiner V2 repository).',
+  },
+  diymodelselSatulator: {
+    description: 'Bitcoin-themed firmware for the ESP32-2432S028 display board.',
+    license: 'Not verified.',
+  },
+  diymodelselSfyl: {
+    description: 'DIY Bitcoin hardware wallet firmware for managing addresses and signing PSBTs over Wi-Fi.',
+    license: 'MIT.',
+  },
+  diymodelselEspinserver: {
+    description: 'ESP32-based PIN server prototype.',
+    license: 'MIT.',
+  },
+  diymodelselBtcp: {
+    description: 'Bitcoin price broadcaster firmware for ESP8266.',
+    license: 'Not verified.',
+  },
+  diymodelselRetardminer: {
+    description: 'Bitcoin solo-mining firmware for ESP32 development boards.',
+    license: 'Not verified.',
+  },
+  diymodelselEasyminer: {
+    description: 'ESP32 Bitcoin mining firmware with headless, LED, and other build variants.',
+    license: 'Not verified.',
+  },
+  diymodelselSertun32: {
+    description: 'Serial-to-TCP tunnel firmware for LilyGo T-Display boards.',
+    license: 'MIT.',
+  },
+  diymodelselMouse64: {
+    description: 'Turns a C64 joystick or buttons into a USB mouse using an ESP32-S2 board.',
+    license: 'MIT.',
+  },
+  diymodelselNostrPager: {
+    description: 'Nostr notification pager firmware for the JC3248W535C display board.',
+    license: 'Not verified.',
+  },
+  diymodelselTovarishSatoshi: {
+    description: 'Bitcoin solo-mining firmware for ESP32 development boards.',
+    license: 'Not verified.',
+  },
+};
+
+function renderProjectDetails(card, selector, projectUrl) {
+  const details = projectDetails[selector.id];
+  if (!card || !details) return;
+
+  card.querySelector('.card-hint')?.remove();
+  card.querySelectorAll('.project-link').forEach((link) => link.remove());
+
+  const block = document.createElement('div');
+  block.className = 'project-details';
+
+  const description = document.createElement('p');
+  description.className = 'project-description';
+  description.textContent = details.description;
+
+  const license = document.createElement('p');
+  license.className = 'project-license';
+  license.textContent = `License: ${details.license}`;
+
+  const link = document.createElement('a');
+  link.className = 'btn btn-outline-jade btn-sm project-link';
+  link.textContent = 'GitHub repository';
+  link.href = projectUrl || '#';
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.hidden = !projectUrl;
+
+  block.append(description, license, link);
+  card.querySelector('.card-body')?.prepend(block);
+}
+
 function hideFirmwareControls() {
   successMessage.textContent = '';
   successMessage.classList.remove('is-error');
@@ -388,12 +477,8 @@ async function loadFirmwareCatalog() {
     catalogs.forEach(([selector, picker, firmwares, button]) => {
       setUpFirmwarePicker(selector, picker, firmwares);
       button.disabled = firmwares.length === 0 || (button !== connectButtonJade && firmwares.every((firmware) => !firmware.files?.length));
-      const projectLink = button.closest('.firmware-card')?.querySelector('.project-link');
       const projectUrl = firmwares.find((firmware) => firmware.projectUrl)?.projectUrl;
-      if (projectLink && projectUrl) {
-        projectLink.href = projectUrl;
-        projectLink.hidden = false;
-      }
+      renderProjectDetails(button.closest('.firmware-card'), selector, projectUrl);
     });
   } catch (error) {
     console.error(error);

@@ -2,6 +2,7 @@
   {
     "value": "btc-pb-0.1.2-esp32",
     "label": "ESP32 (0.1.2)",
+    "projectUrl": "https://github.com/valerio-vaccaro/btc-pb",
     "firmwareVersion": "0.1.2",
     "board": "ESP32",
     "variants": [],
@@ -34,6 +35,7 @@
   {
     "value": "btc-pb-0.1.2-esp8266",
     "label": "ESP8266 (0.1.2)",
+    "projectUrl": "https://github.com/valerio-vaccaro/btc-pb",
     "firmwareVersion": "0.1.2",
     "board": "ESP8266",
     "variants": [],

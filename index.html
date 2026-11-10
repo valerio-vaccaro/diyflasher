@@ -318,10 +318,17 @@
         }
         .firmware-action { margin-top: 1rem; }
         .firmware-action .btn { width: 100%; }
-        .card-hint {
-            margin: 0 0 1.1rem;
+        .project-details { margin-bottom: 1rem; }
+        .project-description {
+            margin: 0 0 0.45rem;
+            color: var(--blkstr-white);
+            font-size: 0.84rem;
+            line-height: 1.5;
+        }
+        .project-license {
+            margin: 0 0 0.65rem;
             color: var(--blkstr-muted);
-            font-size: 0.82rem;
+            font-size: 0.74rem;
         }
         .form-select {
             min-height: 2.55rem;
@@ -498,7 +505,6 @@
                         <span class="firmware-title"><img class="firmware-logo" src="assets/jade.png" alt="" />Jade firmware</span>
                     </div>
                     <div class="card-body">
-                        <p class="card-hint">Choose a version, then the matching board and build variant.</p>
                         <div class="firmware-picker" id="jadePicker">
                             <div>
                                 <label for="jadeVersionSelect"><span class="picker-step">1</span>Version</label>
@@ -529,7 +535,6 @@
                         <span class="firmware-title"><img class="firmware-logo" src="assets/bitfloppy.png" alt="" />BitFloppy firmware</span>
                     </div>
                     <div class="card-body">
-                        <p class="card-hint">Choose a BitFloppy release and the matching board.</p>
                         <div class="firmware-picker" id="bitfloppyPicker">
                             <div>
                                 <label for="bitfloppyVersionSelect"><span class="picker-step">1</span>Version</label>
@@ -558,7 +563,6 @@
                         <span class="firmware-title"><img class="firmware-logo" src="assets/nerdminer.png" alt="" />NerdMiner firmware</span>
                     </div>
                     <div class="card-body">
-                        <p class="card-hint">Select a NerdMiner release, then the matching board and installation image.</p>
                         <div class="firmware-picker" id="nerdPicker">
                             <div>
                                 <label for="nerdVersionSelect"><span class="picker-step">1</span>Version</label>
@@ -587,7 +591,6 @@
                         <span class="firmware-title"><img class="firmware-logo" src="assets/han.png" alt="" />HAN SOLOminer firmware</span>
                     </div>
                     <div class="card-body">
-                        <p class="card-hint">Select a HAN release and the matching board.</p>
                         <div class="firmware-picker" id="hanPicker">
                             <div>
                                 <label for="hanVersionSelect"><span class="picker-step">1</span>Version</label>
@@ -616,7 +619,6 @@
                         <span class="firmware-title"><img class="firmware-logo" src="assets/satulator.png" alt="" />SATulator firmware</span>
                     </div>
                     <div class="card-body">
-                        <p class="card-hint">Select a SATulator release and the matching board.</p>
                         <div class="firmware-picker" id="satulatorPicker">
                             <div>
                                 <label for="satulatorVersionSelect"><span class="picker-step">1</span>Version</label>
@@ -645,7 +647,6 @@
                         <span class="firmware-title"><img class="firmware-logo" src="assets/sfyl-wallet.png" alt="" />SFYL Wallet firmware</span>
                     </div>
                     <div class="card-body">
-                        <p class="card-hint">Select an SFYL Wallet release and the matching board.</p>
                         <div class="firmware-picker" id="sfylPicker">
                             <div>
                                 <label for="sfylVersionSelect"><span class="picker-step">1</span>Version</label>
@@ -672,9 +673,8 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/espinserver.png" alt="" />ESPInServer firmware</span></div>
                     <div class="card-body">
-                        <p class="card-hint">Choose the ESPInServer version and matching board.</p>
                         <div class="firmware-picker" id="espinserverPicker"><div><label for="espinserverVersionSelect">Version</label><select id="espinserverVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div><div><label for="espinserverBoardSelect">Board</label><select id="espinserverBoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div><div class="variant-field"><label for="espinserverVariantSelect">Build</label><select id="espinserverVariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div></div>
-                        <select id="diymodelselEspinserver" class="d-none" aria-hidden="true" tabindex="-1"></select><a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a><div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonEspinserver" value="Flash" disabled /></div>
+                        <select id="diymodelselEspinserver" class="d-none" aria-hidden="true" tabindex="-1"></select><div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonEspinserver" value="Flash" disabled /></div>
                     </div>
                 </div>
             </div>
@@ -683,9 +683,8 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/btc-pb.png" alt="" />BTC-PB firmware</span></div>
                     <div class="card-body">
-                        <p class="card-hint">Catalog prepared; a flash image is not bundled yet.</p>
                         <div class="firmware-picker" id="btcpPicker"><div><label for="btcpVersionSelect">Version</label><select id="btcpVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div><div><label for="btcpBoardSelect">Board</label><select id="btcpBoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div><div class="variant-field"><label for="btcpVariantSelect">Build</label><select id="btcpVariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div></div>
-                        <select id="diymodelselBtcp" class="d-none" aria-hidden="true" tabindex="-1"></select><a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a><div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonBtcp" value="Flash" disabled /></div>
+                        <select id="diymodelselBtcp" class="d-none" aria-hidden="true" tabindex="-1"></select><div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonBtcp" value="Flash" disabled /></div>
                     </div>
                 </div>
             </div>
@@ -694,9 +693,8 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/retardminer.png" alt="" />RetardMiner firmware</span></div>
                     <div class="card-body">
-                        <p class="card-hint">Catalog prepared; a flash image is not bundled yet.</p>
                         <div class="firmware-picker" id="retardminerPicker"><div><label for="retardminerVersionSelect">Version</label><select id="retardminerVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div><div><label for="retardminerBoardSelect">Board</label><select id="retardminerBoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div><div class="variant-field"><label for="retardminerVariantSelect">Build</label><select id="retardminerVariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div></div>
-                        <select id="diymodelselRetardminer" class="d-none" aria-hidden="true" tabindex="-1"></select><a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a><div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonRetardminer" value="Flash" disabled /></div>
+                        <select id="diymodelselRetardminer" class="d-none" aria-hidden="true" tabindex="-1"></select><div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonRetardminer" value="Flash" disabled /></div>
                     </div>
                 </div>
             </div>
@@ -705,9 +703,8 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/easyminer.png" alt="" />EasyMiner firmware</span></div>
                     <div class="card-body">
-                        <p class="card-hint">Catalog prepared; a flash image is not bundled yet.</p>
                         <div class="firmware-picker" id="easyminerPicker"><div><label for="easyminerVersionSelect">Version</label><select id="easyminerVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div><div><label for="easyminerBoardSelect">Board</label><select id="easyminerBoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div><div class="variant-field"><label for="easyminerVariantSelect">Build</label><select id="easyminerVariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div></div>
-                        <select id="diymodelselEasyminer" class="d-none" aria-hidden="true" tabindex="-1"></select><a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a><div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonEasyminer" value="Flash" disabled /></div>
+                        <select id="diymodelselEasyminer" class="d-none" aria-hidden="true" tabindex="-1"></select><div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonEasyminer" value="Flash" disabled /></div>
                     </div>
                 </div>
             </div>
@@ -716,14 +713,12 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/sertun32.png" alt="" />SerTun32 firmware</span></div>
                     <div class="card-body">
-                        <p class="card-hint">Choose a SerTun32 release and the matching board.</p>
                         <div class="firmware-picker" id="sertun32Picker">
                             <div><label for="sertun32VersionSelect">Version</label><select id="sertun32VersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                             <div><label for="sertun32BoardSelect">Board</label><select id="sertun32BoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                             <div class="variant-field"><label for="sertun32VariantSelect">Build</label><select id="sertun32VariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                         </div>
                         <select id="diymodelselSertun32" class="d-none" aria-hidden="true" tabindex="-1"></select>
-                        <a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a>
                         <div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonSertun32" value="Flash" disabled /></div>
                     </div>
                 </div>
@@ -733,14 +728,12 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/mouse64.png" alt="" />Mouse64 firmware</span></div>
                     <div class="card-body">
-                        <p class="card-hint">Choose a Mouse64 release and the matching board.</p>
                         <div class="firmware-picker" id="mouse64Picker">
                             <div><label for="mouse64VersionSelect">Version</label><select id="mouse64VersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                             <div><label for="mouse64BoardSelect">Board</label><select id="mouse64BoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                             <div class="variant-field"><label for="mouse64VariantSelect">Build</label><select id="mouse64VariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                         </div>
                         <select id="diymodelselMouse64" class="d-none" aria-hidden="true" tabindex="-1"></select>
-                        <a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a>
                         <div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonMouse64" value="Flash" disabled /></div>
                     </div>
                 </div>
@@ -750,14 +743,12 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/nostr-pager.png" alt="" />Nostr Pager firmware</span></div>
                     <div class="card-body">
-                        <p class="card-hint">Choose a Nostr Pager release and the matching board.</p>
                         <div class="firmware-picker" id="nostrPagerPicker">
                             <div><label for="nostrPagerVersionSelect">Version</label><select id="nostrPagerVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                             <div><label for="nostrPagerBoardSelect">Board</label><select id="nostrPagerBoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                             <div class="variant-field"><label for="nostrPagerVariantSelect">Build</label><select id="nostrPagerVariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                         </div>
                         <select id="diymodelselNostrPager" class="d-none" aria-hidden="true" tabindex="-1"></select>
-                        <a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a>
                         <div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonNostrPager" value="Flash" disabled /></div>
                     </div>
                 </div>
@@ -767,14 +758,12 @@
                 <div class="card firmware-card h-100">
                     <div class="card-header"><span class="firmware-title"><img class="firmware-logo" src="assets/tovarish-satoshi.png" alt="" />TovarishSatoshi firmware</span></div>
                     <div class="card-body">
-                        <p class="card-hint">No TovarishSatoshi firmware builds are available yet.</p>
                         <div class="firmware-picker" id="tovarishSatoshiPicker">
                             <div><label for="tovarishSatoshiVersionSelect">Version</label><select id="tovarishSatoshiVersionSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                             <div><label for="tovarishSatoshiBoardSelect">Board</label><select id="tovarishSatoshiBoardSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                             <div class="variant-field"><label for="tovarishSatoshiVariantSelect">Build</label><select id="tovarishSatoshiVariantSelect" class="form-select form-select-sm" disabled><option>Loading…</option></select></div>
                         </div>
                         <select id="diymodelselTovarishSatoshi" class="d-none" aria-hidden="true" tabindex="-1"></select>
-                        <a class="project-link" hidden target="_blank" rel="noopener noreferrer">GitHub project</a>
                         <div class="firmware-action"><input class="btn btn-jade btn-sm px-3" type="button" id="connectButtonTovarishSatoshi" value="Flash" disabled /></div>
                     </div>
                 </div>
@@ -813,8 +802,6 @@
         <div class="footer-links container justify-content-center">
             <a href="https://github.com/valerio-vaccaro/diyflasher" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="LICENSE">Apache-2.0 License</a>
-            <a href="https://github.com/Blockstream/jade" target="_blank" rel="noopener noreferrer">Blockstream Jade</a>
-            <a href="https://github.com/BitMaker-hub/NerdMiner_v2" target="_blank" rel="noopener noreferrer">NerdMiner</a>
         </div>
     </footer>
 

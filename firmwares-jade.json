@@ -1,7 +1,136 @@
 [
   {
+    "value": "Jade_1.0.42-beta1_jade",
+    "label": "Jade v1.0 (dev board) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v1.0",
+    "variants": ["dev board"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_noradio",
+    "label": "Jade v1.0 (dev board - no radio) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v1.0",
+    "variants": ["dev board", "no radio"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v1_1",
+    "label": "Jade v1.1 (dev board) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v1.1",
+    "variants": ["dev board"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v1_1_noradio",
+    "label": "Jade v1.1 (dev board - no radio) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v1.1",
+    "variants": ["dev board", "no radio"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v2",
+    "label": "Jade v2 (dev board) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v2",
+    "variants": ["dev board"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v2_noradio",
+    "label": "Jade v2 (dev board - no radio) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v2",
+    "variants": ["dev board", "no radio"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v2c",
+    "label": "Jade v2 core (dev board) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v2 core",
+    "variants": ["dev board"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v2c_noradio",
+    "label": "Jade v2 core (dev board - no radio) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v2 core",
+    "variants": ["dev board", "no radio"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_ci",
+    "label": "Jade v1.0 (dev board - ci version) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v1.0",
+    "variants": ["dev board", "ci version"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_noradio_ci",
+    "label": "Jade v1.0 (dev board - ci no radio version) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v1.0",
+    "variants": ["dev board", "ci no radio version"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v1_1_ci",
+    "label": "Jade v1.1 (dev board - ci version) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v1.1",
+    "variants": ["dev board", "ci version"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v1_1_noradio_ci",
+    "label": "Jade v1.1 (dev board - ci no radio version) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v1.1",
+    "variants": ["dev board", "ci no radio version"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v2_ci",
+    "label": "Jade v2 (dev board - ci version) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v2",
+    "variants": ["dev board", "ci version"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v2_noradio_ci",
+    "label": "Jade v2 (dev board - ci no radio version) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v2",
+    "variants": ["dev board", "ci no radio version"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v2c_ci",
+    "label": "Jade v2 core (dev board - ci version) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v2 core",
+    "variants": ["dev board", "ci version"]
+  },
+  {
+    "value": "Jade_1.0.42-beta1_jade_v2c_noradio_ci",
+    "label": "Jade v2 core (dev board - ci no radio version) (1.0.42 beta 1)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta1",
+    "board": "Jade v2 core",
+    "variants": ["dev board", "ci no radio version"]
+  },
+  {
     "value": "Jade_1.0.41_esp32-cam",
     "label": "ESP32-Cam (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "ESP32-Cam",
     "variants": []
@@ -9,6 +138,7 @@
   {
     "value": "Jade_1.0.41_esp32-s3-devkitc-1",
     "label": "esp32-s3-devkitc-1 (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "esp32-s3-devkitc-1",
     "variants": []
@@ -16,6 +146,7 @@
   {
     "value": "Jade_1.0.41_esp32-wrover-cam",
     "label": "ESP32-Wrover-cam (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "ESP32-Wrover-cam",
     "variants": []
@@ -23,6 +154,7 @@
   {
     "value": "Jade_1.0.41_m5blackgray",
     "label": "M5Stack Black/Gray (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "M5Stack Black/Gray",
     "variants": []
@@ -30,6 +162,7 @@
   {
     "value": "Jade_1.0.41_m5core2",
     "label": "M5Stack Core2 (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "M5Stack Core2",
     "variants": []
@@ -37,6 +170,7 @@
   {
     "value": "Jade_1.0.41_m5cores3",
     "label": "M5Stack Core S3 (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "M5Stack Core S3",
     "variants": []
@@ -44,6 +178,7 @@
   {
     "value": "Jade_1.0.41_m5fire",
     "label": "M5Stack FIRE (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "M5Stack FIRE",
     "variants": []
@@ -51,6 +186,7 @@
   {
     "value": "Jade_1.0.41_m5stickcplus",
     "label": "M5StickC PLUS (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "M5StickC PLUS",
     "variants": []
@@ -58,6 +194,7 @@
   {
     "value": "Jade_1.0.41_m5stickcplus2",
     "label": "M5StickC PLUS2 (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "M5StickC PLUS2",
     "variants": []
@@ -65,6 +202,7 @@
   {
     "value": "Jade_1.0.41_tcameraplus",
     "label": "T-Camera Plus (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "T-Camera Plus",
     "variants": []
@@ -72,6 +210,7 @@
   {
     "value": "Jade_1.0.41_ttgo_tdisplay",
     "label": "LILYGO T-Display (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "LILYGO T-Display",
     "variants": []
@@ -79,6 +218,7 @@
   {
     "value": "Jade_1.0.41_ttgo_tdisplays3",
     "label": "LILYGO T-DisplayS3 (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "LILYGO T-DisplayS3",
     "variants": []
@@ -86,6 +226,7 @@
   {
     "value": "Jade_1.0.41_ttgo_tdisplays3procamera",
     "label": "LILYGO T-DisplayS3 Pro Camera (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "LILYGO T-DisplayS3 Pro Camera",
     "variants": []
@@ -93,6 +234,7 @@
   {
     "value": "Jade_1.0.41_ttgo_twatchs3",
     "label": "T-Watch S3 (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "T-Watch S3",
     "variants": []
@@ -100,6 +242,7 @@
   {
     "value": "Jade_1.0.41_waveshares3_touch_lcd2",
     "label": "Waveshare Touch LCD 2 (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Waveshare Touch LCD 2",
     "variants": []
@@ -107,6 +250,7 @@
   {
     "value": "Jade_1.0.41_jade",
     "label": "Jade v1.0 (dev board) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.0",
     "variants": ["dev board"]
@@ -114,6 +258,7 @@
   {
     "value": "Jade_1.0.41_jade_noradio",
     "label": "Jade v1.0 (dev board - no radio) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.0",
     "variants": ["dev board", "no radio"]
@@ -121,6 +266,7 @@
   {
     "value": "Jade_1.0.41_jade_v1_1",
     "label": "Jade v1.1 (dev board) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.1",
     "variants": ["dev board"]
@@ -128,6 +274,7 @@
   {
     "value": "Jade_1.0.41_jade_v1_1_noradio",
     "label": "Jade v1.1 (dev board - no radio) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.1",
     "variants": ["dev board", "no radio"]
@@ -135,6 +282,7 @@
   {
     "value": "Jade_1.0.41_jade_v2",
     "label": "Jade v2 (dev board) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2",
     "variants": ["dev board"]
@@ -142,6 +290,7 @@
   {
     "value": "Jade_1.0.41_jade_v2_noradio",
     "label": "Jade v2 (dev board - no radio) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2",
     "variants": ["dev board", "no radio"]
@@ -149,6 +298,7 @@
   {
     "value": "Jade_1.0.41_jade_v2c",
     "label": "Jade v2 core (dev board) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2 core",
     "variants": ["dev board"]
@@ -156,6 +306,7 @@
   {
     "value": "Jade_1.0.41_jade_v2c_noradio",
     "label": "Jade v2 core (dev board - no radio) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2 core",
     "variants": ["dev board", "no radio"]
@@ -163,6 +314,7 @@
   {
     "value": "Jade_1.0.41_jade_ci",
     "label": "Jade v1.0 (dev board - ci version) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.0",
     "variants": ["dev board", "ci version"]
@@ -170,6 +322,7 @@
   {
     "value": "Jade_1.0.41_jade_noradio_ci",
     "label": "Jade v1.0 (dev board - ci no radio version) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.0",
     "variants": ["dev board", "ci no radio version"]
@@ -177,6 +330,7 @@
   {
     "value": "Jade_1.0.41_jade_v1_1_ci",
     "label": "Jade v1.1 (dev board - ci version) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.1",
     "variants": ["dev board", "ci version"]
@@ -184,6 +338,7 @@
   {
     "value": "Jade_1.0.41_jade_v1_1_noradio_ci",
     "label": "Jade v1.1 (dev board - ci no radio version) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.1",
     "variants": ["dev board", "ci no radio version"]
@@ -191,6 +346,7 @@
   {
     "value": "Jade_1.0.41_jade_v2_ci",
     "label": "Jade v2 (dev board - ci version) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2",
     "variants": ["dev board", "ci version"]
@@ -198,6 +354,7 @@
   {
     "value": "Jade_1.0.41_jade_v2_noradio_ci",
     "label": "Jade v2 (dev board - ci no radio version) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2",
     "variants": ["dev board", "ci no radio version"]
@@ -205,6 +362,7 @@
   {
     "value": "Jade_1.0.41_jade_v2c_ci",
     "label": "Jade v2 core (dev board - ci version) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2 core",
     "variants": ["dev board", "ci version"]
@@ -212,6 +370,7 @@
   {
     "value": "Jade_1.0.41_jade_v2c_noradio_ci",
     "label": "Jade v2 core (dev board - ci no radio version) (1.0.41)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2 core",
     "variants": ["dev board", "ci no radio version"]
@@ -219,6 +378,7 @@
   {
     "value": "Jade_1.0.40_m5blackgray",
     "label": "Jade 1.0.40 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "M5Stack",
     "variants": []
@@ -226,6 +386,7 @@
   {
     "value": "Jade_1.0.40_m5core2",
     "label": "Jade 1.0.40 for M5Stack2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "M5Stack2",
     "variants": []
@@ -233,6 +394,7 @@
   {
     "value": "Jade_1.0.40_m5cores3",
     "label": "Jade 1.0.40 for M5StackS3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "M5StackS3",
     "variants": []
@@ -240,6 +402,7 @@
   {
     "value": "Jade_1.0.40_m5fire",
     "label": "Jade 1.0.40 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "M5Stack FIRE",
     "variants": []
@@ -247,6 +410,7 @@
   {
     "value": "Jade_1.0.40_m5stickcplus",
     "label": "Jade 1.0.40 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "M5StickC Plus",
     "variants": []
@@ -254,6 +418,7 @@
   {
     "value": "Jade_1.0.40_m5stickcplus2",
     "label": "Jade 1.0.40 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -261,6 +426,7 @@
   {
     "value": "Jade_1.0.40_tdisplay",
     "label": "Jade 1.0.40 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "LILYGO T-Display",
     "variants": []
@@ -268,6 +434,7 @@
   {
     "value": "Jade_1.0.40_tdisplays3",
     "label": "Jade 1.0.40 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -275,6 +442,7 @@
   {
     "value": "Jade_1.0.40_tdisplays3procamera",
     "label": "Jade 1.0.40 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -282,6 +450,7 @@
   {
     "value": "Jade_1.0.40_twatchs3",
     "label": "Jade 1.0.40 for LILYGO T-Watch-S3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "LILYGO T-Watch-S3",
     "variants": ["NEW"]
@@ -289,6 +458,7 @@
   {
     "value": "Jade_1.0.40_esp32-cam",
     "label": "Jade 1.0.40 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "ESP32-cam",
     "variants": []
@@ -296,6 +466,7 @@
   {
     "value": "Jade_1.0.40_esp32-wrover-cam",
     "label": "Jade 1.0.40 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -303,6 +474,7 @@
   {
     "value": "Jade_1.0.40_esp32-s3-devkitc-1",
     "label": "Jade 1.0.40 for ESP32-S3-devkitc-1",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "ESP32-S3-devkitc-1",
     "variants": []
@@ -310,6 +482,7 @@
   {
     "value": "Jade_1.0.40_tcameraplus",
     "label": "Jade 1.0.40 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -317,6 +490,7 @@
   {
     "value": "Jade_1.0.40_wavesharetouchlcd2",
     "label": "Jade 1.0.40 for Waveshare Touch LCD2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Waveshare Touch LCD2",
     "variants": []
@@ -324,6 +498,7 @@
   {
     "value": "Jade_1.0.40_jade",
     "label": "Jade 1.0.40 for Jade 1.0 Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Jade 1.0 Dev",
     "variants": []
@@ -331,6 +506,7 @@
   {
     "value": "Jade_1.0.40_jade_v1_1",
     "label": "Jade 1.0.40 for Jade 1.1 Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Jade 1.1 Dev",
     "variants": []
@@ -338,6 +514,7 @@
   {
     "value": "Jade_1.0.40_jade_v2",
     "label": "Jade 1.0.40 for Jade 2.0 Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Jade 2.0 Dev",
     "variants": []
@@ -345,6 +522,7 @@
   {
     "value": "Jade_1.0.40_jade_v2c",
     "label": "Jade 1.0.40 for Jade 2.0 Core Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Jade 2.0 Core Dev",
     "variants": []
@@ -352,6 +530,7 @@
   {
     "value": "Jade_1.0.40_jade_ci",
     "label": "Jade 1.0.40 for Jade 1.0 Dev - CI option",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Jade 1.0 Dev - CI option",
     "variants": []
@@ -359,6 +538,7 @@
   {
     "value": "Jade_1.0.40_jade_v1_1_ci",
     "label": "Jade 1.0.40 for Jade 1.1 Dev - CI option",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Jade 1.1 Dev - CI option",
     "variants": []
@@ -366,6 +546,7 @@
   {
     "value": "Jade_1.0.40_jade_v2_ci",
     "label": "Jade 1.0.40 for Jade 2.0 Dev - CI option",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Jade 2.0 Dev - CI option",
     "variants": []
@@ -373,6 +554,7 @@
   {
     "value": "Jade_1.0.40_jade_v2c_ci",
     "label": "Jade 1.0.40 for Jade 2.0 Core Dev - CI option",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "Jade 2.0 Core Dev - CI option",
     "variants": []
@@ -380,6 +562,7 @@
   {
     "value": "Jade_1.0.39_display_m5blackgray",
     "label": "Jade 1.0.39 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "M5Stack",
     "variants": []
@@ -387,6 +570,7 @@
   {
     "value": "Jade_1.0.39_display_m5core2",
     "label": "Jade 1.0.39 for M5Stack2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "M5Stack2",
     "variants": []
@@ -394,6 +578,7 @@
   {
     "value": "Jade_1.0.39_display_m5cores3",
     "label": "Jade 1.0.39 for M5StackS3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "M5StackS3",
     "variants": []
@@ -401,6 +586,7 @@
   {
     "value": "Jade_1.0.39_display_m5fire",
     "label": "Jade 1.0.39 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "M5Stack FIRE",
     "variants": []
@@ -408,6 +594,7 @@
   {
     "value": "Jade_1.0.39_display_m5stickcplus",
     "label": "Jade 1.0.39 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "M5StickC Plus",
     "variants": []
@@ -415,6 +602,7 @@
   {
     "value": "Jade_1.0.39_display_m5stickcplus2",
     "label": "Jade 1.0.39 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -422,6 +610,7 @@
   {
     "value": "Jade_1.0.39_display_ttgo_tdisplay",
     "label": "Jade 1.0.39 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "LILYGO T-Display",
     "variants": []
@@ -429,6 +618,7 @@
   {
     "value": "Jade_1.0.39_display_ttgo_tdisplays3",
     "label": "Jade 1.0.39 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -436,6 +626,7 @@
   {
     "value": "Jade_1.0.39_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.39 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -443,6 +634,7 @@
   {
     "value": "Jade_1.0.39_display_ttgo_twatchs3",
     "label": "Jade 1.0.39 for LILYGO T-Watch-S3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "LILYGO T-Watch-S3",
     "variants": ["NEW"]
@@ -450,6 +642,7 @@
   {
     "value": "Jade_1.0.39_diycam_esp32-cam",
     "label": "Jade 1.0.39 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "ESP32-cam",
     "variants": []
@@ -457,6 +650,7 @@
   {
     "value": "Jade_1.0.39_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.39 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -464,6 +658,7 @@
   {
     "value": "Jade_1.0.39_diycam_tcameraplus",
     "label": "Jade 1.0.39 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -471,6 +666,7 @@
   {
     "value": "Jade_1.0.39_display_waveshare_touch_lcd2",
     "label": "Jade 1.0.39 for Waveshare Touch LCD2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Waveshare Touch LCD2",
     "variants": []
@@ -478,6 +674,7 @@
   {
     "value": "Jade_1.0.39_jade",
     "label": "Jade 1.0.39 for Jade 1.0 Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Jade 1.0 Dev",
     "variants": []
@@ -485,6 +682,7 @@
   {
     "value": "Jade_1.0.39_jade_v1_1",
     "label": "Jade 1.0.39 for Jade 1.1 Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Jade 1.1 Dev",
     "variants": []
@@ -492,6 +690,7 @@
   {
     "value": "Jade_1.0.39_jade_v2",
     "label": "Jade 1.0.39 for Jade 2.0 Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Jade 2.0 Dev",
     "variants": []
@@ -499,6 +698,7 @@
   {
     "value": "Jade_1.0.39_jade_v2_core",
     "label": "Jade 1.0.39 for Jade 2.0 Core Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Jade 2.0 Core Dev",
     "variants": []
@@ -506,6 +706,7 @@
   {
     "value": "Jade_1.0.39_jade_ci",
     "label": "Jade 1.0.39 for Jade 1.0 Dev - CI option",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Jade 1.0 Dev - CI option",
     "variants": []
@@ -513,6 +714,7 @@
   {
     "value": "Jade_1.0.39_jade_v1_1_ci",
     "label": "Jade 1.0.39 for Jade 1.1 Dev - CI option",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Jade 1.1 Dev - CI option",
     "variants": []
@@ -520,6 +722,7 @@
   {
     "value": "Jade_1.0.39_jade_v2_ci",
     "label": "Jade 1.0.39 for Jade 2.0 Dev - CI option",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Jade 2.0 Dev - CI option",
     "variants": []
@@ -527,6 +730,7 @@
   {
     "value": "Jade_1.0.39_jade_v2_core_ci",
     "label": "Jade 1.0.39 for Jade 2.0 Core Dev - CI option",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "Jade 2.0 Core Dev - CI option",
     "variants": []
@@ -534,6 +738,7 @@
   {
     "value": "Jade_1.0.38_display_m5blackgray",
     "label": "Jade 1.0.38 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "M5Stack",
     "variants": []
@@ -541,6 +746,7 @@
   {
     "value": "Jade_1.0.38_display_m5core2",
     "label": "Jade 1.0.38 for M5Stack2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "M5Stack2",
     "variants": []
@@ -548,6 +754,7 @@
   {
     "value": "Jade_1.0.38_display_m5cores3",
     "label": "Jade 1.0.38 for M5StackS3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "M5StackS3",
     "variants": []
@@ -555,6 +762,7 @@
   {
     "value": "Jade_1.0.38_display_m5fire",
     "label": "Jade 1.0.38 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "M5Stack FIRE",
     "variants": []
@@ -562,6 +770,7 @@
   {
     "value": "Jade_1.0.38_display_m5stickcplus",
     "label": "Jade 1.0.38 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "M5StickC Plus",
     "variants": []
@@ -569,6 +778,7 @@
   {
     "value": "Jade_1.0.38_display_m5stickcplus2",
     "label": "Jade 1.0.38 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -576,6 +786,7 @@
   {
     "value": "Jade_1.0.38_display_ttgo_tdisplay",
     "label": "Jade 1.0.38 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "LILYGO T-Display",
     "variants": []
@@ -583,6 +794,7 @@
   {
     "value": "Jade_1.0.38_display_ttgo_tdisplays3",
     "label": "Jade 1.0.38 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -590,6 +802,7 @@
   {
     "value": "Jade_1.0.38_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.38 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -597,6 +810,7 @@
   {
     "value": "Jade_1.0.38_display_ttgo_twatchs3",
     "label": "Jade 1.0.38 for LILYGO T-Watch-S3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "LILYGO T-Watch-S3",
     "variants": ["NEW"]
@@ -604,6 +818,7 @@
   {
     "value": "Jade_1.0.38_diycam_esp32-cam",
     "label": "Jade 1.0.38 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "ESP32-cam",
     "variants": []
@@ -611,6 +826,7 @@
   {
     "value": "Jade_1.0.38_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.38 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -618,6 +834,7 @@
   {
     "value": "Jade_1.0.38_diycam_tcameraplus",
     "label": "Jade 1.0.38 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -625,6 +842,7 @@
   {
     "value": "Jade_1.0.38_jade_v1_1",
     "label": "Jade 1.0.38 for Jade 1.1 Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "Jade 1.1 Dev",
     "variants": []
@@ -632,6 +850,7 @@
   {
     "value": "Jade_1.0.38_jade_v2",
     "label": "Jade 1.0.38 for Jade 2.0 Dev",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "Jade 2.0 Dev",
     "variants": []
@@ -639,6 +858,7 @@
   {
     "value": "Jade_1.0.37_display_m5blackgray",
     "label": "Jade 1.0.37 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "M5Stack",
     "variants": []
@@ -646,6 +866,7 @@
   {
     "value": "Jade_1.0.37_display_m5core2",
     "label": "Jade 1.0.37 for M5Stack2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "M5Stack2",
     "variants": []
@@ -653,6 +874,7 @@
   {
     "value": "Jade_1.0.37_display_m5cores3",
     "label": "Jade 1.0.37 for M5StackS3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "M5StackS3",
     "variants": []
@@ -660,6 +882,7 @@
   {
     "value": "Jade_1.0.37_display_m5fire",
     "label": "Jade 1.0.37 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "M5Stack FIRE",
     "variants": []
@@ -667,6 +890,7 @@
   {
     "value": "Jade_1.0.37_display_m5stickcplus",
     "label": "Jade 1.0.37 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "M5StickC Plus",
     "variants": []
@@ -674,6 +898,7 @@
   {
     "value": "Jade_1.0.37_display_m5stickcplus2",
     "label": "Jade 1.0.37 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -681,6 +906,7 @@
   {
     "value": "Jade_1.0.37_display_ttgo_tdisplay",
     "label": "Jade 1.0.37 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "LILYGO T-Display",
     "variants": []
@@ -688,6 +914,7 @@
   {
     "value": "Jade_1.0.37_display_ttgo_tdisplays3",
     "label": "Jade 1.0.37 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -695,6 +922,7 @@
   {
     "value": "Jade_1.0.37_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.37 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -702,6 +930,7 @@
   {
     "value": "Jade_1.0.37_display_ttgo_twatchs3",
     "label": "Jade 1.0.37 for LILYGO T-Watch-S3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "LILYGO T-Watch-S3",
     "variants": ["NEW"]
@@ -709,6 +938,7 @@
   {
     "value": "Jade_1.0.37_diycam_esp32-cam",
     "label": "Jade 1.0.37 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "ESP32-cam",
     "variants": []
@@ -716,6 +946,7 @@
   {
     "value": "Jade_1.0.37_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.37 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -723,6 +954,7 @@
   {
     "value": "Jade_1.0.37_diycam_tcameraplus",
     "label": "Jade 1.0.37 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -730,6 +962,7 @@
   {
     "value": "Jade_1.0.36_display_m5blackgray",
     "label": "Jade 1.0.36 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "M5Stack",
     "variants": []
@@ -737,6 +970,7 @@
   {
     "value": "Jade_1.0.36_display_m5core2",
     "label": "Jade 1.0.36 for M5Stack2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "M5Stack2",
     "variants": []
@@ -744,6 +978,7 @@
   {
     "value": "Jade_1.0.36_display_m5cores3",
     "label": "Jade 1.0.36 for M5StackS3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "M5StackS3",
     "variants": []
@@ -751,6 +986,7 @@
   {
     "value": "Jade_1.0.36_display_m5fire",
     "label": "Jade 1.0.36 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "M5Stack FIRE",
     "variants": []
@@ -758,6 +994,7 @@
   {
     "value": "Jade_1.0.36_display_m5stickcplus",
     "label": "Jade 1.0.36 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "M5StickC Plus",
     "variants": []
@@ -765,6 +1002,7 @@
   {
     "value": "Jade_1.0.36_display_m5stickcplus2",
     "label": "Jade 1.0.36 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -772,6 +1010,7 @@
   {
     "value": "Jade_1.0.36_display_ttgo_tdisplay",
     "label": "Jade 1.0.36 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "LILYGO T-Display",
     "variants": []
@@ -779,6 +1018,7 @@
   {
     "value": "Jade_1.0.36_display_ttgo_tdisplays3",
     "label": "Jade 1.0.36 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -786,6 +1026,7 @@
   {
     "value": "Jade_1.0.36_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.36 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -793,6 +1034,7 @@
   {
     "value": "Jade_1.0.36_display_ttgo_twatchs3",
     "label": "Jade 1.0.36 for LILYGO T-Watch-S3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "LILYGO T-Watch-S3",
     "variants": ["NEW"]
@@ -800,6 +1042,7 @@
   {
     "value": "Jade_1.0.36_diycam_esp32-cam",
     "label": "Jade 1.0.36 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "ESP32-cam",
     "variants": []
@@ -807,6 +1050,7 @@
   {
     "value": "Jade_1.0.36_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.36 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -814,6 +1058,7 @@
   {
     "value": "Jade_1.0.36_diycam_tcameraplus",
     "label": "Jade 1.0.36 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -821,6 +1066,7 @@
   {
     "value": "Jade_1.0.35_display_m5blackgray",
     "label": "Jade 1.0.35 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "M5Stack",
     "variants": []
@@ -828,6 +1074,7 @@
   {
     "value": "Jade_1.0.35_display_m5core2",
     "label": "Jade 1.0.35 for M5Stack2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "M5Stack2",
     "variants": []
@@ -835,6 +1082,7 @@
   {
     "value": "Jade_1.0.35_display_m5cores3",
     "label": "Jade 1.0.35 for M5StackS3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "M5StackS3",
     "variants": []
@@ -842,6 +1090,7 @@
   {
     "value": "Jade_1.0.35_display_m5fire",
     "label": "Jade 1.0.35 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "M5Stack FIRE",
     "variants": []
@@ -849,6 +1098,7 @@
   {
     "value": "Jade_1.0.35_display_m5stickcplus",
     "label": "Jade 1.0.35 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "M5StickC Plus",
     "variants": []
@@ -856,6 +1106,7 @@
   {
     "value": "Jade_1.0.35_display_m5stickcplus2",
     "label": "Jade 1.0.35 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -863,6 +1114,7 @@
   {
     "value": "Jade_1.0.35_display_ttgo_tdisplay",
     "label": "Jade 1.0.35 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "LILYGO T-Display",
     "variants": []
@@ -870,6 +1122,7 @@
   {
     "value": "Jade_1.0.35_display_ttgo_tdisplays3",
     "label": "Jade 1.0.35 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -877,6 +1130,7 @@
   {
     "value": "Jade_1.0.35_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.35 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -884,6 +1138,7 @@
   {
     "value": "Jade_1.0.35_display_ttgo_twatchs3",
     "label": "Jade 1.0.35 for LILYGO T-Watch-S3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "LILYGO T-Watch-S3",
     "variants": ["NEW"]
@@ -891,6 +1146,7 @@
   {
     "value": "Jade_1.0.35_diycam_esp32-cam",
     "label": "Jade 1.0.35 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "ESP32-cam",
     "variants": []
@@ -898,6 +1154,7 @@
   {
     "value": "Jade_1.0.35_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.35 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -905,6 +1162,7 @@
   {
     "value": "Jade_1.0.35_diycam_tcameraplus",
     "label": "Jade 1.0.35 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -912,6 +1170,7 @@
   {
     "value": "Jade_1.0.34_display_m5blackgray",
     "label": "Jade 1.0.34 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "M5Stack",
     "variants": []
@@ -919,6 +1178,7 @@
   {
     "value": "Jade_1.0.34_display_m5fire",
     "label": "Jade 1.0.34 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "M5Stack FIRE",
     "variants": []
@@ -926,6 +1186,7 @@
   {
     "value": "Jade_1.0.34_display_m5stickcplus",
     "label": "Jade 1.0.34 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "M5StickC Plus",
     "variants": []
@@ -933,6 +1194,7 @@
   {
     "value": "Jade_1.0.34_display_m5stickcplus2",
     "label": "Jade 1.0.34 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -940,6 +1202,7 @@
   {
     "value": "Jade_1.0.34_display_ttgo_tdisplay",
     "label": "Jade 1.0.34 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "LILYGO T-Display",
     "variants": []
@@ -947,6 +1210,7 @@
   {
     "value": "Jade_1.0.34_display_ttgo_tdisplays3",
     "label": "Jade 1.0.34 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -954,6 +1218,7 @@
   {
     "value": "Jade_1.0.34_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.34 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -961,6 +1226,7 @@
   {
     "value": "Jade_1.0.34_diycam_esp32-cam",
     "label": "Jade 1.0.34 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "ESP32-cam",
     "variants": []
@@ -968,6 +1234,7 @@
   {
     "value": "Jade_1.0.34_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.34 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -975,6 +1242,7 @@
   {
     "value": "Jade_1.0.34_diycam_tcameraplus",
     "label": "Jade 1.0.34 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.34",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -982,6 +1250,7 @@
   {
     "value": "Jade_1.0.33_display_m5blackgray",
     "label": "Jade 1.0.33 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "M5Stack",
     "variants": []
@@ -989,6 +1258,7 @@
   {
     "value": "Jade_1.0.33_display_m5core2",
     "label": "Jade 1.0.33 for M5Stack2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "M5Stack2",
     "variants": []
@@ -996,6 +1266,7 @@
   {
     "value": "Jade_1.0.33_display_m5cores3",
     "label": "Jade 1.0.33 for M5StackS3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "M5StackS3",
     "variants": []
@@ -1003,6 +1274,7 @@
   {
     "value": "Jade_1.0.33_display_m5fire",
     "label": "Jade 1.0.33 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1010,6 +1282,7 @@
   {
     "value": "Jade_1.0.33_display_m5stickcplus",
     "label": "Jade 1.0.33 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "M5StickC Plus",
     "variants": []
@@ -1017,6 +1290,7 @@
   {
     "value": "Jade_1.0.33_display_m5stickcplus2",
     "label": "Jade 1.0.33 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -1024,6 +1298,7 @@
   {
     "value": "Jade_1.0.33_display_ttgo_tdisplay",
     "label": "Jade 1.0.33 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1031,6 +1306,7 @@
   {
     "value": "Jade_1.0.33_display_ttgo_tdisplays3",
     "label": "Jade 1.0.33 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -1038,6 +1314,7 @@
   {
     "value": "Jade_1.0.33_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.33 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -1045,6 +1322,7 @@
   {
     "value": "Jade_1.0.33_display_ttgo_twatchs3",
     "label": "Jade 1.0.33 for LILYGO T-Watch-S3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "LILYGO T-Watch-S3",
     "variants": ["NEW"]
@@ -1052,6 +1330,7 @@
   {
     "value": "Jade_1.0.33_diycam_esp32-cam",
     "label": "Jade 1.0.33 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "ESP32-cam",
     "variants": []
@@ -1059,6 +1338,7 @@
   {
     "value": "Jade_1.0.33_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.33 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -1066,6 +1346,7 @@
   {
     "value": "Jade_1.0.33_diycam_tcameraplus",
     "label": "Jade 1.0.33 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -1073,6 +1354,7 @@
   {
     "value": "Jade_1.0.32_display_m5blackgray",
     "label": "Jade 1.0.32 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "M5Stack",
     "variants": []
@@ -1080,6 +1362,7 @@
   {
     "value": "Jade_1.0.32_display_m5core2",
     "label": "Jade 1.0.32 for M5Stack2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "M5Stack2",
     "variants": []
@@ -1087,6 +1370,7 @@
   {
     "value": "Jade_1.0.32_display_m5cores3",
     "label": "Jade 1.0.32 for M5StackS3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "M5StackS3",
     "variants": []
@@ -1094,6 +1378,7 @@
   {
     "value": "Jade_1.0.32_display_m5fire",
     "label": "Jade 1.0.32 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1101,6 +1386,7 @@
   {
     "value": "Jade_1.0.32_display_m5stickcplus",
     "label": "Jade 1.0.32 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "M5StickC Plus",
     "variants": []
@@ -1108,6 +1394,7 @@
   {
     "value": "Jade_1.0.32_display_m5stickcplus2",
     "label": "Jade 1.0.32 for M5StickC Plus 2",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "M5StickC Plus 2",
     "variants": []
@@ -1115,6 +1402,7 @@
   {
     "value": "Jade_1.0.32_display_ttgo_tdisplay",
     "label": "Jade 1.0.32 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1122,6 +1410,7 @@
   {
     "value": "Jade_1.0.32_display_ttgo_tdisplays3",
     "label": "Jade 1.0.32 for LILYGO T-Display-S3",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "LILYGO T-Display-S3",
     "variants": []
@@ -1129,6 +1418,7 @@
   {
     "value": "Jade_1.0.32_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.32 for LILYGO T-Display-S3 PRO Camera",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": []
@@ -1136,6 +1426,7 @@
   {
     "value": "Jade_1.0.32_diycam_esp32-cam",
     "label": "Jade 1.0.32 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "ESP32-cam",
     "variants": []
@@ -1143,6 +1434,7 @@
   {
     "value": "Jade_1.0.32_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.32 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -1150,6 +1442,7 @@
   {
     "value": "Jade_1.0.32_diycam_tcameraplus",
     "label": "Jade 1.0.32 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.32",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -1157,6 +1450,7 @@
   {
     "value": "Jade_1.0.31_display_m5blackgray",
     "label": "Jade 1.0.31 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5Stack",
     "variants": []
@@ -1164,6 +1458,7 @@
   {
     "value": "Jade_1.0.31_display_m5core2",
     "label": "Jade 1.0.31 for M5Stack2 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5Stack2",
     "variants": ["NEW"]
@@ -1171,6 +1466,7 @@
   {
     "value": "Jade_1.0.31_display_m5cores3",
     "label": "Jade 1.0.31 for M5StackS3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5StackS3",
     "variants": ["NEW"]
@@ -1178,6 +1474,7 @@
   {
     "value": "Jade_1.0.31_display_m5fire",
     "label": "Jade 1.0.31 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1185,6 +1482,7 @@
   {
     "value": "Jade_1.0.31_display_m5stickcplus",
     "label": "Jade 1.0.31 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5StickC Plus",
     "variants": []
@@ -1192,6 +1490,7 @@
   {
     "value": "Jade_1.0.31_display_m5stickcplus2",
     "label": "Jade 1.0.31 for M5StickC Plus 2 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5StickC Plus 2",
     "variants": ["NEW"]
@@ -1199,6 +1498,7 @@
   {
     "value": "Jade_1.0.31_display_ttgo_tdisplay",
     "label": "Jade 1.0.31 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1206,6 +1506,7 @@
   {
     "value": "Jade_1.0.31_display_ttgo_tdisplays3",
     "label": "Jade 1.0.31 for LILYGO T-Display-S3 (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "LILYGO T-Display-S3",
     "variants": ["NEW"]
@@ -1213,6 +1514,7 @@
   {
     "value": "Jade_1.0.31_display_ttgo_tdisplays3procamera",
     "label": "Jade 1.0.31 for LILYGO T-Display-S3 PRO Camera (NEW)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "LILYGO T-Display-S3 PRO Camera",
     "variants": ["NEW"]
@@ -1220,6 +1522,7 @@
   {
     "value": "Jade_1.0.31_diycam_esp32-cam",
     "label": "Jade 1.0.31 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "ESP32-cam",
     "variants": []
@@ -1227,6 +1530,7 @@
   {
     "value": "Jade_1.0.31_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.31 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -1234,6 +1538,7 @@
   {
     "value": "Jade_1.0.31_diycam_tcameraplus",
     "label": "Jade 1.0.31 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -1241,6 +1546,7 @@
   {
     "value": "Jade_1.0.30_display_m5blackgray",
     "label": "Jade 1.0.30 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.30",
     "board": "M5Stack",
     "variants": []
@@ -1248,6 +1554,7 @@
   {
     "value": "Jade_1.0.30_display_m5fire",
     "label": "Jade 1.0.30 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.30",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1255,6 +1562,7 @@
   {
     "value": "Jade_1.0.30_display_m5stickcplus",
     "label": "Jade 1.0.30 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.30",
     "board": "M5StickC Plus",
     "variants": []
@@ -1262,6 +1570,7 @@
   {
     "value": "Jade_1.0.30_display_ttgo_tdisplay",
     "label": "Jade 1.0.30 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.30",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1269,6 +1578,7 @@
   {
     "value": "Jade_1.0.30_diycam_esp32-cam",
     "label": "Jade 1.0.30 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.30",
     "board": "ESP32-cam",
     "variants": []
@@ -1276,6 +1586,7 @@
   {
     "value": "Jade_1.0.30_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.30 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.30",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -1283,6 +1594,7 @@
   {
     "value": "Jade_1.0.30_diycam_tcameraplus",
     "label": "Jade 1.0.30 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.30",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -1290,6 +1602,7 @@
   {
     "value": "Jade_1.0.29_display_m5blackgray",
     "label": "Jade 1.0.29 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.29",
     "board": "M5Stack",
     "variants": []
@@ -1297,6 +1610,7 @@
   {
     "value": "Jade_1.0.29_display_m5fire",
     "label": "Jade 1.0.29 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.29",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1304,6 +1618,7 @@
   {
     "value": "Jade_1.0.29_display_m5stickcplus",
     "label": "Jade 1.0.29 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.29",
     "board": "M5StickC Plus",
     "variants": []
@@ -1311,6 +1626,7 @@
   {
     "value": "Jade_1.0.29_display_ttgo_tdisplay",
     "label": "Jade 1.0.29 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.29",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1318,6 +1634,7 @@
   {
     "value": "Jade_1.0.29_diycam_esp32-cam",
     "label": "Jade 1.0.29 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.29",
     "board": "ESP32-cam",
     "variants": []
@@ -1325,6 +1642,7 @@
   {
     "value": "Jade_1.0.29_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.29 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.29",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -1332,6 +1650,7 @@
   {
     "value": "Jade_1.0.29_diycam_tcameraplus",
     "label": "Jade 1.0.29 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.29",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -1339,6 +1658,7 @@
   {
     "value": "Jade_1.0.28_display_m5blackgray",
     "label": "Jade 1.0.28 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.28",
     "board": "M5Stack",
     "variants": []
@@ -1346,6 +1666,7 @@
   {
     "value": "Jade_1.0.28_display_m5fire",
     "label": "Jade 1.0.28 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.28",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1353,6 +1674,7 @@
   {
     "value": "Jade_1.0.28_display_m5stickcplus",
     "label": "Jade 1.0.28 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.28",
     "board": "M5StickC Plus",
     "variants": []
@@ -1360,6 +1682,7 @@
   {
     "value": "Jade_1.0.28_display_ttgo_tdisplay",
     "label": "Jade 1.0.28 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.28",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1367,6 +1690,7 @@
   {
     "value": "Jade_1.0.28_diycam_esp32-cam",
     "label": "Jade 1.0.28 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.28",
     "board": "ESP32-cam",
     "variants": []
@@ -1374,6 +1698,7 @@
   {
     "value": "Jade_1.0.28_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.28 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.28",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -1381,6 +1706,7 @@
   {
     "value": "Jade_1.0.28_diycam_tcameraplus",
     "label": "Jade 1.0.28 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.28",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -1388,6 +1714,7 @@
   {
     "value": "Jade_1.0.27_display_m5blackgray",
     "label": "Jade 1.0.27 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.27",
     "board": "M5Stack",
     "variants": []
@@ -1395,6 +1722,7 @@
   {
     "value": "Jade_1.0.27_display_m5fire",
     "label": "Jade 1.0.27 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.27",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1402,6 +1730,7 @@
   {
     "value": "Jade_1.0.27_display_m5stickcplus",
     "label": "Jade 1.0.27 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.27",
     "board": "M5StickC Plus",
     "variants": []
@@ -1409,6 +1738,7 @@
   {
     "value": "Jade_1.0.27_display_ttgo_tdisplay",
     "label": "Jade 1.0.27 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.27",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1416,6 +1746,7 @@
   {
     "value": "Jade_1.0.27_diycam_esp32-cam",
     "label": "Jade 1.0.27 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.27",
     "board": "ESP32-cam",
     "variants": []
@@ -1423,6 +1754,7 @@
   {
     "value": "Jade_1.0.27_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.27 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.27",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -1430,6 +1762,7 @@
   {
     "value": "Jade_1.0.27_diycam_tcameraplus",
     "label": "Jade 1.0.27 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.27",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -1437,6 +1770,7 @@
   {
     "value": "jade_1.0.26_display_m5blackgray",
     "label": "Jade 1.0.26 for M5Stack",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.26",
     "board": "M5Stack",
     "variants": []
@@ -1444,6 +1778,7 @@
   {
     "value": "jade_1.0.26_display_m5fire",
     "label": "Jade 1.0.26 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.26",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1451,6 +1786,7 @@
   {
     "value": "jade_1.0.26_display_m5stickcplus",
     "label": "Jade 1.0.26 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.26",
     "board": "M5StickC Plus",
     "variants": []
@@ -1458,6 +1794,7 @@
   {
     "value": "jade_1.0.26_display_ttgo_tdisplay",
     "label": "Jade 1.0.26 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.26",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1465,6 +1802,7 @@
   {
     "value": "jade_1.0.26_diycam_esp32-cam",
     "label": "Jade 1.0.26 for ESP32-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.26",
     "board": "ESP32-cam",
     "variants": []
@@ -1472,6 +1810,7 @@
   {
     "value": "jade_1.0.26_diycam_esp32-wrover-cam",
     "label": "Jade 1.0.26 for ESP32-wrover-cam",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.26",
     "board": "ESP32-wrover-cam",
     "variants": []
@@ -1479,6 +1818,7 @@
   {
     "value": "jade_1.0.26_diycam_tcameraplus",
     "label": "Jade 1.0.26 for LILYGO T-Camera Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.26",
     "board": "LILYGO T-Camera Plus",
     "variants": []
@@ -1486,6 +1826,7 @@
   {
     "value": "jade_1.0.21_tdisplay",
     "label": "Jade 1.0.21 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.21",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1493,6 +1834,7 @@
   {
     "value": "jade_1.0.21_m5stickcplus",
     "label": "Jade 1.0.21 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.21",
     "board": "M5StickC Plus",
     "variants": []
@@ -1500,6 +1842,7 @@
   {
     "value": "jade_0.1.48_m5fire",
     "label": "Jade 0.1.48 for M5Stack FIRE",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "0.1.48",
     "board": "M5Stack FIRE",
     "variants": []
@@ -1507,6 +1850,7 @@
   {
     "value": "jade_0.1.48_tdisplay",
     "label": "Jade 0.1.48 for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "0.1.48",
     "board": "LILYGO T-Display",
     "variants": []
@@ -1514,6 +1858,7 @@
   {
     "value": "jade_0.1.48_m5gray",
     "label": "Jade 0.1.48 for M5Stack Black/Gray",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "0.1.48",
     "board": "M5Stack Black/Gray",
     "variants": []
@@ -1521,6 +1866,7 @@
   {
     "value": "jade_0.1.48_m5stickcplus",
     "label": "Jade 0.1.48 for M5StickC Plus",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "0.1.48",
     "board": "M5StickC Plus",
     "variants": []
@@ -1528,6 +1874,7 @@
   {
     "value": "Jade_0.1.47-miner_display_m5blackgray",
     "label": "Jade 0.1.47-miner for M5Stack Black/Gray",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "0.1.47-miner",
     "board": "M5Stack Black/Gray",
     "variants": []
@@ -1535,6 +1882,7 @@
   {
     "value": "Jade_0.1.47-miner_display_ttgo_tdisplay",
     "label": "Jade 0.1.47-miner for LILYGO T-Display",
+    "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "0.1.47-miner",
     "board": "LILYGO T-Display",
     "variants": []
