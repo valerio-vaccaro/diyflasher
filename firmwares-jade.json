@@ -5,7 +5,19 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v1.0",
-    "variants": ["dev board"]
+    "variants": [
+      "dev board"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade",
+    "label": "Jade v1.0 (dev board) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v1.0",
+    "variants": [
+      "dev board"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_noradio",
@@ -13,7 +25,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v1.0",
-    "variants": ["dev board", "no radio"]
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_noradio",
+    "label": "Jade v1.0 (dev board - no radio) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v1.0",
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v1_1",
@@ -21,7 +47,19 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v1.1",
-    "variants": ["dev board"]
+    "variants": [
+      "dev board"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v1_1",
+    "label": "Jade v1.1 (dev board) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v1.1",
+    "variants": [
+      "dev board"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v1_1_noradio",
@@ -29,7 +67,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v1.1",
-    "variants": ["dev board", "no radio"]
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v1_1_noradio",
+    "label": "Jade v1.1 (dev board - no radio) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v1.1",
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v2",
@@ -37,7 +89,19 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v2",
-    "variants": ["dev board"]
+    "variants": [
+      "dev board"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v2",
+    "label": "Jade v2 (dev board) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v2",
+    "variants": [
+      "dev board"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v2_noradio",
@@ -45,7 +109,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v2",
-    "variants": ["dev board", "no radio"]
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v2_noradio",
+    "label": "Jade v2 (dev board - no radio) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v2",
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v2c",
@@ -53,7 +131,19 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v2 core",
-    "variants": ["dev board"]
+    "variants": [
+      "dev board"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v2c",
+    "label": "Jade v2 core (dev board) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v2 core",
+    "variants": [
+      "dev board"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v2c_noradio",
@@ -61,7 +151,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v2 core",
-    "variants": ["dev board", "no radio"]
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v2c_noradio",
+    "label": "Jade v2 core (dev board - no radio) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v2 core",
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_ci",
@@ -69,7 +173,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v1.0",
-    "variants": ["dev board", "ci version"]
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_ci",
+    "label": "Jade v1.0 (dev board - ci version) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v1.0",
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_noradio_ci",
@@ -77,7 +195,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v1.0",
-    "variants": ["dev board", "ci no radio version"]
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_noradio_ci",
+    "label": "Jade v1.0 (dev board - ci no radio version) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v1.0",
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v1_1_ci",
@@ -85,7 +217,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v1.1",
-    "variants": ["dev board", "ci version"]
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v1_1_ci",
+    "label": "Jade v1.1 (dev board - ci version) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v1.1",
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v1_1_noradio_ci",
@@ -93,7 +239,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v1.1",
-    "variants": ["dev board", "ci no radio version"]
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v1_1_noradio_ci",
+    "label": "Jade v1.1 (dev board - ci no radio version) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v1.1",
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v2_ci",
@@ -101,7 +261,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v2",
-    "variants": ["dev board", "ci version"]
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v2_ci",
+    "label": "Jade v2 (dev board - ci version) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v2",
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v2_noradio_ci",
@@ -109,7 +283,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v2",
-    "variants": ["dev board", "ci no radio version"]
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v2_noradio_ci",
+    "label": "Jade v2 (dev board - ci no radio version) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v2",
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v2c_ci",
@@ -117,7 +305,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v2 core",
-    "variants": ["dev board", "ci version"]
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v2c_ci",
+    "label": "Jade v2 core (dev board - ci version) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v2 core",
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
   },
   {
     "value": "Jade_1.0.42-beta1_jade_v2c_noradio_ci",
@@ -125,7 +327,21 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.42-beta1",
     "board": "Jade v2 core",
-    "variants": ["dev board", "ci no radio version"]
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
+  },
+  {
+    "value": "Jade_1.0.42-beta2_jade_v2c_noradio_ci",
+    "label": "Jade v2 core (dev board - ci no radio version) (1.0.42 beta 2)",
+    "projectUrl": "https://github.com/Blockstream/Jade",
+    "firmwareVersion": "1.0.42-beta2",
+    "board": "Jade v2 core",
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
   },
   {
     "value": "Jade_1.0.41_esp32-cam",
@@ -253,7 +469,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.0",
-    "variants": ["dev board"]
+    "variants": [
+      "dev board"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_noradio",
@@ -261,7 +479,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.0",
-    "variants": ["dev board", "no radio"]
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v1_1",
@@ -269,7 +490,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.1",
-    "variants": ["dev board"]
+    "variants": [
+      "dev board"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v1_1_noradio",
@@ -277,7 +500,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.1",
-    "variants": ["dev board", "no radio"]
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v2",
@@ -285,7 +511,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2",
-    "variants": ["dev board"]
+    "variants": [
+      "dev board"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v2_noradio",
@@ -293,7 +521,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2",
-    "variants": ["dev board", "no radio"]
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v2c",
@@ -301,7 +532,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2 core",
-    "variants": ["dev board"]
+    "variants": [
+      "dev board"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v2c_noradio",
@@ -309,7 +542,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2 core",
-    "variants": ["dev board", "no radio"]
+    "variants": [
+      "dev board",
+      "no radio"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_ci",
@@ -317,7 +553,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.0",
-    "variants": ["dev board", "ci version"]
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_noradio_ci",
@@ -325,7 +564,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.0",
-    "variants": ["dev board", "ci no radio version"]
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v1_1_ci",
@@ -333,7 +575,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.1",
-    "variants": ["dev board", "ci version"]
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v1_1_noradio_ci",
@@ -341,7 +586,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v1.1",
-    "variants": ["dev board", "ci no radio version"]
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v2_ci",
@@ -349,7 +597,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2",
-    "variants": ["dev board", "ci version"]
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v2_noradio_ci",
@@ -357,7 +608,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2",
-    "variants": ["dev board", "ci no radio version"]
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v2c_ci",
@@ -365,7 +619,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2 core",
-    "variants": ["dev board", "ci version"]
+    "variants": [
+      "dev board",
+      "ci version"
+    ]
   },
   {
     "value": "Jade_1.0.41_jade_v2c_noradio_ci",
@@ -373,7 +630,10 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.41",
     "board": "Jade v2 core",
-    "variants": ["dev board", "ci no radio version"]
+    "variants": [
+      "dev board",
+      "ci no radio version"
+    ]
   },
   {
     "value": "Jade_1.0.40_m5blackgray",
@@ -453,7 +713,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.40",
     "board": "LILYGO T-Watch-S3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.40_esp32-cam",
@@ -637,7 +899,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.39",
     "board": "LILYGO T-Watch-S3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.39_diycam_esp32-cam",
@@ -813,7 +1077,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.38",
     "board": "LILYGO T-Watch-S3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.38_diycam_esp32-cam",
@@ -933,7 +1199,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.37",
     "board": "LILYGO T-Watch-S3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.37_diycam_esp32-cam",
@@ -1037,7 +1305,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.36",
     "board": "LILYGO T-Watch-S3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.36_diycam_esp32-cam",
@@ -1141,7 +1411,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.35",
     "board": "LILYGO T-Watch-S3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.35_diycam_esp32-cam",
@@ -1325,7 +1597,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.33",
     "board": "LILYGO T-Watch-S3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.33_diycam_esp32-cam",
@@ -1461,7 +1735,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5Stack2",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.31_display_m5cores3",
@@ -1469,7 +1745,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5StackS3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.31_display_m5fire",
@@ -1493,7 +1771,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "M5StickC Plus 2",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.31_display_ttgo_tdisplay",
@@ -1509,7 +1789,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "LILYGO T-Display-S3",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.31_display_ttgo_tdisplays3procamera",
@@ -1517,7 +1799,9 @@
     "projectUrl": "https://github.com/Blockstream/Jade",
     "firmwareVersion": "1.0.31",
     "board": "LILYGO T-Display-S3 PRO Camera",
-    "variants": ["NEW"]
+    "variants": [
+      "NEW"
+    ]
   },
   {
     "value": "Jade_1.0.31_diycam_esp32-cam",
