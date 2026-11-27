@@ -544,7 +544,7 @@ eraseButton.onclick = async () => {
 
 connectButtonJade.onclick = async () => {
   hideFirmwareControls();
-  const baudrate = diymodelselJade.value.includes('m5stickcplus') ? 115200 : 921600;
+  const baudrate = diymodelselJade.value.includes('m5stickcplus') || diymodelselJade.value.includes('m5blackgray') ? 115200 : 921600;
   setFirmwareSummary(diymodelselJade, 'Flash', baudrate);
   setFlashingState(true);
   if (device === null) {
